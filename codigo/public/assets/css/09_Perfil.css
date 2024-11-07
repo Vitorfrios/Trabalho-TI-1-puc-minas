@@ -25,7 +25,7 @@ body {
     position: relative;
     left: 0;
     padding-top: 10px;
-    border-radius: 30px; 
+    border-radius: 30px;
     margin-left: 10px;
     margin-top: 10px;
 }
@@ -42,20 +42,20 @@ body {
 }
 
 .sidebar ul li a {
-    color: #fff; 
-    text-decoration: none; 
+    color: #fff;
+    text-decoration: none;
     display: block;
-    padding: 0.3em 1px; 
+    padding: 0.3em 1px;
 }
 
 .sidebar ul li.active a {
     color: #03d9ff;
-    padding-left: 15px; 
+    padding-left: 15px;
 }
 
 .sidebar ul li {
-    padding: 0.5em 1em; 
-    font-size: 1.41rem; 
+    padding: 0.5em 1em;
+    font-size: 1.41rem;
 }
 
 .sidebar ul li i {
@@ -69,22 +69,171 @@ body {
 
 /* Main Content */
 .main-content {
-    margin-left: 310px; 
     margin-right: 25px;
     padding: 10px;
     flex: 1;
-    height:180px; 
-    overflow:block;
+    height: 180px;
+    overflow: block;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height:30px;
+    height: 30px;
 }
 
+/* Estilo do container do perfil */
+.profile-container {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 60px;
+}
 
+/* Estilo do cabeçalho do perfil */
+.profile-header {
+    background-color: #80deea;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 24px;
+    border: 2px solid #00a4cc;
+
+}
+
+/* Estilo dos itens do perfil */
+.profile-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    font-size: 30px;
+}
+
+/* Estilo das divs dentro dos itens do perfil */
+.profile-item div {
+    margin-right: 20px;
+}
+
+/* Estilo do texto dentro dos spans */
+.profile-item span {
+    background-color: #80deea;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 300px;
+    height: 20px;
+    text-align: center;
+    border: 2px solid #00a4cc;
+    font-size:25px ;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.profile-itemNot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    font-size: 30px;
+}
+.profile-itemNot span{
+    background-color: #80deea;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 300px;
+    height: 20px;
+    text-align: center;
+    border: 2px solid #00a4cc;
+    font-size:25px ;
+}
+
+.profile-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    font-size: 30px;
+}
+.profile-item button{
+    background-color: #80deea;
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.profile-itemBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    font-size: 30px;
+    
+}
+
+.profile-itemBtn button {
+    background-color: #80deea;
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    display: flex;
+    flex-direction: column; /* Organiza os botões em uma coluna */
+    gap: 10px; /* Define o espaçamento vertical entre os botões */
+}
+
+.btn button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.modal-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 
 /* Right Content */
@@ -131,33 +280,39 @@ body {
 
 
 /* Responsividade */
-@media (max-width: 1024px) { 
+@media (max-width: 1024px) {
     .sidebar {
-        width: 200px; 
+        width: 200px;
     }
 
     .main-content {
-        margin-left: 225px; 
+        margin-left: 225px;
     }
 
-    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/ {
+    .right-content
+
+    /*remova a rigth-content e coloque as classes dela sem o perfil*/
+        {
         width: 95%;
     }
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .sidebar {
-        width: 100%; 
-        height: auto; 
+        width: 100%;
+        height: auto;
         position: relative;
     }
 
     .main-content {
         margin-left: 0;
-        margin-right: 0; 
+        margin-right: 0;
     }
 
-    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/{
-        width: 95%; 
+    .right-content
+
+    /*remova a rigth-content e coloque as classes dela sem o perfil*/
+        {
+        width: 95%;
     }
 }
