@@ -155,9 +155,14 @@ body {
     font-size: 20px; /* Aumenta o tamanho da fonte dos itens de lista dos tópicos */
 }
 
-#subtopicoBotoes button{
-    font-size: 15px; /* Aumenta o tamanho da fonte do título dos subtópicos */
+#subtopicoBotoes {
+    text-align: center; /* Alinha os botões no centro */
 }
+
+#subtopicoBotoes button {
+    font-size: 15px; /* Aumenta o tamanho da fonte dos botões */
+}
+
 
 #subtopicoConteudo h3 {
     font-size: 20px; /* Aumenta o tamanho da fonte do título dos subtópicos */
