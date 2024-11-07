@@ -472,6 +472,51 @@
       ]
     }
   },
+  "conteudo2": {
+    "ajuda-horarios": {
+      "topicos": [
+        "Exibir horários vagos na tabela de acordo com a semana",
+        "Exibir dias mais tranquilos",
+        "Organizar horários de compromissos",
+        "Sincronizar horários com a agenda",
+        "Receber alertas para horários de descanso"
+      ]
+    },
+    "dicas-estudo": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Técnicas de estudo",
+        "Organizar tempo de estudo",
+        "Criar cronograma de estudos",
+        "Gerenciar prazos de tarefas",
+        "Fazer intervalos regulares"
+      ]
+    },
+    "descansar-dormir": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Mostrar cálculo de acordo com o ciclo do sono",
+        "Calcular horário de dormir e acordar",
+        "Exemplo de cálculo de sono:",
+        "Digite o horário de deitar (23:00)",
+        "Digite o horário do compromisso (7:00)",
+        "Exibir a hora de acordar (6:00)",
+        "Exibir tempo de sono (5:30h)"
+      ]
+    },
+    "desempenho": {
+      "topicos": [
+        "Clique na roleta para exibir as 4 dicas",
+        "Mostra o tanto de tarefas por categoria",
+        "Mostra o tanto de horas gastas por categoria",
+        "Avaliar seu desempenho semanal",
+        "Visualizar gráficos de produtividade",
+        "Estabelecer metas de produtividade",
+        "Identificar áreas para melhorar"
+      ]
+    }
+  },
+  
   "tutorial": {
     "AdicionarTarefas": {
       "titulo": "Adicionar Tarefas",
