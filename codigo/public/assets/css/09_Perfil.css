@@ -93,12 +93,12 @@ body {
 
 /* Estilo do cabeçalho do perfil */
 .profile-header {
-    background-color: #80deea;
+    background-color: #76cad8;
+    border: 3px solid #00A4CC;
     padding: 20px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 30px;
     font-size: 24px;
-    border: 2px solid #00a4cc;
 
 }
 
@@ -118,13 +118,13 @@ body {
 
 /* Estilo do texto dentro dos spans */
 .profile-item span {
-    background-color: #80deea;
+    background-color: #76cad8;
+    border: 3px solid #00A4CC;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 30px;
     width: 300px;
     height: 20px;
     text-align: center;
-    border: 2px solid #00a4cc;
     font-size:25px ;
     display: flex;
     align-content: center;
@@ -139,13 +139,13 @@ body {
     font-size: 30px;
 }
 .profile-itemNot span{
-    background-color: #80deea;
+    background-color: #76cad8;
+    border: 3px solid #00A4CC;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 30px;
     width: 300px;
     height: 20px;
     text-align: center;
-    border: 2px solid #00a4cc;
     font-size:25px ;
 }
 
@@ -157,8 +157,8 @@ body {
     font-size: 30px;
 }
 .profile-item button{
-    background-color: #80deea;
-    border-radius: 5px;
+    background-color: #76cad8;
+    border-radius: 30px;
     width: 300px;
     height: 30px;
     font-size: 20px;
@@ -179,8 +179,10 @@ body {
 }
 
 .profile-itemBtn button {
-    background-color: #80deea;
-    border-radius: 5px;
+    background-color: #76cad8;
+    border: 2px solid #00A4CC;
+
+    border-radius: 30px;
     width: 300px;
     height: 30px;
     font-size: 20px;
@@ -214,25 +216,90 @@ body {
     align-items: center;
 }
 
+/* Estilo para o modal */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #E8F0F2;
     padding: 20px;
-    border: 1px solid #888;
+    border: 2px solid #00A4CC;
     border-radius: 8px;
-    width: 300px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Estilo para o cabeçalho do modal */
 .modal-header {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 25px;
 }
 
+/* Estilo para o botão de fechar */
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.form-group-N {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+
+}
+.form-group-N label {
+    font-size: 25px;
+    margin-right: 0;
+    flex: 1;
+}
+.form-group-N input {
+    border: none;
+    border-bottom: 2px solid #00BFFF;
+    outline: none;
+    padding: 5px;
+    width: 300px;
+    background-color: #E8F0F2;
+    position: relative;
+    text-align: left;
+    padding-right: 0;
+    font-size: 24px;
+}
+.form-group-N .star {
+    color: #00BFFF;
+    font-size: 20px;
+    margin-left:0;
+    position: relative;
+    top: 11.5px;
+}
+
+/* Estilo para o botão "Salvar Alterações" */
+#save-changes, #save-password{
+    background-color: #00A4CC;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#save-changes:hover,#save-password:hover {
+    background-color: #007b8b;
+}
+.form-group-N .starS {
+    color: #00BFFF;
+    font-size: 20px;
+    margin-left:0;
+    position: relative;
+    top: 18px;
 }
 
 
