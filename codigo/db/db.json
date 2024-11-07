@@ -2,24 +2,33 @@
   "usuarios": [
     {
       "id": "1",
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
+      "nome": "Administrador do Siste",
+      "email": "admin@abc.com",
+      "login": "admin"
     },
     {
-      "id": "2",
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "id": "d44efd33-0b63-4362-b5db-6f4589ae8133",
+      "login": "web",
+      "nome": "ewqrbqer",
+      "email": "vitor@gmail.com"
+    }
+  ],
+  "senhas": [
+    {
+      "id": "1",
+      "usuarioIdS": "1",
+      "senha": "123esgweg"
     },
     {
-      "login": "rommel",
-      "senha": "123",
-      "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": "3"
+      "id": "ce3361eb-7049-470f-b076-14c98452fa71",
+      "usuarioIdS": "d44efd33-0b63-4362-b5db-6f4589ae8133",
+      "senha": "2345"
+    }
+  ],
+  "configuracoes": [
+    {
+      "usuarioId": "1",
+      "notificacoes": true
     }
   ],
   "tarefas": {
@@ -463,7 +472,6 @@
       ]
     }
   },
-  
   "tutorial": {
     "AdicionarTarefas": {
       "titulo": "Adicionar Tarefas",
@@ -484,7 +492,7 @@
     "CronogramaSemanal": {
       "titulo": "Ver Cronogramas",
       "conteudo": [
-        "Permite que o usuário visualize o cronograma de suas tarefas e compromissos, organizados por data e horário.", 
+        "Permite que o usuário visualize o cronograma de suas tarefas e compromissos, organizados por data e horário.",
         "O cronograma facilita o planejamento e visualização das atividades diárias, semanais ou mensais.",
         "Visualizar tarefas durante um período de 7 dias",
         "Filtrar semana do mês: Selecionar a semana que deseja visualizar",
@@ -503,7 +511,6 @@
         "Exibir gráfico de média entre trabalho, lazer e estudo"
       ]
     },
-    
     "Sugestao": {
       "titulo": "Ver Sugestões",
       "conteudo": "Otimização de tempo, ajustando prioridades e rotina.",
@@ -511,16 +518,16 @@
         "ajuda-horarios": {
           "titulo": "Ajuda com Horários",
           "conteudo": [
-              "Exibir horários vagos na tabela de acordo com a semana",
-              "Exibir dias mais tranquilos"
+            "Exibir horários vagos na tabela de acordo com a semana",
+            "Exibir dias mais tranquilos"
           ]
         },
         "dicas-estudo": {
           "titulo": "Dicas de Estudo",
           "conteudo": [
-              "Clique na roleta para exibir as 4 dicas",
-              "Técnicas de estudo",
-              "Organizar tempo de estudo"
+            "Clique na roleta para exibir as 4 dicas",
+            "Técnicas de estudo",
+            "Organizar tempo de estudo"
           ]
         },
         "descansar-dormir": {
@@ -531,7 +538,7 @@
             "Digite o horário do compromisso",
             "Exibir a hora de acordar",
             "Exibir tempo de sono"
-          ] 
+          ]
         },
         "desempenho": {
           "titulo": "Desempenho",
@@ -542,10 +549,6 @@
           ]
         }
       }
-    
     }
-  
   }
-  
-  
 }
