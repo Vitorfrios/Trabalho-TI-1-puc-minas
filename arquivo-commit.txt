@@ -3,6 +3,12 @@ Get-ChildItem -Recurse -File | ForEach-Object {
     git commit -m "atualização final $($_.Name)"
 }
 
+Get-ChildItem -Recurse -File | ForEach-Object {
+    git add $_.FullName
+    git commit -m "atualização final $($_.Name)"
+}
+git push origin main
+
 
 \Trabalho-TI-1-puc-minas\.gitignore
 \Trabalho-TI-1-puc-minas\CITATION.cff
