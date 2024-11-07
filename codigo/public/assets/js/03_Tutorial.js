@@ -27,17 +27,17 @@ function configurarBotoes(dados) {
     // Mapeia os botões aos dados no JSON
     document.getElementById('AdicionarTarefas').addEventListener('click', () => {
         console.log("Botão 'Adicionar Tarefas' clicado.");
-        exibirDescricao(descricaoDiv, dados.AdicionarTarefas, '3px', '20px'); // Passa o padding 3px e font-size 20px
+        exibirDescricao(descricaoDiv, dados.AdicionarTarefas, '2px', '20px'); // Passa o padding 3px e font-size 20px
     });
 
     document.getElementById('CronogramaSemanal').addEventListener('click', () => {
         console.log("Botão 'Cronograma Semanal' clicado.");
-        exibirDescricao(descricaoDiv, dados.CronogramaSemanal, '10px', '22px'); // Passa o padding 10px e font-size 24px
+        exibirDescricao(descricaoDiv, dados.CronogramaSemanal, '7px', '21px'); // Passa o padding 10px e font-size 24px
     });
 
     document.getElementById('Analise').addEventListener('click', () => {
         console.log("Botão 'Análise' clicado.");
-        exibirDescricao(descricaoDiv, dados.Analise, '10px', '22px'); // Passa o padding 10px e font-size 24px
+        exibirDescricao(descricaoDiv, dados.Analise, '8px', '22px'); // Passa o padding 10px e font-size 24px
     });
 
     document.getElementById('Sugestao').addEventListener('click', () => {
@@ -83,7 +83,7 @@ function mostrarSubtopicos(elemento, dadosSugestao) {
 
     // Define o HTML dos botões e a área onde os subtópicos aparecerão
     const subtituloHTML = `
-        <h3>Escolha um subtópico:</h3>
+        <h3 class:"h3">Escolha um subtópico:</h3>
         <div id="subtopicoBotoes">
             <button id="ajudaHorariosBtn">Ajuda com Horários</button>
             <button id="dicasEstudoBtn">Dicas de Estudo</button>
@@ -102,22 +102,22 @@ function mostrarSubtopicos(elemento, dadosSugestao) {
     // Atribui eventos aos botões de sub-tópicos
     document.getElementById('ajudaHorariosBtn').addEventListener('click', () => {
         console.log("Botão 'Ajuda com Horários' clicado.");
-        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['ajuda-horarios'], '10px', '26px');
+        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['ajuda-horarios'], '10px', '24px');
     });
 
     document.getElementById('dicasEstudoBtn').addEventListener('click', () => {
         console.log("Botão 'Dicas de Estudo' clicado.");
-        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['dicas-estudo'], '8px', '26px');
+        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['dicas-estudo'], '10px', '24px');
     });
 
     document.getElementById('descansarDormirBtn').addEventListener('click', () => {
         console.log("Botão 'Descansar e Dormir' clicado.");
-        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['descansar-dormir'], '3px', '24px');
+        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['descansar-dormir'], '5px', '22px');
     });
 
     document.getElementById('desempenhoBtn').addEventListener('click', () => {
         console.log("Botão 'Desempenho' clicado.");
-        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['desempenho'], '10px', '26px');
+        exibirSubtopico(subtopicoConteudo, dadosSugestao.subtopicos['desempenho'], '10px', '24px');
     });
 }
 
