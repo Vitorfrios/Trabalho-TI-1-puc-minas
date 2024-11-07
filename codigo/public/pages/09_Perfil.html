@@ -35,8 +35,66 @@ npx json-server --watch codigo/db/db.json --port 3000
     </div>
 
     <div class="main-content">
-        <div class="header">Perfil do Usuário</div>
-
+        <div class="profile-container">
+            <div class="profile-container">
+                <div class="profile-header">PERFIL</div>
+                <div class="profile-item">
+                    <div>Nome Completo</div>
+                    <span id="nome-completo"></span>
+                </div>
+                <div class="profile-item">
+                    <div>E-mail</div>
+                    <span id="email"></span>
+                </div>
+                <div class="profile-item">
+                    <div>Nome de usuário</div>
+                    <span id="nome-usuario"></span>
+                </div>
+                <div class="profile-item">
+                    <div>Senha</div>
+                    <button id="change-password">Alterar Senha</button>
+                </div>
+                <div class="profile-itemBtn">
+                    <div>Dados</div>
+                    <div class="btn">
+                        <button id="att-profile">Atualizar dados</button>
+                        <button id="edit-profile">Editar Dados</button>
+                    </div>
+                </div>
+                <div class="profile-itemNot">
+                    <div>Notificações</div>
+                    <label class="switch">
+                        <input type="checkbox" id="notification-toggle">
+                        <span class="slider round">Ligar/Desligar</span>
+                    </label>
+                </div>
+            </div>
+            <div id="edit-form" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close-edit-form">&times;</span>
+                    <div class="modal-header">Editar Dados</div>
+                    <label>Nome Completo</label>
+                    <input type="text" id="edit-nome"><br><br>
+                    <label>E-mail</label>
+                    <input type="text" id="edit-email"><br><br>
+                    <label>Nome de Usuário</label>
+                    <input type="text" id="edit-login"><br><br>
+                    <button id="save-changes">Salvar Alterações</button>
+                </div>
+            </div>
+            
+            <!-- Modal de Alteração de Senha -->
+            <div id="password-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="close-password-modal">&times;</span>
+                    <div class="modal-header">Alterar Senha</div>
+                    <label>Nova Senha</label>
+                    <input type="password" id="new-password"><br><br>
+                    <button id="save-password">Salvar Nova Senha</button>
+                </div>
+            </div>
+            
+        </div>
 
 
     </div>
