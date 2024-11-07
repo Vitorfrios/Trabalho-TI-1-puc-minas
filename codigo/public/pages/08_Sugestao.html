@@ -26,12 +26,6 @@ npx json-server --watch codigo/db/db.json --port 3000
             <li id="tarefas"><a href="../pages/06_Criacao_Tarefas.html"><i class="fas fa-tasks"></i> Criação de tarefas</a></li>
             <li id="progresso"><a href="../pages/07_Progresso.html"><i class="fas fa-chart-line"></i> Progresso</a></li>
             <li id="sugestao"><a href="#"><i class="fas fa-question-circle"></i> Sugestão</a></li>
-            <ul class="sub-itens" style="font-size: 12px;">
-                <li id="ajuda-horarios"><a href="../pages/08.1_Ajuda_com_Horarios.html">&emsp;01.Ajuda com horários</a></li>
-                <li id="dicas-estudo"><a href="../pages/08.2_Dicas_para_Estudo.html">&emsp;02.Dicas para estudo</a></li>
-                <li id="dicas-dormir"><a href="../pages/08.3_Dicas_para_Dormir.html">&emsp;03.Dicas para Dormir</a></li>
-                <li id="dicas-desempenho"><a href="../pages/08.4_Dicas_para_Desempenho.html">&emsp;04.Dicas para desempenho</a></li>
-            </ul>
             <li id="perfil"><a href="../pages/09_Perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
             <li id="feedback"><a href="../pages/10_Suporte_Feedback.html"><i class="fas fa-comments"></i> Feedback/Suporte</a></li>
             <li id="logOut"><a href="../pages/01_logo.html"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
@@ -42,7 +36,14 @@ npx json-server --watch codigo/db/db.json --port 3000
     
 
     <div class="main-content"style="margin-left: 10px;">
-        <div class="header">Sugestão</div>
+        
+        <ul class="nav-list">
+            <div class="header">Sugestão</div>
+            <li id="ajuda-horarios"><a href="../pages/08.1_Ajuda_com_Horarios.html">&emsp;01. Ajuda com horários</a></li>
+            <li id="dicas-estudo"><a href="../pages/08.2_Dicas_para_Estudo.html">&emsp;02. Dicas para estudo</a></li>
+            <li id="dicas-dormir"><a href="../pages/08.3_Dicas_para_Dormir.html">&emsp;03. Dicas para Dormir</a></li>
+            <li id="dicas-desempenho"><a href="../pages/08.4_Dicas_para_Desempenho.html">&emsp;04. Dicas para desempenho</a></li>
+        </ul>
 
 
 
@@ -57,7 +58,18 @@ npx json-server --watch codigo/db/db.json --port 3000
                 width="40" />
             </a>
         </div>
+        <div class="solucoes">
+            <h3 for="opcoes">Selecione uma opção de sugestao para saber o que ela faz:</h3>
+            <select id="opcoes" onchange="exibirConteudo()">
+                <option value="" style="text-align: center;">-- Escolha uma opção de sugestão--</option>
+                <option value="ajuda-horarios">01_Ajuda com Horários</option>
+                <option value="dicas-estudo">02_Dicas para Estudo</option>
+                <option value="descansar-dormir">03_Descansar/Dormir</option>
+                <option value="desempenho">04_Desempenho</option>
 
+            </select>
+            <div id="conteudo-exibicao" class="conteudo-exibicao"></div>
+        </div>
     </div>
     <script src="../assets/js/08_Sugestao.js"></script>
 

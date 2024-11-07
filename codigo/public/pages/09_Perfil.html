@@ -50,7 +50,7 @@ npx json-server --watch codigo/db/db.json --port 3000
                     <div>Nome de usuário</div>
                     <span id="nome-usuario"></span>
                 </div>
-                <div class="profile-item">
+                <div class="profile-itemBtn">
                     <div>Senha</div>
                     <button id="change-password">Alterar Senha</button>
                 </div>
@@ -73,12 +73,27 @@ npx json-server --watch codigo/db/db.json --port 3000
                 <div class="modal-content">
                     <span class="close" id="close-edit-form">&times;</span>
                     <div class="modal-header">Editar Dados</div>
-                    <label>Nome Completo</label>
-                    <input type="text" id="edit-nome"><br><br>
-                    <label>E-mail</label>
-                    <input type="text" id="edit-email"><br><br>
-                    <label>Nome de Usuário</label>
-                    <input type="text" id="edit-login"><br><br>
+                    <div class="form-group-N">
+                        <label>Nome Completo</label>
+                        <input type="text" id="edit-nome"><br><br>
+                        <span class="star">✦</span>
+
+                    </div>
+
+                    <div class="form-group-N">
+                        <label>E-mail</label>
+                        <input type="text" id="edit-email"><br><br>
+                        <span class="star">✦</span>
+
+                    </div>
+
+                    <div class="form-group-N">
+                        <label>Nome de Usuário</label>
+                        <input type="text" id="edit-login"><br><br>
+                        <span class="star">✦</span>
+
+                    </div>
+
                     <button id="save-changes">Salvar Alterações</button>
                 </div>
             </div>
@@ -88,8 +103,12 @@ npx json-server --watch codigo/db/db.json --port 3000
                 <div class="modal-content">
                     <span class="close" id="close-password-modal">&times;</span>
                     <div class="modal-header">Alterar Senha</div>
-                    <label>Nova Senha</label>
-                    <input type="password" id="new-password"><br><br>
+                    <div class="form-group-N">
+                        <label>Nova Senha</label>
+                        <input type="password" id="new-password"><br><br>
+                        <span class="starS">✦</span>
+                    </div>
+                    
                     <button id="save-password">Salvar Nova Senha</button>
                 </div>
             </div>
