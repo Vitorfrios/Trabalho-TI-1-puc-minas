@@ -22,6 +22,14 @@ body {
     align-items: center;
 }
 
+.main-content .h1 h1,h3{
+    text-align: center;
+}
+.main-content .h1 h3{
+    margin-top: 0;
+    margin-bottom: 1px;
+}
+
 /* Container para o topo */
 .top {
     display: flex;
@@ -48,6 +56,10 @@ body {
     border-radius: 15px;
     cursor: pointer;
 }
+.iniciarApp button:hover {
+    background-color: #A9CCE3;
+}
+
 
 /* Container para tutorial */
 .tuto {
@@ -144,10 +156,14 @@ body {
 }
 
 #subtopicoBotoes button{
-    font-size: 16px; /* Aumenta o tamanho da fonte do título dos subtópicos */
+    font-size: 15px; /* Aumenta o tamanho da fonte do título dos subtópicos */
 }
 
 #subtopicoConteudo h3 {
+    font-size: 20px; /* Aumenta o tamanho da fonte do título dos subtópicos */
+}
+
+#subtopicoConteudo .h3 {
     font-size: 20px; /* Aumenta o tamanho da fonte do título dos subtópicos */
 }
 #subtopicoConteudo ul li{
