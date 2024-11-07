@@ -4,13 +4,41 @@ npx json-server --watch codigo/db/db.json --port 3000
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial</title>
+
+    <title> Tempo Otimizado-Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.">
+    <link rel="stylesheet" href="../assets/css/03_Tutorial.css">
 </head>
 <body>
-    <a href="./04_Dashboard.html"><button>clique aqui </button></a>
+    <div class="main-content">
+        <div class="top">
+            <div class="iniciarApp"><button>Iniciar app</button></div>
+            <div class="h1"><h1>Tutorial</h1></div>
+            <div class="iniciarApp" ><button>Iniciar app</button></div>
+        </div>
+        <div class="tuto">
+            <div class="Dpage">
+                <button id="AdicionarTarefas">Adicionar Tarefas</button>
+                <button id="CronogramaSemanal">Cronograma Semanal</button>
+                <button id="Analise">Analise de progresso</button>
+                <button id="Sugestao">Sugestão</button>
+            </div>
+            <div class="set">
+                <span class="setaAdicionarTarefas"><img src="../assets/images/seta-para-cima.png" alt="seta-para-cima"></span>
+                <span class="setCronogramaSemanal"> <img src="../assets/images/seta-para-cima.png" alt="seta-para-cima"></span>
+                <span class="setAnalise"> <img src="../assets/images/seta-para-cima.png" alt="seta-para-cima"></span>
+                <span class="setSugestao"> <img src="../assets/images/seta-para-cima.png" alt="seta-para-cima"></span>
+            </div>
+            <div class="descricao"></div>
+        </div>
+    </div>
+    <script src="../assets/js/03_Tutorial.js"></script>
 </body>
-</html>
