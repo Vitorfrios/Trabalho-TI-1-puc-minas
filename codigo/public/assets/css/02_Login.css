@@ -80,3 +80,45 @@ body {
 .enter-btn:hover {
     background-color: #4bb3c2;
 }
+#password {
+    padding-right: 40px; /* Cria o espaço para o ícone dentro do input */
+}
+
+#toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 70%; /* Ajusta para descer mais (aumente ou diminua conforme necessário) */
+    transform: translateY(-50%); /* Centraliza verticalmente, ajustando o 'top' */
+    cursor: pointer;
+}
+
+.form-group-N {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+
+}
+.form-group-N label {
+    font-size: 18px;
+    margin-right: 0;
+    flex: 1;
+}
+.form-group-N input {
+    border: none;
+    border-bottom: 2px solid #00BFFF;
+    outline: none;
+    padding: 5px;
+    width: 300px;
+    background-color: #E8F0F2;
+    position: relative;
+    text-align: left;
+    padding-right: 0;
+}
+.form-group-N .star {
+    color: #00BFFF;
+    font-size: 20px;
+    margin-left:0;
+    position: relative;
+    top: 15px;
+}
