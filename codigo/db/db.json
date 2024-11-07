@@ -169,19 +169,6 @@
     ],
     "adicionarTarefas": [
       {
-        "name": "0d9urdh9",
-        "time": "12:21",
-        "category": "Trabalho",
-        "priority": "Baixa",
-        "Udate": "2040-05-12",
-        "date": [
-          2,
-          3,
-          5
-        ],
-        "estimatedDuration": 15
-      },
-      {
         "name": "djmdhjmd",
         "time": "05:56",
         "category": "Trabalho",
@@ -192,7 +179,10 @@
         ],
         "estimatedDuration": 45
       }
-    ]
+    ],
+    "grafico": {
+      "Trabalho": 125
+    }
   },
   "telas": {
     "tela1": [
@@ -369,6 +359,18 @@
       "tipo": "feedback",
       "mensagem": "teste feedback",
       "data": "2024-11-06T22:12:36.053Z"
+    },
+    {
+      "id": "feedback1",
+      "tipo": "feedback",
+      "mensagem": "wegwegwg",
+      "data": "2024-11-07T00:44:22.740Z"
+    },
+    {
+      "id": "suporte1",
+      "tipo": "suporte",
+      "mensagem": "qwegwegqge",
+      "data": "2024-11-07T00:44:26.755Z"
     }
   ],
   "suporte": [],
@@ -460,5 +462,90 @@
         "Editar nome de usuário"
       ]
     }
+  },
+  
+  "tutorial": {
+    "AdicionarTarefas": {
+      "titulo": "Adicionar Tarefas",
+      "conteudo": [
+        "Escreva o Nome da tarefa: Define o título da tarefa.",
+        "Escolha os dias de repetição de tarefas (se quiser)",
+        "Escolha a hora da tarefa: Seleciona o horário de início/fim.",
+        "Escolha as categorias (lazer/trabalho/estudo)",
+        "Prioridade: Define a prioridade entre:",
+        "  - Alta Prioridade",
+        "  - Média Prioridade",
+        "  - Baixa Prioridade",
+        "Categoria: Classifica a tarefa em categorias (trabalho, pessoal, etc.).",
+        "Clique no calendário para exibir as tarefas",
+        "Mostra um gráfico com base no tempo gasto em cada categoria"
+      ]
+    },
+    "CronogramaSemanal": {
+      "titulo": "Ver Cronogramas",
+      "conteudo": [
+        "Permite que o usuário visualize o cronograma de suas tarefas e compromissos, organizados por data e horário.", 
+        "O cronograma facilita o planejamento e visualização das atividades diárias, semanais ou mensais.",
+        "Visualizar tarefas durante um período de 7 dias",
+        "Filtrar semana do mês: Selecionar a semana que deseja visualizar",
+        "Ver sugestões/dicas: Vai para a página de sugestões",
+        "Adicionar tarefa: Vai para a página de criação de tarefas"
+      ]
+    },
+    "Analise": {
+      "titulo": "Ver Análises",
+      "conteudo": [
+        "Exibe uma análise detalhada das tarefas concluídas e pendentes, com gráficos de produtividade.",
+        "Mostra o desempenho em termos de tempo gasto em cada tarefa e oferece insights para melhorar a gestão do tempo.",
+        "Exibir gráfico de tarefas concluídas",
+        "Exibir gráfico de tarefas não concluídas",
+        "Exibir tempo gasto por categoria: Trabalho, Lazer, Estudo",
+        "Exibir gráfico de média entre trabalho, lazer e estudo"
+      ]
+    },
+    
+    "Sugestao": {
+      "titulo": "Ver Sugestões",
+      "conteudo": "Recomendações personalizadas para otimizar o tempo, incluindo ajustes nas prioridades e rotina, com base no histórico de tarefas.",
+      "subtopicos": {
+        "ajuda-horarios": {
+          "titulo": "Ajuda com Horários",
+          "conteudo": [
+              "Exibir horários vagos na tabela de acordo com a semana",
+              "Exibir dias mais tranquilos"
+          ]
+        },
+        "dicas-estudo": {
+          "titulo": "Dicas de Estudo",
+          "conteudo": [
+              "Clique na roleta para exibir as 4 dicas",
+              "Técnicas de estudo",
+              "Organizar tempo de estudo"
+          ]
+        },
+        "descansar-dormir": {
+          "titulo": "Descansar e Dormir",
+          "conteudo": [
+            "Clique na roleta para exibir as 4 dicas",
+            "Digite o horário de deitar",
+            "Digite o horário do compromisso",
+            "Exibir a hora de acordar",
+            "Exibir tempo de sono"
+          ] 
+        },
+        "desempenho": {
+          "titulo": "Desempenho",
+          "conteudo": [
+            "Clique na roleta para exibir as 4 dicas",
+            "Mostra o tanto de tarefas por categoria",
+            "Mostra o tanto de horas gastas por categoria"
+          ]
+        }
+      }
+    
+    }
+  
   }
+  
+  
 }
