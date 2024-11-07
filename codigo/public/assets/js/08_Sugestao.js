@@ -48,3 +48,40 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // ------------------- FIM DA SIDE BAR ------------------- //
+
+
+function exibirConteudo() {
+    const opcaoSelecionada = document.getElementById('opcoes').value;
+
+    if (!opcaoSelecionada) {
+        document.getElementById('conteudo-exibicao').innerHTML = '';
+        document.getElementById('conteudo-exibicao').style.border = 'none';
+        return;
+    }
+
+    fetch('/codigo/db/db.json')
+        .then(response => response.json())
+        .then(data => {
+            const conteudoExibicao = document.getElementById('conteudo-exibicao');
+            conteudoExibicao.innerHTML = '';
+
+            // Acessa a chave do conteúdo selecionado (ajuda-horarios, dicas-estudo, etc.)
+            const conteudo = data.conteudo2[opcaoSelecionada];
+            if (conteudo && conteudo.topicos) {
+                conteudoExibicao.style.border = '3px solid #210af3';
+                conteudo.topicos.forEach(topico => {
+                    const p = document.createElement('p');
+                    p.textContent = "• " + topico;
+                    conteudoExibicao.appendChild(p);
+                });
+            } else {
+                conteudoExibicao.style.border = 'none';
+            }
+
+            conteudoExibicao.style.maxWidth = '100%';
+        })
+        .catch(error => {
+            console.error('Erro ao carregar o conteúdo:', error);
+            document.getElementById('conteudo-exibicao').style.border = 'none';
+        });
+}
