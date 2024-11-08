@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": "1",
-      "nome": "Administrador do Siste",
+      "nome": "o Siste",
       "email": "admin@abc.com",
       "login": "admin"
     },
@@ -516,7 +516,6 @@
       ]
     }
   },
-  
   "tutorial": {
     "AdicionarTarefas": {
       "titulo": "Adicionar Tarefas",

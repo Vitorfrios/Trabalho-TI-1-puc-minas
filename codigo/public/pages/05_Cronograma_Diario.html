@@ -33,11 +33,46 @@ npx json-server --watch codigo/db/db.json --port 3000
     </div>
 
     <div class="main-content">
-        <div class="header">Cronograma Semanal</div>
+        <div class="header">
+            <button class="filtro">Filtro</button>
+            <button class="tarefas"><li id="tarefas"><a href="../pages/06_Criacao_Tarefas.html"><i class="fas fa-tasks"></i> Criação de tarefas</a></li>
+            </button>
+            <button class="sugestao"><a href="../pages/08_Sugestao.html"> Sugestão</a></button>
 
-
+        </div>
+        <div class="table-container">
+            <table>
+                <thead class="menu">
+                    <tr class="table-header">
+                        <th class="H">HORA</th>
+                        <th class="S">SEGUNDA</th>
+                        <th class="T">TERÇA</th>
+                        <th class="Q">QUARTA</th>
+                        <th class="Q2">QUINTA</th>
+                        <th class="SX">SEXTA</th>
+                        <th class="SB">SÁBADO</th>
+                        <th class="D">DOMINGO</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="scrollable-tbody-container">
+                <table>
+                    <tbody id="schedule-body">
+                        <!-- Linhas geradas dinamicamente via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <div class="legend">
+            <div><span class="high-priority"></span>ALTA PRIORIDADE</div>
+            <div><span class="medium-priority"></span>MÉDIA PRIORIDADE</div>
+            <div><span class="low-priority"></span>BAIXA PRIORIDADE</div>
+        </div>
 
     </div>
+
 
     <div class="right-content">
         <div class="profile">

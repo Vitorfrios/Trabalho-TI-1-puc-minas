@@ -69,7 +69,6 @@ body {
 
 /* Main Content */
 .main-content {
-    margin-right: 25px;
     padding: 10px;
     flex: 1;
     height:180px; 
@@ -81,6 +80,85 @@ body {
     justify-content: space-between;
     align-items: center;
     height:30px;
+    padding: 20px;
+}
+
+
+
+.table-container {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+table {
+    width: 98.32%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #000;
+}
+
+th, td {
+    width: calc(100% / 8); /* Altere o valor aqui para ajustar o tamanho da célula */
+}
+
+td {
+    border-top: 0;
+}
+
+.scrollable-tbody-container {
+    max-height: 300px;
+    overflow-y: auto;
+    display: block;
+}
+
+.scrollable-tbody-container table {
+    width: 99.989%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    border: 1px solid #000;
+}
+
+
+.legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.legend div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+.legend div span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.high-priority {
+    background-color: red;
+}
+.medium-priority {
+    background-color: yellow;
+}
+.low-priority {
+    background-color: green;
 }
 
 

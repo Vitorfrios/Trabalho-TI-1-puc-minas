@@ -39,3 +39,31 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // ------------------- FIM DA SIDE BAR ------------------- //
+
+document.addEventListener('DOMContentLoaded', () => {
+    const scheduleBody = document.getElementById('schedule-body');
+
+    // Função para formatar as horas no formato "HH:00"
+    function formatHour(hour) {
+        return hour.toString().padStart(2, '0') + ':00';
+    }
+
+    // Gerar linhas e células da tabela
+    for (let hour = 0; hour < 24; hour++) {
+        const row = document.createElement('tr');
+
+        // Primeira célula com a hora
+        const hourCell = document.createElement('td');
+        hourCell.textContent = formatHour(hour);
+        row.appendChild(hourCell);
+
+        // Criar células vazias para cada dia da semana
+        for (let day = 0; day < 7; day++) {
+            const dayCell = document.createElement('td');
+            row.appendChild(dayCell);
+        }
+
+        // Adicionar a linha completa ao tbody
+        scheduleBody.appendChild(row);
+    }
+});
