@@ -192,6 +192,8 @@ body {
     margin: 0; /* Remove margens para alinhamento */
     box-sizing: border-box;
     font-size: 18px;
+    border-top: 0;
+    
 }
 
 /* Coluna de hora */
