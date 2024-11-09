@@ -122,22 +122,34 @@ function getSelectedRecurrenceDays() {
 }
 
 
-// Função para salvar tarefas no servidor
 async function saveTaskToServer(task) {
     try {
         const response = await fetch('http://localhost:3000/tarefas');
         if (!response.ok) throw new Error('Erro ao carregar tarefas');
         
         const data = await response.json();
-        
+
+        // Garante que o array de tarefas existe; caso contrário, inicializa como um array vazio
         if (!Array.isArray(data.adicionarTarefas)) {
-            data.adicionarTarefas = []; 
+            data.adicionarTarefas = [];
         }
-        
+
+        // Filtra tarefas válidas com IDs definidos para calcular o próximo ID corretamente
+        const validTasks = data.adicionarTarefas.filter(t => typeof t.id === 'number' && t.id > 0);
+
+        // Define o próximo ID sequencial baseado no maior ID encontrado, ou começa em 1
+        const nextId = validTasks.length > 0 
+            ? Math.max(...validTasks.map(t => t.id)) + 1 
+            : 1;
+
+        // Atribui o ID sequencial à tarefa antes de outras propriedades
+        task = { id: nextId, ...task };
+
+        // Adiciona a tarefa ao array
         data.adicionarTarefas.push(task);
         
         const estimatedDuration = task.estimatedDuration;
-        const category = task.category; 
+        const category = task.category;
         
         if (!data.grafico) {
             data.grafico = {};
@@ -149,6 +161,7 @@ async function saveTaskToServer(task) {
             data.grafico[category] += estimatedDuration;
         }
 
+        // Salva as mudanças no servidor
         const updateResponse = await fetch('http://localhost:3000/tarefas', {
             method: 'PUT', 
             headers: {
@@ -163,7 +176,7 @@ async function saveTaskToServer(task) {
     }
 }
 
-// Função para remover uma tarefa do servidor
+// Função para remover uma tarefa do servidor usando o ID da tarefa
 async function removeTaskFromServer(task) {
     try {
         const response = await fetch('http://localhost:3000/tarefas');
@@ -171,7 +184,8 @@ async function removeTaskFromServer(task) {
         
         const data = await response.json();
         
-        data.adicionarTarefas = data.adicionarTarefas.filter(t => t.name !== task.name);
+        // Filtra a tarefa pelo ID
+        data.adicionarTarefas = data.adicionarTarefas.filter(t => t.id !== task.id);
         
         const updateResponse = await fetch('http://localhost:3000/tarefas', {
             method: 'PUT',
@@ -182,11 +196,17 @@ async function removeTaskFromServer(task) {
         });
 
         if (!updateResponse.ok) throw new Error('Erro ao remover tarefa');
-        console.log(`Tarefa ${task.name} removida com sucesso.`);
+        console.log(`Tarefa com ID ${task.id} removida com sucesso.`);
     } catch (error) {
         console.error('Erro ao remover tarefa:', error);
     }
 }
+
+
+
+
+
+
 
 
 // --- CARREGAMENTO DE TAREFAS E CRONOGRAMA ---

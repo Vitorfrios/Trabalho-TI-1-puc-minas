@@ -186,19 +186,21 @@
     ],
     "adicionarTarefas": [
       {
-        "name": "djmdhjmd",
-        "time": "05:56",
-        "category": "Trabalho",
+        "id": 1731191654878,
+        "name": "egsv",
+        "time": "23:45",
+        "category": "Estudo",
         "priority": "Baixa",
-        "Udate": "0037-05-06",
+        "Udate": "0043-05-31",
         "date": [
-          6
+          1
         ],
-        "estimatedDuration": 45
+        "estimatedDuration": 435
       }
     ],
     "grafico": {
-      "Trabalho": 125
+      "Trabalho": 1209,
+      "Estudo": 435
     }
   },
   "telas": {
