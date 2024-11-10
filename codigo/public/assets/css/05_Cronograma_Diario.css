@@ -152,6 +152,7 @@ body {
     padding: 8px;
     align-items: center;
     text-align: center;
+    border-radius: 10px;
 }
 
 .tempo button {
@@ -179,6 +180,7 @@ body {
     z-index: 1;
     border-collapse: collapse;
     border: 1px solid #000;
+    
 }
 
 /* Conteúdo das células */
@@ -194,6 +196,7 @@ body {
     font-size: 18px;
     border-top: 0;
     
+    
 }
 
 /* Coluna de hora */
@@ -207,7 +210,9 @@ td#HOUR {
     border-collapse: collapse;
     width: 100%;
 }
-
+.tarefa{
+    cursor: pointer;
+}
 
 /* Estilo do Modal */
 .modal-editar-tarefa {

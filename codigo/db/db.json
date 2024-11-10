@@ -429,12 +429,7 @@
         "Dicas para descansar"
       ]
     },
-    "ajuda-horarios": {
-      "topicos": [
-        "Exibir horários vagos na tabela de acordo com a semana",
-        "Exibir dias mais tranquilos"
-      ]
-    },
+
     "dicas-estudo": {
       "topicos": [
         "Clique na roleta para exibir as 4 dicas",
@@ -483,15 +478,6 @@
     }
   },
   "conteudo2": {
-    "ajuda-horarios": {
-      "topicos": [
-        "Exibir horários vagos na tabela de acordo com a semana",
-        "Exibir dias mais tranquilos",
-        "Organizar horários de compromissos",
-        "Sincronizar horários com a agenda",
-        "Receber alertas para horários de descanso"
-      ]
-    },
     "dicas-estudo": {
       "topicos": [
         "Clique na roleta para exibir as 4 dicas",
@@ -569,13 +555,6 @@
       "titulo": "Ver Sugestões",
       "conteudo": "Otimização de tempo, ajustando prioridades e rotina.",
       "subtopicos": {
-        "ajuda-horarios": {
-          "titulo": "Ajuda com Horários",
-          "conteudo": [
-            "Exibir horários vagos na tabela de acordo com a semana",
-            "Exibir dias mais tranquilos"
-          ]
-        },
         "dicas-estudo": {
           "titulo": "Dicas de Estudo",
           "conteudo": [

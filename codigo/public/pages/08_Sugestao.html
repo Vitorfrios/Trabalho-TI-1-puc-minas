@@ -39,10 +39,9 @@ npx json-server --watch codigo/db/db.json --port 3000
         
         <ul class="nav-list">
             <div class="header">Sugestão</div>
-            <li id="ajuda-horarios"><a href="../pages/08.1_Ajuda_com_Horarios.html">&emsp;01. Ajuda com horários</a></li>
-            <li id="dicas-estudo"><a href="../pages/08.2_Dicas_para_Estudo.html">&emsp;02. Dicas para estudo</a></li>
-            <li id="dicas-dormir"><a href="../pages/08.3_Dicas_para_Dormir.html">&emsp;03. Dicas para Dormir</a></li>
-            <li id="dicas-desempenho"><a href="../pages/08.4_Dicas_para_Desempenho.html">&emsp;04. Dicas para desempenho</a></li>
+            <li id="dicas-estudo"><a href="../pages/08.1_Dicas_para_Estudo.html">&emsp;01. Dicas para estudo</a></li>
+            <li id="dicas-dormir"><a href="../pages/08.2_Dicas_para_Dormir.html">&emsp;02. Dicas para Dormir</a></li>
+            <li id="dicas-desempenho"><a href="../pages/08.3_Dicas_para_Desempenho.html">&emsp;03. Dicas para desempenho</a></li>
         </ul>
 
 
@@ -62,10 +61,9 @@ npx json-server --watch codigo/db/db.json --port 3000
             <h3 for="opcoes">Selecione uma opção de sugestao para saber o que ela faz:</h3>
             <select id="opcoes" onchange="exibirConteudo()">
                 <option value="" style="text-align: center;">-- Escolha uma opção de sugestão--</option>
-                <option value="ajuda-horarios">01_Ajuda com Horários</option>
-                <option value="dicas-estudo">02_Dicas para Estudo</option>
-                <option value="descansar-dormir">03_Descansar/Dormir</option>
-                <option value="desempenho">04_Desempenho</option>
+                <option value="dicas-estudo">01_Dicas para Estudo</option>
+                <option value="descansar-dormir">02_Descansar/Dormir</option>
+                <option value="desempenho">03_Desempenho</option>
 
             </select>
             <div id="conteudo-exibicao" class="conteudo-exibicao"></div>
