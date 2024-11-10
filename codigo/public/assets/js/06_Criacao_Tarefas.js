@@ -213,37 +213,11 @@ async function removeTaskFromServer(task) {
 
 
 // Função para verificar se a tabela de tarefas está vazia
-function checkEmptyTasks() {
-    const tasksTable = document.querySelector('.task-list');
-    const notice = document.querySelector('.empty');
-    notice.innerHTML = tasksTable.children.length === 0 ? 'Nenhuma tarefa para este dia.' : '';
-}
 
 // Função para capitalizar a primeira letra de uma string
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-// Função para criar uma linha de tarefa
-function createTaskRow(task) {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-        <td>${task.time}</td>
-        <td>${task.name}</td>
-        <td>${task.category}</td>
-        <td>${task.priority}</td>
-        <td><button class="remove-task" style="font-size: 22px">Remover</button></td>
-    `;
-
-    row.querySelector('.remove-task').addEventListener('click', async () => {
-        await removeTaskFromServer(task); 
-        row.remove(); 
-        checkEmptyTasks(); 
-    });
-    return row;
-}
-
-
 
 
 // Função para carregar tarefas do JSON
@@ -348,7 +322,30 @@ function addTaskToTable(task) {
     }
 }
 
+// Função para criar uma linha de tarefa
+function createTaskRow(task) {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+    <td>${task.time}</td>
+    <td>${task.name}</td>
+    <td>${task.category}</td>
+    <td>${task.priority}</td>
+    <td><button class="remove-task" style="font-size: 22px">Remover</button></td>
+    `;
+    
+    row.querySelector('.remove-task').addEventListener('click', async () => {
+        await removeTaskFromServer(task); 
+        row.remove(); 
+        checkEmptyTasks(); 
+    });
+    return row;
+}
 
+function checkEmptyTasks() {
+    const tasksTable = document.querySelector('.task-list');
+    const notice = document.querySelector('.empty');
+    notice.innerHTML = tasksTable.children.length === 0 ? 'Nenhuma tarefa para este dia.' : '';
+}
 
 function convertTimeToNumber(time) {
     const [hours, minutes] = time.split(':').map(Number);
