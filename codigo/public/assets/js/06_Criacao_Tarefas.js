@@ -326,18 +326,24 @@ function addTaskToTable(task) {
 function createTaskRow(task) {
     const row = document.createElement("tr");
     row.innerHTML = `
-    <td>${task.time}</td>
-    <td>${task.name}</td>
-    <td>${task.category}</td>
-    <td>${task.priority}</td>
-    <td><button class="remove-task" style="font-size: 22px">Remover</button></td>
+        <td>${task.time}</td>
+        <td>${task.name}</td>
+        <td>${task.category}</td>
+        <td>${task.priority}</td>
+        <td><button class="remove-task" style="font-size: 22px">Remover</button></td>
     `;
-    
-    row.querySelector('.remove-task').addEventListener('click', async () => {
-        await removeTaskFromServer(task); 
-        row.remove(); 
-        checkEmptyTasks(); 
+
+    // Adiciona o evento de clique na linha para abrir o modal de edição
+    row.addEventListener('click', () => openEditModal(task));
+
+    // Impede o clique no botão de remover de abrir o modal de edição
+    row.querySelector('.remove-task').addEventListener('click', async (event) => {
+        event.stopPropagation(); // Impede o clique de se propagar para a linha
+        await removeTaskFromServer(task);
+        row.remove();
+        checkEmptyTasks();
     });
+
     return row;
 }
 

@@ -35,33 +35,7 @@ npx json-server --watch codigo/db/db.json --port 3000
     </div>
 
     <div class="main-content">
-        <div class="header">Progresso</div>
-
-
-            <div class="dicas">
-                <h2>Desempenho por</h2>
-                <div style="display: flex;">
-                    <div class="Dcategoria">
-                        <h4>Categoria</h4>
-                        <span class="borda" id="trabalho">Trabalho 0</span>
-                        <span>||</span>
-                        <span class="borda" id="lazer">Lazer&emsp; 0</span>
-                        <span>||</span>
-                        <span class="borda" id="estudo" style="margin-bottom: 20px;">Estudo&emsp; 0</span>
-                    </div>
-                    <h4>e</h4>
-                    <div class="Dtempo">
-                        <h4>Tempo</h4>
-                        <span class="borda" id="trabalhoT">Trabalho 0</span>
-                        <span>||</span>
-                        <span class="borda" id="lazerT">Lazer&emsp; 0</span>
-                        <span>||</span>
-                        <span class="borda" id="estudoT" style="margin-bottom: 20px;">Estudo&emsp; 0</span>
-                    </div>
-                </div>
-                <button id="atualizarDados">Atualizar dados</button>
-            </div>
-        </div>
+        <div class="header"><h2>Progresso</h2></div>
 
         <h2>TAREFAS CONCLUIDAS</h2>
         <div class="progress-bar-container">
@@ -78,13 +52,11 @@ npx json-server --watch codigo/db/db.json --port 3000
             </div>
             <p>60%</p>
         </div>
-
         <div class="content">
             <table>
                 <thead>
                     <tr>
                         <th>Categoria</th>
-                        <th>Progresso</th>
                         <th>Tempo Gasto por Categoria (h)</th>
                         <th>Tarefas Concluídas</th>
                         <th>Tarefas Pendentes</th>
@@ -94,7 +66,6 @@ npx json-server --watch codigo/db/db.json --port 3000
                 <tbody>
                     <tr>
                         <td>Trabalho</td>
-                        <td>(Progresso)</td>
                         <td>(Horas Gastas)</td>
                         <td>(Concluídas)</td>
                         <td>(Pendentes)</td>
@@ -102,7 +73,6 @@ npx json-server --watch codigo/db/db.json --port 3000
                     </tr>
                     <tr>
                         <td>Lazer</td>
-                        <td>(Progresso)</td>
                         <td>(Horas Gastas)</td>
                         <td>(Concluídas)</td>
                         <td>(Pendentes)</td>
@@ -110,7 +80,6 @@ npx json-server --watch codigo/db/db.json --port 3000
                     </tr>
                     <tr>
                         <td>Estudo</td>
-                        <td>(Progresso)</td>
                         <td>(Horas Gastas)</td>
                         <td>(Concluídas)</td>
                         <td>(Pendentes)</td>
@@ -121,27 +90,29 @@ npx json-server --watch codigo/db/db.json --port 3000
 
         
         </div>
-        <div class="right-content">
-            
-            <div class="profile">
-                <a href="./09_Perfil.html">
-                    <span class="name">Nome de perfil </span>
-                    <img alt="Profile Picture" height="40"
-                    src="https://storage.googleapis.com/a1aa/image/NUmI0MfMz42fpENwyavwQqU3J22dTVo3W9l6l6JgS0EbB3iTA.jpg"
-                    width="40" />
-                </a>
+
+    </div>   
+    <div class="right-content">
+        
+        <div class="profile">
+            <a href="./09_Perfil.html">
+                <span class="name">Nome de perfil </span>
+                <img alt="Profile Picture" height="40"
+                src="https://storage.googleapis.com/a1aa/image/NUmI0MfMz42fpENwyavwQqU3J22dTVo3W9l6l6JgS0EbB3iTA.jpg"
+                width="40" />
+            </a>
+        </div>
+        <div class="charts">
+            <div class="pie-chart">
+                <img src="https://storage.googleapis.com/a1aa/image/gOvBbmVyiOoxLlY8AaGcapsp4y8XVZbxmaZWsA7Fw6Zs227E.jpg" alt="Pie chart for completed tasks" width="200" height="200">
+                <div class="center">4</div>
             </div>
-            <div class="charts">
-                <div class="pie-chart">
-                    <img src="https://storage.googleapis.com/a1aa/image/gOvBbmVyiOoxLlY8AaGcapsp4y8XVZbxmaZWsA7Fw6Zs227E.jpg" alt="Pie chart for completed tasks" width="200" height="200">
-                    <div class="center">4</div>
-                </div>
-                <div class="pie-chart">
-                    <img src="https://storage.googleapis.com/a1aa/image/gOvBbmVyiOoxLlY8AaGcapsp4y8XVZbxmaZWsA7Fw6Zs227E.jpg" alt="Pie chart for pending tasks" width="200" height="200">
-                    <div class="center">4</div>
-                </div>
+            <div class="pie-chart">
+                <img src="https://storage.googleapis.com/a1aa/image/gOvBbmVyiOoxLlY8AaGcapsp4y8XVZbxmaZWsA7Fw6Zs227E.jpg" alt="Pie chart for pending tasks" width="200" height="200">
+                <div class="center">4</div>
             </div>
         </div>
+    </div>
             
     <script src="../assets/js/07_Progresso.js"></script>
 

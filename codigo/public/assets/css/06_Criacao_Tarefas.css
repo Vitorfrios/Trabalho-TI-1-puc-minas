@@ -232,10 +232,11 @@ body {
     padding: 10px;
     border-radius: 30px;
     margin: 20px auto; 
-    width: 95%; 
+    width: 52%; 
     text-align: center;
     margin-bottom: 0;
     padding-bottom: 2px;
+    position: fixed;
 }
 .tasks h2{
     margin-top: 1px;
@@ -246,37 +247,59 @@ body {
     border-collapse: collapse;
     margin: 0 auto; 
 }
+.task-table tbody {
+    display: block; /* Faz com que o tbody se comporte como um bloco */
+    max-height: 173px; /* Define uma altura máxima */
+    overflow-y: auto; /* Permite a rolagem vertical quando necessário */
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
+}
+
+/* Oculta a barra de rolagem em navegadores WebKit (Chrome, Safari) */
+.task-table tbody::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.task-table tr {
+    display: table; /* Faz com que cada linha se comporte como uma linha de tabela */
+    table-layout: fixed; /* Mantém o layout da tabela */
+    width: 100%; /* Garante que a largura da linha corresponda à tabela */
+}
 
 .task-table th {
     border: 0px solid #ddd;
     text-align: center; 
     background-color: #009efa;
-    padding: 5px;
+    padding: 8px;
     font-size: 24px;
 }
 
 
 .task-table td {
     border: 0px solid #ddd;
-    padding: 8px;
+    padding: 15px;
     text-align: center;
-    padding-bottom: 1px;
+    padding-bottom: 8px;
+    padding-left: 0;
+    padding-right: 0;
+
 }
 
-.tasks table tbody td.time {
-    padding: 1px; 
-    width: 10%;
+
+
+.remove-task {
+    background-color: #B0C4DE; /* Cor de fundo inicial */
+    border: none; /* Remove a borda padrão */
+    color: black; /* Cor do texto */
+    padding: 8px 16px; /* Ajusta o preenchimento */
+    cursor: pointer; /* Muda o cursor para "mãozinha" */
+    font-size: 22px; /* Tamanho da fonte */
+    border-radius: 4px; /* Arredonda as bordas */
 }
 
-.tasks table tbody td.task-name {
-    padding: 10px;
-    width: 50%;
-}
-
-.tasks table tbody td.category,
-.tasks table tbody td.priority {
-    padding: 10px; 
-    width: 17.5%;
+/* Muda a cor de fundo ao passar o mouse */
+.remove-task:hover {
+    background-color: #D3DDE8; /* Cor mais clara no hover */
 }
 
 
@@ -299,6 +322,7 @@ body {
     border: 2px solid #00A4CC;
     border-radius: 30px;
     margin-top: 10px;
+    margin-bottom: 5px;
 
 }
 
@@ -323,103 +347,105 @@ body {
     color: inherit;
 }
 
-    /* Progress */
-    .progress {
-        text-align: center;
-        background-color: #B0C4DE;
-        padding: 11px;
-        border-radius: 30px;
-        margin: 5px 0;
-        width: 92%;
-    }
+/* Progress */
+.progress {
+    text-align: center;
+    background-color: #B0C4DE;
+    padding: 11px;
+    border-radius: 30px;
+    margin: 5px 0;
+    width: 92%;
+    margin-bottom: 5px;
 
-    #chartContainer {
-        max-width: 200px;
-        margin: auto;
-        margin-bottom: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+}
 
-    #progressChart {
-        width: 90% !important;
-        height: auto !important;
-        margin: 0;
-    }
+#chartContainer {
+    max-width: 200px;
+    margin: auto;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#progressChart {
+    width: 90% !important;
+    height: auto !important;
+    margin: 0;
+}
 
 
-    .legend {
-        display: flex;
-        justify-content:flex-start;
-        align-items: center;
-        text-align: center;
-    }
+.legend {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    text-align: center;
+}
 
-    .legend-item {
-        width: 30px;
-        height: 20px;
-        margin-right: 10px;
-        margin-left: 20px;
-        text-align: center;
+.legend-item {
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
+    text-align: center;
 
-    }
+}
 
-    /* Calendar */
-    .calendar-container {
-        background-color: #1cb6ae;
-        padding: 10px;
-        border-radius: 30px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-left: 10px;
-    }
+/* Calendar */
+.calendar-container {
+    background-color: #1cb6ae;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
 
-    .calendar {
-        background-color: #B0C4DE;
-        padding: 15px;
-        border-radius: 30px;
-        margin: 10px 0;
-        width: 92%;
-    }
+.calendar {
+    background-color: #B0C4DE;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 10px 0;
+    width: 92%;
+}
 
-    .calendar table {
-        width: 100%;
-        text-align: center;
-        border-collapse: collapse;
-    }
+.calendar table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
 
-    .calendar th,
-    .calendar td {
-        padding: 5.5px;
-        border-radius: 30px;
-        cursor: pointer;
-    }
+.calendar th,
+.calendar td {
+    padding: 5.5px;
+    border-radius: 30px;
+    cursor: pointer;
+}
 
-    .calendar td:hover {
-        background-color: #00A4CC;
-        color: white;
-    }
+.calendar td:hover {
+    background-color: #00A4CC;
+    color: white;
+}
 
-    .calendar td {
-        text-align: center;
-        vertical-align: middle;
-        height: 25px;
-    }
+.calendar td {
+    text-align: center;
+    vertical-align: middle;
+    height: 25px;
+}
 
-    .tempo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 30px;
+.tempo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
 
-    }
+}
 
-    .selected-day {
-        background-color: rgba(0, 255, 213, 0.432);
-        color: white;
-        border-radius: 30px;
+.selected-day {
+    background-color: rgba(0, 255, 213, 0.432);
+    color: white;
+    border-radius: 30px;
 
-    }
+}
 
 /* Responsividade */
 @media (max-width: 1024px) {

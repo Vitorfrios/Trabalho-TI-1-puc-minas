@@ -106,13 +106,16 @@ npx json-server --watch codigo/db/db.json --port 3000
                             <th>Remover</th>
                         </tr>
                     </thead>
-                    <tbody class="task-list" style="font-size: 22px;">
+                    <tbody class="task-list" style="font-size: 20px;">
                         <!-- As tarefas serão inseridas aqui pelo JavaScript -->
                     </tbody>
                 </table>
                 <h4 class="empty"></h4>
                 
             </div>
+
+
+
     </div>
 
     <div class="right-content">
@@ -132,21 +135,6 @@ npx json-server --watch codigo/db/db.json --port 3000
                 <div class="legend-item" style="background-color: #4BC0C0;"></div>Lazer
             </h3>
             <div id="chartContainer">
-                <p id="chartMessage" style="font-size: 10px;">Clique numa data para gerar o gráfico</p>
-                <script>
-                        // Mostra a mensagem do grafico ao carregar a página 
-                    function initializePage() {
-                        const chartMessage = document.getElementById('chartMessage');
-                        chartMessage.style.display = 'block';
-
-                        setTimeout(() => {
-                            chartMessage.style.display = 'none'; 
-                        }, 3000);
-                    }
-
-                    initializePage();
-
-                </script>
                 <canvas id="progressChart" width="100" height="100"></canvas>
             </div>
         </div>
@@ -163,7 +151,10 @@ npx json-server --watch codigo/db/db.json --port 3000
                     <button id="prev" style="font-size: 15px; border-radius: 30px;">Anterior</button>
                     <div id="month-year"></div>
                     <button id="next" style="font-size: 15px; border-radius: 30px;">Próximo</button>
+                    
                 </div>
+                <p id="chartMessage" style="font-size: 13.5px; text-align: center;">Clique numa data para gerar o gráfico</p>
+
                 <thead>
                     <tr style="font-size: 20px;">
                         <th>Dom</th>

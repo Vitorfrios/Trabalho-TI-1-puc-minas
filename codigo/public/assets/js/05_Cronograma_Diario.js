@@ -63,6 +63,7 @@ botaoFiltro.addEventListener('click', (event) => {
     modalFiltro.style.top = `${rect.top - modalFiltro.offsetHeight - 10}px`;
 });
 
+
 aplicarFiltro.addEventListener('click', async () => {
     const mesF = document.getElementById('meses').value;
     let anoF = document.getElementById('ano').value;

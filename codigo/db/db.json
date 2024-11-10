@@ -196,36 +196,74 @@
           1
         ],
         "estimatedDuration": 435
+      },
+      {
+        "id": 1731191654879,
+        "name": "sdzfbadfhadh",
+        "time": "23:04",
+        "category": "Trabalho",
+        "priority": "Media",
+        "Udate": "0034-02-04",
+        "date": [
+          2
+        ],
+        "estimatedDuration": 234
+      },
+      {
+        "id": 1731191654880,
+        "name": "aerhdafbhafd",
+        "time": "03:45",
+        "category": "Trabalho",
+        "priority": "Baixa",
+        "Udate": "0054-04-23",
+        "date": [
+          3
+        ],
+        "estimatedDuration": 4345
+      },
+      {
+        "id": 1731191654881,
+        "name": "5345",
+        "time": "04:53",
+        "category": "Trabalho",
+        "priority": "Media",
+        "Udate": "0035-05-14",
+        "date": [
+          2
+        ],
+        "estimatedDuration": 345
+      },
+      {
+        "id": 1731191654882,
+        "name": "125433",
+        "time": "12:43",
+        "category": "Trabalho",
+        "priority": "Media",
+        "Udate": "0033-04-15",
+        "date": [
+          2
+        ],
+        "estimatedDuration": 1543
+      },
+      {
+        "id": 1731191654883,
+        "name": "413545",
+        "time": "13:45",
+        "category": "Estudo",
+        "priority": "Media",
+        "Udate": "0345-05-14",
+        "date": [
+          2
+        ],
+        "estimatedDuration": 1245
       }
     ],
     "grafico": {
-      "Trabalho": 1209,
-      "Estudo": 435
+      "Trabalho": 8021,
+      "Estudo": 1680
     }
   },
   "telas": {
-    "tela1": [
-      {
-        "num": 1,
-        "text": "texto"
-      },
-      {
-        "num": 2,
-        "text": "texto2"
-      },
-      {
-        "num": 3,
-        "text": "texto3"
-      },
-      {
-        "num": 4,
-        "text": "texto4"
-      },
-      {
-        "num": 5,
-        "text": "texto5"
-      }
-    ],
     "tela2": [
       {
         "num": 1,
@@ -429,7 +467,6 @@
         "Dicas para descansar"
       ]
     },
-
     "dicas-estudo": {
       "topicos": [
         "Clique na roleta para exibir as 4 dicas",
