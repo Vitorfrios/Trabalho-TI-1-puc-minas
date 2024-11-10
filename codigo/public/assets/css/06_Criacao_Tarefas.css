@@ -227,77 +227,58 @@ body {
 
 
 /* Tasks da main content(onde aparece as tarefas)*/
-    .tasks {
-        background-color: #B0C4DE;
-        padding: 10px;
-        border-radius: 30px;
-        margin: 20px auto; 
-        width: 95%; 
-        text-align: center;
-        margin-bottom: 0;
-        padding-bottom: 2px;
-    }
-    .tasks h2{
-        margin-top: 1px;
-        margin-bottom: 9px;
-    }
-    .task-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 0 auto; 
-    }
+.tasks {
+    background-color: #B0C4DE;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 20px auto; 
+    width: 95%; 
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 2px;
+}
+.tasks h2{
+    margin-top: 1px;
+    margin-bottom: 9px;
+}
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; 
+}
 
-    .task-table th {
-        border: 0px solid #ddd;
-        padding: 8px;
-        text-align: center; 
-    }
+.task-table th {
+    border: 0px solid #ddd;
+    text-align: center; 
+    background-color: #009efa;
+    padding: 5px;
+    font-size: 24px;
+}
 
-    .task-table td {
-        border: 0px solid #ddd;
-        padding: 8px;
-        text-align: center;
-        padding-bottom: 1px;
-    }
 
-    .task-table th {
-        background-color: #f2f2f2;
-    }
+.task-table td {
+    border: 0px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    padding-bottom: 1px;
+}
 
-    .tasks table thead th {
-        background-color: #009efa;
-        padding: 5px;
-        font-size: 24px;
-    }
+.tasks table tbody td.time {
+    padding: 1px; 
+    width: 10%;
+}
 
-    .tasks table tbody td.time {
-        padding: 1px; 
-        width: 10%;
-    }
+.tasks table tbody td.task-name {
+    padding: 10px;
+    width: 50%;
+}
 
-    .tasks table tbody td.task-name {
-        padding: 10px;
-        width: 50%;
-    }
+.tasks table tbody td.category,
+.tasks table tbody td.priority {
+    padding: 10px; 
+    width: 17.5%;
+}
 
-    .tasks table tbody td.category,
-    .tasks table tbody td.priority {
-        padding: 10px; 
-        width: 17.5%;
-    }
-
-    .tasks ul {
-        list-style-type: none;
-        padding: 0;
-        font-size: 20px;
-    }
-
-    .tasks ul li {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        font-size: 20px; 
-    }
 
 
 
