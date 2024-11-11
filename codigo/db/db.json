@@ -35,7 +35,7 @@
   "mes_calendar": [
     {
       "id": "2686",
-      "value": 11,
+      "value": 3,
       "year": 2024
     }
   ],
@@ -61,7 +61,7 @@
         "date": [
           2
         ],
-        "time": "09:30",
+        "time": "04:00",
         "category": "Trabalho",
         "priority": "Alta",
         "estimatedDuration": 60
@@ -178,7 +178,7 @@
           5,
           7
         ],
-        "time": "10:30",
+        "time": "10:00",
         "category": "Trabalho",
         "priority": "Média",
         "estimatedDuration": 60
@@ -200,7 +200,7 @@
       {
         "id": 1731191654879,
         "name": "sdzfbadfhadh",
-        "time": "23:04",
+        "time": "23:00",
         "category": "Trabalho",
         "priority": "Media",
         "Udate": "0034-02-04",
@@ -224,7 +224,7 @@
       {
         "id": 1731191654881,
         "name": "5345",
-        "time": "04:53",
+        "time": "04:50",
         "category": "Trabalho",
         "priority": "Media",
         "Udate": "0035-05-14",
@@ -236,7 +236,7 @@
       {
         "id": 1731191654882,
         "name": "125433",
-        "time": "12:43",
+        "time": "12:40",
         "category": "Trabalho",
         "priority": "Media",
         "Udate": "0033-04-15",
@@ -248,7 +248,7 @@
       {
         "id": 1731191654883,
         "name": "413545",
-        "time": "13:45",
+        "time": "13:40",
         "category": "Estudo",
         "priority": "Media",
         "Udate": "0345-05-14",
@@ -759,6 +759,7 @@
         2
       ]
     },
+    
     {
       "name": "Planejamento de Viagem",
       "time": [
@@ -800,13 +801,17 @@
       ]
     },
     {
-      "dates": [
-        2
-      ],
+      "id": "task_14",
+      "name": "Estudo de Caso",
+      "description": "Analisar um estudo de caso relevante.",
       "time": [
-        "task_14"
+        "10:00"
       ],
-      "id": "task_14"
+      "priority": "baixa",
+      "category": "lazer",
+      "dates": [
+        5
+      ]
     },
     {
       "id": "task_15",

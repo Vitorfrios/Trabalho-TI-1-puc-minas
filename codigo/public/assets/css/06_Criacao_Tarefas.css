@@ -249,16 +249,12 @@ body {
 }
 .task-table tbody {
     display: block; /* Faz com que o tbody se comporte como um bloco */
-    max-height: 173px; /* Define uma altura máxima */
+    max-height: 150px; /* Define uma altura máxima */
     overflow-y: auto; /* Permite a rolagem vertical quando necessário */
-    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
 }
 
 /* Oculta a barra de rolagem em navegadores WebKit (Chrome, Safari) */
-.task-table tbody::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
+
 
 .task-table tr {
     display: table; /* Faz com que cada linha se comporte como uma linha de tabela */
@@ -272,6 +268,7 @@ body {
     background-color: #009efa;
     padding: 8px;
     font-size: 24px;
+    padding-right: 30px;
 }
 
 
@@ -284,9 +281,6 @@ body {
     padding-right: 0;
 
 }
-
-
-
 .remove-task {
     background-color: #B0C4DE; /* Cor de fundo inicial */
     border: none; /* Remove a borda padrão */
@@ -294,7 +288,7 @@ body {
     padding: 8px 16px; /* Ajusta o preenchimento */
     cursor: pointer; /* Muda o cursor para "mãozinha" */
     font-size: 22px; /* Tamanho da fonte */
-    border-radius: 4px; /* Arredonda as bordas */
+    border-radius: 30px; /* Arredonda as bordas */
 }
 
 /* Muda a cor de fundo ao passar o mouse */
@@ -302,6 +296,60 @@ body {
     background-color: #D3DDE8; /* Cor mais clara no hover */
 }
 
+
+
+
+/* Estilos para o Modal */
+.modal {
+    display: none; /* Esconde o modal inicialmente */
+    position: fixed;
+    z-index: 1; /* Fica acima do conteúdo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Adiciona rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
 
 
 
