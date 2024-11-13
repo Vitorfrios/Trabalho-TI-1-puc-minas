@@ -6,6 +6,90 @@
       "year": 2024
     }
   ],
+  "adicionarTarefas": [
+    {
+      "id": "205",
+      "name": "Fazer um Trabalho de Pesquisa",
+      "time": "10:03",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        4
+      ],
+      "estimatedDuration": "113"
+    },
+    {
+      "id": "206",
+      "name": "Participar de um Seminário",
+      "time": "11:40",
+      "category": "Estudo",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        1,
+        3
+      ],
+      "estimatedDuration": "50"
+    },
+    {
+      "id": "207",
+      "name": "Organizar um Evento Corporativo",
+      "time": "07:14",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        5,
+        6
+      ],
+      "estimatedDuration": "39"
+    },
+    {
+      "id": "208",
+      "name": "Fazer um Estudo de Caso",
+      "time": "15:53",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        7,
+        5
+      ],
+      "estimatedDuration": "101"
+    },
+    {
+      "id": "209",
+      "name": "Escrever um Ensaio",
+      "time": "22:10",
+      "category": "Estudo",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        4
+      ],
+      "estimatedDuration": "92"
+    },
+    {
+      "id": "210",
+      "name": "Fazer um Blog",
+      "time": "10:45",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        4,
+        7,
+        6
+      ],
+      "estimatedDuration": "118"
+    }
+  ],
+  "grafico": {
+    "Trabalho": 3021,
+    "Estudo": 2080,
+    "Lazer": 1680
+  },
   "listaDeTarefas": [
     {
       "id": "1",
@@ -382,22 +466,5 @@
       ],
       "estimatedDuration": 38
     }
-  ],
-  "adicionarTarefas": [
-    {
-      "id": "205",
-      "name": "",
-      "time": "",
-      "category": "all",
-      "priority": "Não definida",
-      "Udate": "",
-      "date": [],
-      "estimatedDuration": 0
-    }
-  ],
-  "grafico": {
-    "Trabalho": 3021,
-    "Estudo": 2080,
-    "Lazer": 1680
-  }
+  ]
 }
