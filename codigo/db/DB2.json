@@ -2,7 +2,7 @@
   "mes_calendar": [
     {
       "id": "2686",
-      "value": 2,
+      "value": 1,
       "year": 2024
     }
   ],
@@ -17,7 +17,7 @@
       "date": [
         4
       ],
-      "estimatedDuration": "113"
+      "estimatedDuration": 113
     },
     {
       "id": "206",
@@ -30,7 +30,7 @@
         1,
         3
       ],
-      "estimatedDuration": "50"
+      "estimatedDuration": 50
     },
     {
       "id": "207",
@@ -43,7 +43,7 @@
         5,
         6
       ],
-      "estimatedDuration": "39"
+      "estimatedDuration": 39
     },
     {
       "id": "208",
@@ -56,7 +56,7 @@
         7,
         5
       ],
-      "estimatedDuration": "101"
+      "estimatedDuration": 101
     },
     {
       "id": "209",
@@ -68,7 +68,7 @@
       "date": [
         4
       ],
-      "estimatedDuration": "92"
+      "estimatedDuration": 92
     },
     {
       "id": "210",
@@ -82,7 +82,7 @@
         7,
         6
       ],
-      "estimatedDuration": "118"
+      "estimatedDuration": 118
     }
   ],
   "grafico": {
@@ -154,20 +154,6 @@
         7
       ],
       "estimatedDuration": 59
-    },
-    {
-      "id": "6",
-      "name": "Fazer Exercícios",
-      "time": "07:39",
-      "category": "Estudo",
-      "priority": "Média",
-      "Udate": "2024-11-13",
-      "date": [
-        3,
-        4,
-        1
-      ],
-      "estimatedDuration": 64
     },
     {
       "id": "7",
@@ -334,20 +320,6 @@
         3
       ],
       "estimatedDuration": 99
-    },
-    {
-      "id": "21",
-      "name": "Praticar Esportes",
-      "time": "00:24",
-      "category": "Lazer",
-      "priority": "Baixa",
-      "Udate": "2024-11-13",
-      "date": [
-        3,
-        5,
-        4
-      ],
-      "estimatedDuration": 61
     },
     {
       "name": "Cozinhar um Novo Prato",
