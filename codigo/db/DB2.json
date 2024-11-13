@@ -1,0 +1,403 @@
+{
+  "mes_calendar": [
+    {
+      "id": "2686",
+      "value": 2,
+      "year": 2024
+    }
+  ],
+  "listaDeTarefas": [
+    {
+      "id": "1",
+      "name": "Revisar Notas",
+      "time": "13:22",
+      "category": "Estudo",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        1
+      ],
+      "estimatedDuration": 58
+    },
+    {
+      "id": "2",
+      "name": "Participar de uma Reunião",
+      "time": "23:40",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        2,
+        4
+      ],
+      "estimatedDuration": 40
+    },
+    {
+      "id": "3",
+      "name": "Preparar o Almoço",
+      "time": "12:40",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        5,
+        6
+      ],
+      "estimatedDuration": 102
+    },
+    {
+      "id": "4",
+      "name": "Jogar um Jogo de Tabuleiro",
+      "time": "08:29",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        5,
+        3,
+        2
+      ],
+      "estimatedDuration": 68
+    },
+    {
+      "id": "5",
+      "name": "Estudar Matemática",
+      "time": "15:05",
+      "category": "Estudo",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        7
+      ],
+      "estimatedDuration": 59
+    },
+    {
+      "id": "6",
+      "name": "Fazer Exercícios",
+      "time": "07:39",
+      "category": "Estudo",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3,
+        4,
+        1
+      ],
+      "estimatedDuration": 64
+    },
+    {
+      "id": "7",
+      "name": "Fazer um Trabalho Voluntário",
+      "time": "05:47",
+      "category": "Lazer",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        1,
+        3,
+        6
+      ],
+      "estimatedDuration": 76
+    },
+    {
+      "id": "8",
+      "name": "Fazer um Trabalho Voluntário",
+      "time": "16:36",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        7,
+        6
+      ],
+      "estimatedDuration": 57
+    },
+    {
+      "id": "9",
+      "name": "Fazer um Curso Online",
+      "time": "23:01",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        6
+      ],
+      "estimatedDuration": 103
+    },
+    {
+      "id": "10",
+      "name": "Planejar uma Campanha",
+      "time": "01:24",
+      "category": "Trabalho",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        7
+      ],
+      "estimatedDuration": 113
+    },
+    {
+      "id": "11",
+      "name": "Estudar Matemática",
+      "time": "15:58",
+      "category": "Estudo",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        1,
+        3
+      ],
+      "estimatedDuration": 38
+    },
+    {
+      "id": "12",
+      "name": "Fazer um Curso Online",
+      "time": "23:32",
+      "category": "Estudo",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        3,
+        5
+      ],
+      "estimatedDuration": 83
+    },
+    {
+      "id": "13",
+      "name": "Revisar Documentos",
+      "time": "21:05",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        2,
+        5,
+        1
+      ],
+      "estimatedDuration": 93
+    },
+    {
+      "id": "14",
+      "name": "Escrever um Artigo",
+      "time": "09:28",
+      "category": "Estudo",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        5
+      ],
+      "estimatedDuration": 39
+    },
+    {
+      "id": "16",
+      "name": "Participar de uma Reunião",
+      "time": "22:32",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        1
+      ],
+      "estimatedDuration": 42
+    },
+    {
+      "id": "17",
+      "name": "Assistir a uma Série",
+      "time": "19:08",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        1
+      ],
+      "estimatedDuration": 82
+    },
+    {
+      "id": "18",
+      "name": "Atender Clientes",
+      "time": "02:51",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        4
+      ],
+      "estimatedDuration": 103
+    },
+    {
+      "id": "19",
+      "name": "Assistir a um Filme",
+      "time": "18:54",
+      "category": "Lazer",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        2,
+        4
+      ],
+      "estimatedDuration": 75
+    },
+    {
+      "id": "20",
+      "name": "Fazer um Trabalho Voluntário",
+      "time": "19:34",
+      "category": "Lazer",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        3
+      ],
+      "estimatedDuration": 99
+    },
+    {
+      "id": "21",
+      "name": "Praticar Esportes",
+      "time": "00:24",
+      "category": "Lazer",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        3,
+        5,
+        4
+      ],
+      "estimatedDuration": 61
+    },
+    {
+      "name": "Cozinhar um Novo Prato",
+      "time": "23:26",
+      "description": "undefined",
+      "priority": "Alta",
+      "category": "Lazer",
+      "date": [
+        1,
+        3,
+        7
+      ],
+      "estimatedDuration": 52,
+      "id": "22"
+    },
+    {
+      "id": "23",
+      "name": "Preparar o Almoço",
+      "time": "06:18",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        4,
+        5,
+        1
+      ],
+      "estimatedDuration": 76
+    },
+    {
+      "id": "24",
+      "name": "Estudar Matemática",
+      "time": "10:27",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        4
+      ],
+      "estimatedDuration": 46
+    },
+    {
+      "id": "25",
+      "name": "Fazer um Projeto",
+      "time": "19:54",
+      "category": "Estudo",
+      "priority": "Baixa",
+      "Udate": "2024-11-13",
+      "date": [
+        5
+      ],
+      "estimatedDuration": 99
+    },
+    {
+      "id": "26",
+      "name": "Enviar Relatório",
+      "time": "19:33",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        7,
+        3
+      ],
+      "estimatedDuration": 58
+    },
+    {
+      "id": "27",
+      "name": "Participar de uma Reunião",
+      "time": "09:51",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        7
+      ],
+      "estimatedDuration": 110
+    },
+    {
+      "id": "28",
+      "name": "Participar de uma Reunião",
+      "time": "03:54",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        6,
+        4
+      ],
+      "estimatedDuration": 46
+    },
+    {
+      "id": "29",
+      "name": "Organizar a Casa",
+      "time": "14:38",
+      "category": "Trabalho",
+      "priority": "Média",
+      "Udate": "2024-11-13",
+      "date": [
+        4,
+        1,
+        5
+      ],
+      "estimatedDuration": 116
+    },
+    {
+      "id": "30",
+      "name": "Fazer Meditação",
+      "time": "07:10",
+      "category": "Lazer",
+      "priority": "Alta",
+      "Udate": "2024-11-13",
+      "date": [
+        4,
+        5
+      ],
+      "estimatedDuration": 38
+    }
+  ],
+  "adicionarTarefas": [
+    {
+      "id": "205",
+      "name": "",
+      "time": "",
+      "category": "all",
+      "priority": "Não definida",
+      "Udate": "",
+      "date": [],
+      "estimatedDuration": 0
+    }
+  ],
+  "grafico": {
+    "Trabalho": 3021,
+    "Estudo": 2080,
+    "Lazer": 1680
+  }
+}
