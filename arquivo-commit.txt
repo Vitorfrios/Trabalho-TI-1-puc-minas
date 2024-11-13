@@ -92,7 +92,6 @@ $arquivos = @(
     "Trabalho-TI-1-puc-minas\docs\images\propostaCarlos.png"
 )
 
-# Para cada arquivo, faz o add, commit e push
 foreach ($arquivo in $arquivos) {
     git add $arquivo
     git commit -m "Adicionando $arquivo"
