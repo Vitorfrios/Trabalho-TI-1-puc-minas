@@ -127,6 +127,26 @@ fetchSavedTasks().then(savedTasks => {
             .map(checkbox => parseInt(checkbox.value));
     }
 
+    function atualizarGraficoTempo(taskDetails) {
+        const { category, estimatedDuration } = taskDetails;
+    
+        fetch("http://localhost:4000/grafico")
+            .then(response => response.json())
+            .then(graficoTempo => {
+                // Soma incremental do tempo estimado para a categoria
+                graficoTempo[category] = (graficoTempo[category] || 0) + estimatedDuration;
+    
+                // Envia atualização ao servidor
+                return fetch("http://localhost:4000/grafico", {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(graficoTempo)
+                });
+            })
+            .then(() => console.log("Gráfico de tempo atualizado com sucesso"))
+            .catch(error => console.error("Erro ao atualizar gráfico de tempo:", error));
+    }
+
     function saveTaskToServer() {
         const taskDetails = gatherTaskDetails();
     
@@ -142,6 +162,8 @@ fetchSavedTasks().then(savedTasks => {
         })
         .then(data => {
             console.log("Tarefa salva no servidor:", data);
+            atualizarGraficoTempo(taskDetails); // Atualiza apenas o gráfico de tempo
+
         })
         .catch(error => console.error("Erro:", error));
     }
@@ -160,7 +182,6 @@ fetchSavedTasks().then(savedTasks => {
 
 async function removeTaskFromServer(taskId) {
     try {
-        // Normalizar o ID para comparar corretamente com strings e números
         const normalizedTaskId = typeof taskId === 'number' ? taskId.toString() : taskId;
 
         // Determinar o endpoint correto
@@ -170,14 +191,22 @@ async function removeTaskFromServer(taskId) {
         };
 
         const endpoint = endpointMap.adicionarTarefas ? 'adicionarTarefas' : 'listaDeTarefas';
-        let url = `http://localhost:4000/${endpoint}/${normalizedTaskId}`;
+        const url = `http://localhost:4000/${endpoint}/${normalizedTaskId}`;
 
-        console.log(`Tentando remover tarefa com ID ${normalizedTaskId} do endpoint: ${url}`);
+        // Recupera a tarefa para obter a categoria e o tempo estimado antes de excluí-la
+        const taskResponse = await fetch(url);
+        if (!taskResponse.ok) {
+            throw new Error(`Erro ao recuperar a tarefa: ${taskResponse.statusText}`);
+        }
+        const taskDetails = await taskResponse.json();
 
+        // Exclui a tarefa do servidor
         const response = await fetch(url, { method: 'DELETE', headers: { 'Content-Type': 'application/json' } });
-
         if (response.ok) {
             console.log(`Tarefa com ID ${normalizedTaskId} removida de ${url}`);
+
+            // Atualiza graficoTempo subtraindo a duração da tarefa removida
+            atualizarGraficoTempoRemocao(taskDetails.category, taskDetails.estimatedDuration);
         } else {
             console.error(`Erro ao remover tarefa de ${url}:`, response.statusText);
             const errorMessage = await response.text();
@@ -185,6 +214,27 @@ async function removeTaskFromServer(taskId) {
         }
     } catch (error) {
         console.error('Erro ao remover a tarefa:', error);
+    }
+}
+
+// Função para subtrair o tempo da categoria no gráfico de tempo
+async function atualizarGraficoTempoRemocao(category, estimatedDuration) {
+    try {
+        const response = await fetch("http://localhost:4000/grafico");
+        const graficoTempo = await response.json();
+
+        if (graficoTempo[category] !== undefined) {
+            graficoTempo[category] = Math.max(0, graficoTempo[category] - estimatedDuration); // Evita valores negativos
+
+            await fetch("http://localhost:4000/grafico", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(graficoTempo)
+            });
+            console.log("Gráfico de tempo atualizado após remoção.");
+        }
+    } catch (error) {
+        console.error("Erro ao atualizar gráfico de tempo após remoção:", error);
     }
 }
 
