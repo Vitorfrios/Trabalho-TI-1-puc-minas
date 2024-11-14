@@ -1,49 +1,33 @@
-import json
+import os
 
-# Caminho do arquivo JSON
-caminho_arquivo = 'codigo/db/DB2.json'
+def contar_linhas_diretorio(diretorio):
+    total_linhas = 0
+    linhas_por_arquivo = {}
 
-# Função para ler e calcular a duração total por categoria
-def calcular_duracoes_por_categoria():
-    try:
-        # Abrir e carregar o arquivo JSON
-        with open(caminho_arquivo, 'r') as file:
-            dados = json.load(file)
+    # Percorre todos os arquivos do diretório
+    for root, dirs, files in os.walk(diretorio):
+        for file in files:
+            # Caminho completo do arquivo
+            caminho_arquivo = os.path.join(root, file)
 
-        # Verifique como os dados são carregados
-        print("Dados lidos do arquivo:", dados)  # Adicionamos isso para depurar
+            # Verifica se é um arquivo de código (extensões comuns)
+            if caminho_arquivo.endswith(('.py', '.js', '.html', '.css', '.java', '.json')):
+                with open(caminho_arquivo, 'r', encoding='utf-8') as f:
+                    linhas = f.readlines()
+                    num_linhas = len(linhas)
 
-        # Criar um dicionário para armazenar a soma de estimatedDuration por categoria
-        duracoes_por_categoria = {}
+                    # Armazena o número de linhas do arquivo
+                    linhas_por_arquivo[caminho_arquivo] = num_linhas
+                    total_linhas += num_linhas
 
-        # Verifica se as chaves 'adicionarTarefas' e 'listaDeTarefas' existem
-        for key in ['adicionarTarefas', 'listaDeTarefas']:
-            if key in dados:
-                # Iterar sobre as tarefas em cada categoria
-                for tarefa in dados[key]:
-                    if isinstance(tarefa, dict):
-                        categoria = tarefa.get('category')
-                        estimated_duration = tarefa.get('estimatedDuration', 0)
+    return linhas_por_arquivo, total_linhas
 
-                        # Soma a duração por categoria
-                        if categoria:
-                            if categoria in duracoes_por_categoria:
-                                duracoes_por_categoria[categoria] += estimated_duration
-                            else:
-                                duracoes_por_categoria[categoria] = estimated_duration
-                    else:
-                        print(f"Erro: A tarefa não está no formato esperado (dicionário). Tarefa: {tarefa}")
+# Caminho do diretório
+diretorio = 'codigo'
 
-        # Exibir as somas das durações por categoria
-        for categoria, duracao_total in duracoes_por_categoria.items():
-            print(f"Categoria: {categoria} - Duração total: {duracao_total} minutos")
-
-    except FileNotFoundError:
-        print(f"Erro: O arquivo {caminho_arquivo} não foi encontrado.")
-    except json.JSONDecodeError:
-        print(f"Erro ao ler o arquivo JSON. Verifique se o formato está correto.")
-    except Exception as e:
-        print(f"Erro inesperado: {e}")
-
-# Chamar a função para calcular e exibir os resultados
-calcular_duracoes_por_categoria()
+# Chama a função e imprime o resultado
+linhas_por_arquivo, total_linhas = contar_linhas_diretorio(diretorio)
+print("Linhas por arquivo:")
+for arquivo, linhas in linhas_por_arquivo.items():
+    print(f"{arquivo}: {linhas} linhas")
+print(f"\nTotal de linhas de código: {total_linhas}")
