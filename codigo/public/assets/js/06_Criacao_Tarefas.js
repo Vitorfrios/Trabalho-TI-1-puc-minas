@@ -94,10 +94,10 @@ function fetchSavedTasks() {
 
 // Inicializa o ID com base nas tarefas salvas no servidor ou começa com 205 se não houver tarefas
 fetchSavedTasks().then(savedTasks => {
-    let currentTaskId = savedTasks.length > 0 ? getMaxTaskId(savedTasks) + 1 : 205; // Se não houver tarefas, começa com 205
+    let currentTaskId = savedTasks.length > 0 ? getMaxTaskId(savedTasks) + 1 : 205; 
 
     function generateTaskId() {
-        return currentTaskId++; // Incrementa a cada chamada
+        return currentTaskId++; 
     }
 
     function gatherTaskDetails() {
@@ -109,16 +109,14 @@ fetchSavedTasks().then(savedTasks => {
         const estimatedDuration = parseInt(document.querySelector('input#estimatedDuration').value) || 0;
         const selectedPriorityButton = document.querySelector(".priority-button.selected");
     
-        // Verifica se todos os campos obrigatórios estão preenchidos
         if (!taskName || !taskTime || !taskUdate || !taskCategory || !taskRecurrenceDays.length) {
             alert("Por favor, preencha todos os campos obrigatórios antes de salvar a tarefa.");
-            return null; // Cancela o processo se algum campo obrigatório estiver vazio
+            return null; 
         }
     
-        // Verificação de limite de duração
         if (estimatedDuration > 1440) {
             alert("A duração estimada não pode ser superior a 1440 minutos (24 horas).");
-            return null; // Cancela a execução se a duração exceder o limite
+            return null; 
         }
     
         const taskPriority = selectedPriorityButton 
@@ -169,6 +167,13 @@ fetchSavedTasks().then(savedTasks => {
     function saveTaskToServer() {
         const taskDetails = gatherTaskDetails();
     
+        if (!taskDetails) {
+            console.error("Os detalhes da tarefa são inválidos ou incompletos.");
+            return;
+        }
+    
+        console.log("Enviando tarefa ao servidor:", taskDetails); 
+    
         fetch("http://localhost:4000/adicionarTarefas", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -177,16 +182,15 @@ fetchSavedTasks().then(savedTasks => {
         .then(response => {
             if (!response.ok) throw new Error("Erro ao salvar a tarefa no servidor");
             console.log("Tarefa salva com sucesso!");
-            return response.json();  
+            return response.json();
         })
         .then(data => {
             console.log("Tarefa salva no servidor:", data);
-            atualizarGraficoTempo(taskDetails); // Atualiza apenas o gráfico de tempo
-
+            atualizarGraficoTempo(taskDetails); 
         })
         .catch(error => console.error("Erro:", error));
     }
-
+    
     document.getElementById('add-task-button').addEventListener('click', (e) => {
         e.preventDefault();
         saveTaskToServer();
