@@ -89,6 +89,9 @@ function fetchSavedTasks() {
         .catch(() => []);  // Retorna uma lista vazia caso haja erro na busca
 }
 
+
+
+
 // Inicializa o ID com base nas tarefas salvas no servidor ou começa com 205 se não houver tarefas
 fetchSavedTasks().then(savedTasks => {
     let currentTaskId = savedTasks.length > 0 ? getMaxTaskId(savedTasks) + 1 : 205; // Se não houver tarefas, começa com 205
@@ -98,13 +101,19 @@ fetchSavedTasks().then(savedTasks => {
     }
 
     function gatherTaskDetails() {
-        const taskName = document.querySelector('input[placeholder="Nome da tarefa"]').value;
-        const taskTime = document.querySelector('input[type="time"]').value;
-        const taskUdate = document.querySelector('input[name="dateUsuario"]').value;
-        const taskCategory = document.getElementById("category-filter").value;
+        const taskName = document.querySelector('input[placeholder="Nome da tarefa"]').value.trim();
+        const taskTime = document.querySelector('input[type="time"]').value.trim();
+        const taskUdate = document.querySelector('input[name="dateUsuario"]').value.trim();
+        const taskCategory = document.getElementById("category-filter").value.trim();
         const taskRecurrenceDays = getSelectedRecurrenceDays();
         const estimatedDuration = parseInt(document.querySelector('input#estimatedDuration').value) || 0;
         const selectedPriorityButton = document.querySelector(".priority-button.selected");
+    
+        // Verifica se todos os campos obrigatórios estão preenchidos
+        if (!taskName || !taskTime || !taskUdate || !taskCategory || !taskRecurrenceDays.length) {
+            alert("Por favor, preencha todos os campos obrigatórios antes de salvar a tarefa.");
+            return null; // Cancela o processo se algum campo obrigatório estiver vazio
+        }
     
         // Verificação de limite de duração
         if (estimatedDuration > 1440) {
@@ -115,11 +124,21 @@ fetchSavedTasks().then(savedTasks => {
         const taskPriority = selectedPriorityButton 
             ? capitalizeFirstLetter(selectedPriorityButton.getAttribute("data-priority")) 
             : "Não definida";
-        
+    
         const taskId = String(generateTaskId());
-        
-        return { id: taskId, name: taskName, time: taskTime, category: taskCategory, priority: taskPriority, Udate: taskUdate, date: taskRecurrenceDays, estimatedDuration };
+    
+        return { 
+            id: taskId, 
+            name: taskName, 
+            time: taskTime, 
+            category: taskCategory, 
+            priority: taskPriority, 
+            Udate: taskUdate, 
+            date: taskRecurrenceDays, 
+            estimatedDuration 
+        };
     }
+    
     
     
     function getSelectedRecurrenceDays() {
