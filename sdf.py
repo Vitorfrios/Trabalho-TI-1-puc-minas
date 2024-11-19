@@ -11,7 +11,7 @@ def contar_linhas_diretorio(diretorio):
             caminho_arquivo = os.path.join(root, file)
 
             # Verifica se é um arquivo de código (extensões comuns)
-            if caminho_arquivo.endswith(('.py', '.js', '.html', '.css', '.java', '.json')):
+            if caminho_arquivo.endswith(('.js', '.html', '.css','.json')):
                 with open(caminho_arquivo, 'r', encoding='utf-8') as f:
                     linhas = f.readlines()
                     num_linhas = len(linhas)
