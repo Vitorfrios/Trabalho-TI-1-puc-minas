@@ -84,3 +84,56 @@ extensoes_alvo = ['.html', '.js', '.css']
 
 # Executar a substituição
 substituir_texto_em_arquivos(diretorio, mapeamento, extensoes_alvo)
+
+
+
+
+
+import os
+import re
+
+def processar_arquivos_html(diretorio):
+    for raiz, _, arquivos in os.walk(diretorio):
+        for arquivo in arquivos:
+            if arquivo.endswith('.html'):
+                caminho_arquivo = os.path.join(raiz, arquivo)
+                
+                with open(caminho_arquivo, 'r', encoding='utf-8') as file:
+                    conteudo = file.read()
+                
+                # Remover o item com ID "progresso"
+                conteudo_atualizado = re.sub(
+                    r'\s*<li id="progresso">.*?</li>', 
+                    '', 
+                    conteudo, 
+                    flags=re.DOTALL
+                )
+                
+                # Reordenar os IDs restantes
+                conteudo_atualizado = re.sub(
+                    r'<li id="sugestao"><a href="../pages/\d{2}_Sugestao\.html">',
+                    '<li id="sugestao"><a href="../pages/07_Sugestao.html">',
+                    conteudo_atualizado
+                )
+                conteudo_atualizado = re.sub(
+                    r'<li id="perfil"><a href="../pages/\d{2}_Perfil\.html">',
+                    '<li id="perfil"><a href="../pages/08_Perfil.html">',
+                    conteudo_atualizado
+                )
+                conteudo_atualizado = re.sub(
+                    r'<li id="feedback"><a href="../pages/\d{2}_Suporte_Feedback\.html">',
+                    '<li id="feedback"><a href="../pages/9_Suporte_Feedback.html">',
+                    conteudo_atualizado
+                )
+                
+                # Se algo mudou, salva as alterações
+                if conteudo != conteudo_atualizado:
+                    with open(caminho_arquivo, 'w', encoding='utf-8') as file:
+                        file.write(conteudo_atualizado)
+                    print(f"Alterado: {caminho_arquivo}")
+
+# Configurações
+diretorio_alvo = 'codigo'  # Substitua pelo caminho do diretório onde estão os arquivos HTML
+
+# Executar a função
+processar_arquivos_html(diretorio_alvo)
