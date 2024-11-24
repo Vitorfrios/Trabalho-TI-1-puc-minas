@@ -31,3 +31,56 @@ print("Linhas por arquivo:")
 for arquivo, linhas in linhas_por_arquivo.items():
     print(f"{arquivo}: {linhas} linhas")
 print(f"\nTotal de linhas de código: {total_linhas}")
+
+
+
+
+def substituir_texto_em_arquivos(diretorio, mapeamento, extensoes):
+    for raiz, _, arquivos in os.walk(diretorio):
+        for arquivo in arquivos:
+            if any(arquivo.endswith(ext) for ext in extensoes):
+                caminho_arquivo = os.path.join(raiz, arquivo)
+                with open(caminho_arquivo, 'r', encoding='utf-8') as file:
+                    conteudo = file.read()
+                
+                conteudo_original = conteudo
+                for texto_antigo, texto_novo in mapeamento.items():
+                    conteudo = conteudo.replace(texto_antigo, texto_novo)
+                
+                if conteudo != conteudo_original:
+                    with open(caminho_arquivo, 'w', encoding='utf-8') as file:
+                        file.write(conteudo)
+                    print(f"Alterado: {caminho_arquivo}")
+
+# Configurações
+
+# Mapear textos antigos e novos para cada tipo de comentário
+mapeamento = {
+    """<!--
+COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npx json-server --watch codigo/db/db.json --port 3000
+-->""": """<!--
+COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+-->""",
+    """/*
+COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npx json-server --watch codigo/db/db.json --port 3000
+*/""": """/*
+COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
+npm start 
+*/""",
+    """//
+// COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
+// npx json-server --watch codigo/db/db.json --port 3000
+//""": """//
+// COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
+// npm start 
+//"""
+}
+
+# Extensões de arquivos que serão processadas
+extensoes_alvo = ['.html', '.js', '.css']
+
+# Executar a substituição
+substituir_texto_em_arquivos(diretorio, mapeamento, extensoes_alvo)
