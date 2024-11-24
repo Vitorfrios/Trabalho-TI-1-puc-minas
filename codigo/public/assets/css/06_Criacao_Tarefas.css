@@ -252,6 +252,14 @@ body {
     display: block;
     max-height: 150px;
     overflow-y: auto;
+    scrollbar-width: none; 
+}
+
+
+/* Oculta a barra de rolagem */
+.task-table tbody::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .task-table tr {
