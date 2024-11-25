@@ -8,6 +8,7 @@ const hourHand = document.querySelector('.hour-hand');
 const minuteHand = document.querySelector('.minute-hand');
 const secondHand = document.querySelector('.second-hand');
 
+// ------------- FUNÇÂO PARA O RELÓGIO ------------- //
 function setClock() {
     const now = new Date();
     const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
