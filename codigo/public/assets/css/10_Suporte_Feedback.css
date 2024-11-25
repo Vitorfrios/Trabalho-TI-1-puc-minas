@@ -18,16 +18,19 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 40vh;
+    width: auto; 
+    min-width: 40vh;
     background-color: #000;
     color: #fff;
-    height: 96vh;
+    height: auto;
     position: relative;
     left: 0;
     padding-top: 10px;
     border-radius: 30px; 
     margin-left: 10px;
     margin-top: 10px;
+    min-height: 96vh; 
+
 }
 
 .sidebar h2 {
@@ -325,7 +328,7 @@ body {
 /* Responsiveness */
 @media (max-width: 1024px) {
     .sidebar {
-        width: 200px;
+        width: auto; min-width: 40vh;
     }
 
     .main-content {
@@ -341,7 +344,7 @@ body {
 
 @media (max-width: 768px) {
     .sidebar {
-        width: 100%;
+        width: auto; min-width: 40vh;
         height: auto;
         position: relative;
     }

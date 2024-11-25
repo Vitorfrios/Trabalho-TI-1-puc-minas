@@ -13,16 +13,19 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 40vh;
+    width: auto;
+    min-width: 40vh;
     background-color: #000;
     color: #fff;
-    height: 96vh;
+    height: auto;
     position: relative;
     left: 0;
     padding-top: 10px;
     border-radius: 30px; 
     margin-left: 10px;
     margin-top: 10px;
+    min-height: 96vh; 
+
 }
 
 .sidebar h2 {
@@ -69,7 +72,6 @@ body {
     height:180px; 
     overflow:block;
     margin-left: 10px;
-    margin-right: 15px;
     
 }
 
@@ -397,17 +399,19 @@ td#HOUR {
     gap: 1rem;
 }
 
+/* Profile */
 .right-content .profile {
     display: flex;
     align-items: center;
     border: 2px solid #00A4CC;
     border-radius: 30px;
+
 }
 
 .right-content .name,
 .right-content .profile img {
     margin: 2px;
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 .right-content .profile img {
@@ -428,7 +432,8 @@ td#HOUR {
 /* Responsividade */
 @media (max-width: 1024px) { 
     .sidebar {
-        width: 200px; 
+        width: auto;
+  min-width: 40vh; min-width: 40vh; 
     }
 
     .main-content {
@@ -442,7 +447,8 @@ td#HOUR {
 
 @media (max-width: 768px) { 
     .sidebar {
-        width: 100%; 
+        width: auto;
+  min-width: 40vh; min-width: 40vh; 
         height: auto; 
         position: relative;
     }
