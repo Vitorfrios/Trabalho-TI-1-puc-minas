@@ -14,6 +14,20 @@ header {
     padding: 10px 20px;
     text-align: center;
 }
+header h2{
+    color: #fff;
+
+}
+button{
+    background-color: #00a4cc;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
 
 section {
     padding: 20px;

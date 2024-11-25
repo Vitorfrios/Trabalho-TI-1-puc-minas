@@ -68,7 +68,6 @@ body {
 }
 
 
-/* Estilos dos sub-itens */
 .sidebar .sub-itens {
     font-size: 12px; 
     margin-top: 1px; 
@@ -86,7 +85,6 @@ body {
 }
 
 
-/* Estilos para os links */
 .sub-itens li a {
     color: #ddd; 
     text-decoration: none;
@@ -95,13 +93,11 @@ body {
     font-size: 20px;
 }
 
-/* Efeito hover para os sub-itens */
 .sub-itens li:hover {
     background-color: #333; 
     cursor: pointer;
 }
 
-/* Ativação dos itens e alteração de cor */
 .sidebar .ul li.active a{
     color: #03d9ff;
     padding-left: 10px; 
@@ -345,7 +341,7 @@ button {
         margin-left: 225px; 
     }
 
-    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/ {
+    .right-content {
         width: 95%;
     }
 }
@@ -362,7 +358,7 @@ button {
         margin-right: 0; 
     }
 
-    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/{
+    .right-content{
         width: 95%; 
     }
 }

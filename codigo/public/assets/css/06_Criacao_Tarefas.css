@@ -300,7 +300,6 @@ body {
     border-radius: 30px;
 }
 
-/* Muda a cor de fundo ao passar o mouse */
 .remove-task:hover {
     background-color: #D3DDE8; 
 }

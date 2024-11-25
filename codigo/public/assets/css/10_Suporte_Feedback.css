@@ -97,13 +97,11 @@ body {
     font-size: 20px;
 }
 
-/* Efeito hover para os sub-itens */
 .sub-itens li:hover {
     background-color: #333; 
     cursor: pointer;
 }
 
-/* Ativação dos itens e alteração de cor */
 .sidebar .ul li.active a{
     color: #03d9ff;
     padding-left: 5px; 

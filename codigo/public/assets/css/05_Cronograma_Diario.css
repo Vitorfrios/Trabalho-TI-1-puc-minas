@@ -162,7 +162,6 @@ body {
     border-radius: 30px;
 }
 
-/* Estilos para a estrutura geral */
 .table-container {
     height: 500px;
     overflow-y: auto;
@@ -173,7 +172,6 @@ body {
     display: none;
 }
 
-/* Cabeçalho fixo */
 .hed {
     width: 100%;
     position: sticky;
@@ -185,7 +183,6 @@ body {
     
 }
 
-/* Conteúdo das células */
 .hed th,
 #schedule td {
     width: 180px; 
@@ -201,13 +198,11 @@ body {
     
 }
 
-/* Coluna de hora */
 th#H,
 td#HOUR {
     width: 70px;
 }
 
-/* Configurações gerais da tabela */
 #schedule {
     border-collapse: collapse;
     width: 100%;
@@ -235,7 +230,6 @@ td#HOUR {
     overflow-y: auto; 
 }
 
-/* Estilo do conteúdo dentro do modal */
 .modal-content-editar {
     background-color: #E8F0F2;
     border: 2px solid #00A4CC;
@@ -248,7 +242,6 @@ td#HOUR {
     box-sizing: border-box; 
 }
 
-/* Estilo para o cabeçalho do modal */
 .modal-header {
     font-weight: bold;
     margin-bottom: 20px;
@@ -258,7 +251,6 @@ td#HOUR {
     flex-shrink: 0; 
 }
 
-/* Estilo para o botão de fechar */
 .close {
     color: #aaa;
     font-size: 28px;
@@ -271,7 +263,6 @@ td#HOUR {
     right: 10px;
 }
 
-/* Estilo para os campos do formulário */
 .form-group-N {
     display: flex;
     flex-direction: column;
@@ -302,7 +293,6 @@ td#HOUR {
     resize: vertical;
 }
 
-/* Estilo para o botão "Salvar Alterações" */
 #btn-salvar {
     background-color: #00A4CC;
     color: white;
@@ -319,7 +309,6 @@ td#HOUR {
     background-color: #007b8b;
 }
 
-/* Estilo para os dias da semana */
 #edit-dates {
     display: flex;
     justify-content: space-between; 
@@ -342,7 +331,7 @@ td#HOUR {
 
 
 .botao-remover {
-    background-color: #f44336; /* Vermelho */
+    background-color: #f44336; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -352,7 +341,7 @@ td#HOUR {
 }
 
 .botao-remover:hover {
-    background-color: #d32f2f; /* Vermelho mais escuro */
+    background-color: #d32f2f; 
 }
 
 

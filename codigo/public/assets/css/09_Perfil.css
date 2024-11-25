@@ -86,7 +86,6 @@ body {
     height: 30px;
 }
 
-/* Estilo do container do perfil */
 .profile-container {
     border-radius: 10px;
     padding: 10px;
@@ -94,7 +93,6 @@ body {
     margin-left: 60px;
 }
 
-/* Estilo do cabeçalho do perfil */
 .profile-header {
     background-color: #76cad8;
     border: 3px solid #00A4CC;
@@ -105,7 +103,6 @@ body {
 
 }
 
-/* Estilo dos itens do perfil */
 .profile-item {
     display: flex;
     justify-content: space-between;
@@ -114,12 +111,10 @@ body {
     font-size: 30px;
 }
 
-/* Estilo das divs dentro dos itens do perfil */
 .profile-item div {
     margin-right: 20px;
 }
 
-/* Estilo do texto dentro dos spans */
 .profile-item span {
     background-color: #76cad8;
     border: 3px solid #00A4CC;
@@ -219,7 +214,6 @@ body {
     align-items: center;
 }
 
-/* Estilo para o modal */
 .modal-content {
     background-color: #E8F0F2;
     padding: 20px;
@@ -230,7 +224,6 @@ body {
     flex-direction: column;
 }
 
-/* Estilo para o cabeçalho do modal */
 .modal-header {
     font-weight: bold;
     margin-bottom: 30px;
@@ -238,7 +231,6 @@ body {
     font-size: 25px;
 }
 
-/* Estilo para o botão de fechar */
 .close {
     color: #aaa;
     float: right;
@@ -282,7 +274,6 @@ body {
     top: 11.5px;
 }
 
-/* Estilo para o botão "Salvar Alterações" */
 #save-changes, #save-password{
     background-color: #00A4CC;
     color: white;
@@ -361,7 +352,7 @@ body {
 
     .right-content
 
-    /*remova a rigth-content e coloque as classes dela sem o perfil*/
+    
         {
         width: 95%;
     }
@@ -381,7 +372,7 @@ body {
 
     .right-content
 
-    /*remova a rigth-content e coloque as classes dela sem o perfil*/
+    
         {
         width: 95%;
     }

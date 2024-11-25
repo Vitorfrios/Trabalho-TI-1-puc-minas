@@ -27,6 +27,20 @@
     
     <header>
         <h1>Tempo Otimizado - Telas</h1>
+        <div class="header-buttons" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h2>Para utilizar nosso app clique no botão abaixo</h2>
+                <a href="./codigo/public/pages/01_logo.html">
+                    <button style="padding: 10px 20px; font-size: 16px;">Iniciar App</button>
+                </a>
+            </div>
+            <div>
+                <h2>Conheça mais sobre o projeto</h2>
+                <a href="./codigo/public/pages/about.html">
+                    <button style="padding: 10px 20px; font-size: 16px;">Ver Informações</button>
+                </a>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -97,11 +111,11 @@
             <h2>6. Criação de Tarefas </h2>
             <p>
                 - Formulário para adicionar tarefas:<br>
-                &nbsp;&nbsp;&bull; Nome da tarefa.<br>
-                &nbsp;&nbsp;&bull; Escolha dos dias de repetição (opcional).<br>
-                &nbsp;&nbsp;&bull; Hora e dia para execução.<br>
-                &nbsp;&nbsp;&bull; Definição de prioridade (Alta, Média, Baixa).<br>
-                &nbsp;&nbsp;&bull; Seleção de categorias (Lazer, Trabalho, Estudo, etc.).<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Nome da tarefa.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Escolha dos dias de repetição (opcional).<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Hora e dia para execução.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Definição de prioridade (Alta, Média, Baixa).<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Seleção de categorias (Lazer, Trabalho, Estudo, etc.).<br>
                 - Mostragem de tarefas criadas com opções de edição ou exclusão.<br>
                 - Clique no calendário para exibir as tarefas criadas.<br>
                 - Visualização de um gráfico que mostra o tempo gasto em cada categoria.
@@ -111,9 +125,30 @@
             </div>
         </section>
 
+        <!-- Progresso -->
+        <section>
+            <h2>7. Progresso </h2>
+            <p>
+                - Mostra a porcentagem em forma de gráfico horizontal de tarefas concluídas.<br>
+                - Mostra a porcentagem em forma de gráfico horizontal de acordo com as tarefas que ainda não foram feitas.<br>
+                <br>
+                - Categorias:<br>
+                &nbsp;&nbsp;&bull; Tempo gasto por categoria:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&bull; Trabalho - Quantidade de horas gastas por trabalho.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&bull; Lazer - Quantidade de horas gastas por lazer.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&bull; Estudo - Quantidade de horas gastas por estudo.<br>
+                <br>
+                - Gráfico exibindo a média de horas dedicadas a Trabalho, Lazer e Estudo.
+            </p>
+            <div class="content">
+                <iframe src="codigo\public\pages\07_Progresso.html"></iframe>
+            </div>
+        </section>
+
+
         <!-- Sugestões -->
         <section>
-            <h2>7. Sugestões </h2>
+            <h2>8. Sugestões </h2>
             <p>
                 - Combinação de dicas personalizadas com base nos hábitos do usuário.<br>
                 - Navegação por categorias, como dicas de estudo, sono e desempenho.
@@ -157,13 +192,13 @@
         </section>
         <!-- Perfil -->
         <section>
-            <h2>8. Perfil </h2>
+            <h2>9. Perfil </h2>
             <p>
                 - Permite editar informações pessoais:<br>
-                &nbsp;&nbsp;&bull; Nome completo.<br>
-                &nbsp;&nbsp;&bull; Idade.<br>
-                &nbsp;&nbsp;&bull; Email.<br>
-                &nbsp;&nbsp;&bull; Nome de usuário.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Nome completo.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Idade.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Email.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Nome de usuário.<br>
                 - Configurações de preferências, como notificações.
             </p>
             <div class="content">
@@ -173,7 +208,7 @@
         </section>
         <!-- Suporte e Feedback -->
         <section>
-            <h2>9. Suporte e Feedback </h2>
+            <h2>10. Suporte e Feedback </h2>
             <p>
                 - Formulário para envio de dúvidas, relatórios de problemas ou sugestões.<br>
                 - Integração com o email para notificação direta da equipe de suporte.<br>

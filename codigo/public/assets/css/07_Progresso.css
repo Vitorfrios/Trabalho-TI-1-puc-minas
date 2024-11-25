@@ -72,122 +72,21 @@ body {
 
 
 
+
+
 /* Main Content */
 .main-content {
     margin-right: 25px;
     padding: 10px;
     flex: 1;
     gap: 20px; 
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 30px;
-    margin-top: 4px;
-}
-
-
-
-.progress-bar-container {
-    width: 80%; 
-    margin: 0 auto;
-}
-
-.progress-bar {
-    width: 20%;
-    height: 30px;
-    border: 2px solid black;
-    margin: 10px 0;
-    position: relative;
-    background-color: white;
-}
-
-.progress {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to right, #003f5c, #2f4b7c, #665191, #a05195, #d45087, #f95d6a, #ff7c43, #ffa600);
-}
-
-.progress.completed {
-    animation: progress-animation 2s ease-in-out forwards;
-}
-
-.progress.pending {
-    animation: progress-animation-remaining 2s ease-in-out forwards;
-}
-
-@keyframes progress-animation {
-    from { width: 0; }
-    to { width: 20%; }
-}
-
-@keyframes progress-animation-remaining {
-    from { width: 0; }
-    to { width: 60%; }
-}
-
-
-
-
-
-.content {
+    font-size: 50px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: row;
 }
-.pie-chart {
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-    position: relative;
-}
-
-.pie-chart img {
-    width: 100%;
-    height: 100%;
-}
-
-.pie-chart .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2em;
-    color: red;
-}
-
-table {
-    width: 100%;
-    margin: 20px;
-    border-collapse: collapse;
-    background-color: #8ed1fc;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.charts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 
 
 
@@ -244,7 +143,7 @@ th {
         margin-left: 225px; 
     }
 
-    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/ {
+    .right-content {
         width: 95%;
     }
 }
@@ -261,7 +160,7 @@ th {
         margin-right: 0; 
     }
 
-    .right-content/*remova a rigth-content e coloque as classes dela sem o perfil*/{
+    .right-content{
         width: 95%; 
     }
 }
