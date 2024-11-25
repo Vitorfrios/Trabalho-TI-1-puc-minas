@@ -1,0 +1,5 @@
+Get-ChildItem -Recurse -File | ForEach-Object {
+    git add $_.FullName
+    git commit -m "atualização final $($_.Name)"
+}
+git push origin main
