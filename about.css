@@ -1,39 +1,72 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Geral */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box; /* Garante que padding e margem sejam inclusos nas dimensões */
+    font-size: 20px;
+}
+.main{
+    padding: 0 20px; /* Adiciona margem nas laterais */
 }
 
+/* Remove borda da tabela específica */
+.invisible-table {
+    border: none !important; /* Remove a borda da tabela com prioridade */
+    width: 100%;
+    border-collapse: collapse; /* Garante que as bordas não se sobreponham */
+    margin-bottom: 20px;
+}
+
+.invisible-table th, .invisible-table td {
+    padding: 10px;
+    text-align: left;
+    border: none !important; /* Remove a borda das células da tabela */
+}
+
+.invisible-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+/* Cabeçalho */
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    padding: 15px ;
     text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espaço abaixo do cabeçalho */
 }
 
-header h2 {
-    color: #fff;
+header h1 {
     margin: 0;
+    font-size: 4rem;
 }
 
+/* Links do cabeçalho */
 .header-button {
     display: flex;
     justify-content: center;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 .header-button a {
     background-color: #00a4cc;
-    color: #000;
-    cursor: pointer;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
+    color: white;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .header-button a:hover {
@@ -41,91 +74,130 @@ header h2 {
     transform: scale(1.05);
 }
 
+/* Seções */
 section {
     padding: 20px;
-    border-bottom: 1px solid #ccc;
+    margin: 10px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #00a4cc;
 }
 
+/* Títulos */
 h2 {
     color: #333;
-}
-
-.content {
-    margin: 20px 0;
-}
-
-iframe {
-    transform: scale(0.8);
-    transform-origin: 0 0;
-    width: 125%;
-    border: 1px solid #ccc;
-    overflow: hidden;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00a4cc;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 p {
-    font-size: 20px;
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+ul, ol {
+    margin: 10px 0 20px 20px;
 }
 
-
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
+ul li, ol li {
+    margin: 8px 0;
 }
-header h2{
-    color: #fff;
 
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-button{
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table th {
     background-color: #00a4cc;
-    color: #000000;
-    cursor: pointer;
-    padding: 10px 10px;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+/* Links */
+a {
+    color: #00a4cc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #00a4cc;
+}
+
+/* Botões */
+button {
+    background-color: #00a4cc;
+    color: white;
     border: none;
-    border-radius: 30px;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
     font-size: 20px;
-    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin:15px
 }
 
-section {
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
+button:hover {
+    background-color: #008bb5;
+    transform: scale(1.05);
 }
 
-h2 {
-    color: #333;
-}
 
-.content {
+.space-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 20px 0;
 }
 
-
-iframe {
-    width: 100%;
-    height: 800px;
-    border: 1px solid #ccc;
-    overflow: hidden;
+.space-img img {
+    max-width: 30%; /* Limita o tamanho das imagens para não ficarem muito grandes */
+    height: auto;
 }
 
 
-iframe {
-    transform: scale(0.8); 
-    transform-origin: 0 0; 
-    width: 125%; 
-}
 
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+        padding: 0 10px; /* Reduz margens em telas pequenas */
+    }
 
-p{
-    font-size: 20px;
+    section {
+        padding: 15px;
+        margin: 10px 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
 }
