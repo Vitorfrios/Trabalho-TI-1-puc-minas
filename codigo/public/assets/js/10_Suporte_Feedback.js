@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
         items.forEach(item => {
             item.classList.remove('active');
         });
-        if (currentPage === '04_Dashboard.html') {
+        if (currentPage === '05_Dashboard.html') {
             document.getElementById('dashboard').classList.add('active');
-        } else if (currentPage === '05_Cronograma_Diario.html') {
+        } else if (currentPage === '06_Cronograma_Diario.html') {
             document.getElementById('cronograma').classList.add('active');
-        } else if (currentPage === '06_Criacao_Tarefas.html') {
+        } else if (currentPage === '07_Criacao_Tarefas.html') {
             document.getElementById('tarefas').classList.add('active');
         } else if (currentPage === '07_Progresso.html') {
             document.getElementById('progresso').classList.add('active');
-        } else if (currentPage === '09_Perfil.html') {
+        } else if (currentPage === '10_Perfil.html') {
             document.getElementById('perfil').classList.add('active');
-        } else if (currentPage === '10_Suporte_Feedback.html') {
+        } else if (currentPage === '11_Suporte_Feedback.html') {
             document.getElementById('feedback').classList.add('active');
         } else if (currentPage === '08_Sugestao.html') {
             document.getElementById('sugestao').classList.add('active');

@@ -2,8 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-/* Geral */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -11,40 +9,21 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    box-sizing: border-box; /* Garante que padding e margem sejam inclusos nas dimensões */
+    box-sizing: border-box;
     font-size: 20px;
 }
-.main{
-    padding: 0 20px; /* Adiciona margem nas laterais */
+
+.main {
+    padding: 0 20px;
 }
 
-/* Remove borda da tabela específica */
-.invisible-table {
-    border: none !important; /* Remove a borda da tabela com prioridade */
-    width: 100%;
-    border-collapse: collapse; /* Garante que as bordas não se sobreponham */
-    margin-bottom: 20px;
-}
-
-.invisible-table th, .invisible-table td {
-    padding: 10px;
-    text-align: left;
-    border: none !important; /* Remove a borda das células da tabela */
-}
-
-.invisible-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-
-/* Cabeçalho */
 header {
     background-color: #333;
     color: white;
-    padding: 15px ;
+    padding: 15px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Espaço abaixo do cabeçalho */
+    margin-bottom: 20px;
 }
 
 header h1 {
@@ -52,7 +31,6 @@ header h1 {
     font-size: 4rem;
 }
 
-/* Links do cabeçalho */
 .header-button {
     display: flex;
     justify-content: center;
@@ -74,7 +52,6 @@ header h1 {
     transform: scale(1.05);
 }
 
-/* Seções */
 section {
     padding: 20px;
     margin: 10px auto;
@@ -84,7 +61,6 @@ section {
     border-left: 5px solid #00a4cc;
 }
 
-/* Títulos */
 h2 {
     color: #333;
     font-size: 1.8rem;
@@ -107,12 +83,10 @@ ul li, ol li {
     margin: 8px 0;
 }
 
-/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 table th, table td {
@@ -131,7 +105,6 @@ table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Imagens */
 img {
     max-width: 100%;
     height: auto;
@@ -141,7 +114,6 @@ img {
     width: 400px;
 }
 
-/* Links */
 a {
     color: #00a4cc;
     text-decoration: none;
@@ -149,10 +121,9 @@ a {
 }
 
 a:hover {
-    color: #00a4cc;
+    color: #008bb5;
 }
 
-/* Botões */
 button {
     background-color: #00a4cc;
     color: white;
@@ -162,14 +133,13 @@ button {
     cursor: pointer;
     font-size: 20px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin:15px
+    margin: 15px;
 }
 
 button:hover {
     background-color: #008bb5;
     transform: scale(1.05);
 }
-
 
 .space-img {
     display: flex;
@@ -179,17 +149,31 @@ button:hover {
 }
 
 .space-img img {
-    max-width: 30%; /* Limita o tamanho das imagens para não ficarem muito grandes */
+    max-width: 30%;
     height: auto;
 }
 
+.invisible-table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 
+.invisible-table th, .invisible-table td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+}
 
-/* Responsividade */
+.invisible-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 0.9rem;
-        padding: 0 10px; /* Reduz margens em telas pequenas */
+        padding: 0 10px;
     }
 
     section {

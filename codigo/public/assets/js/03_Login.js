@@ -1,5 +1,5 @@
 // Página inicial de Login
-const LOGIN_URL = "./public/pages/02_Login.html";
+const LOGIN_URL = "./public/pages/03_Login.html";
 
 // URL do servidor para o db.json
 const SERVER_URL = 'http://localhost:3000/usuarios'; 
@@ -97,7 +97,7 @@ document.getElementById('btn-login').addEventListener('click', function () {
 
     if (usuarioExistente) {
         // Se o usuário estiver cadastrado, redireciona para a próxima página
-        window.location.href = './03_Tutorial.html';
+        window.location.href = './04_Tutorial.html';
     } else {
         // Caso o usuário não esteja cadastrado, mostra um alerta
         alert("Usuário não cadastrado. Por favor, crie um novo usuário.");
