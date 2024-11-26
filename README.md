@@ -4,12 +4,14 @@
 
 A documentação do projeto é estruturada da seguinte forma:
 
+| **Links - Parte 1**                           | **Links - Parte 2**                       |
 |:----------------------------------------------|:------------------------------------------|
-| - [Introdução](#introducao) | - [Requisitos](#requisitos) |
-| - [Contexto](#contexto) | - [Ações do Usuário](#acoes) |
-| - [Projeto de Design thinking](#design-thinking) | - [Projeto de Interfaces](#projetos) |
-| - [Personas](#personas) | - [Metodologia](#metodologia) |
-| | - [Como usar](#iniciar)
+| - [Introdução](#introducao)                   | - [Requisitos](#requisitos)               |
+| - [Contexto](#contexto)                       | - [Ações do Usuário](#acoes)              |
+| - [Projeto de Design thinking](#design-thinking) | - [Projeto de Interfaces](#projetos)      |
+| - [Personas](#personas)                       | - [Metodologia](#metodologia)             |
+|                                               | - [Como usar](#iniciar)                   |
+
 
 ## <a name="introducao"></a>**Introdução**
 
