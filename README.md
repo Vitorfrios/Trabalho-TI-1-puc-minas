@@ -4,8 +4,12 @@
 
 A documentação do projeto é estruturada da seguinte forma:
 
-| <p>- [Introdução](#introducao)</p><p>- [Contexto](#contexto)</p><p>- [Projeto de Design thinking](#design-thinking)</p><p>- [Personas](#personas)</p><p>- [Requisitos](#requisitos)</p><p>- [Ações do Usuário](#acoes)</p><p>- [Projeto de Interfaces](#projetos)</p><p>- [Metodologia](#metodologia)</p><p>- [Como usar](#iniciar)</p> |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:----------------------------------------------|:------------------------------------------|
+| - [Introdução](#introducao) | - [Requisitos](#requisitos) |
+| - [Contexto](#contexto) | - [Ações do Usuário](#acoes) |
+| - [Projeto de Design thinking](#design-thinking) | - [Projeto de Interfaces](#projetos) |
+| - [Personas](#personas) | - [Metodologia](#metodologia) |
+| | - [Como usar](#iniciar)
 
 ## <a name="introducao"></a>**Introdução**
 
@@ -65,12 +69,12 @@ Nosso público-alvo principal são jovens adultos e adultos, entre 20 e 50 anos,
 
 ## <a name="design-thinking"></a>**Projeto de Design Thinking**
 
-| **Matriz CSD e Mapa de Stakeholders**                               | **Entrevista Qualitativa**                                  | **Histórias de Usuários**                      |
-| ------------------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------- |
+| **Matriz CSD e Mapa de Stakeholders**                                    | **Entrevista Qualitativa**                                       | **Histórias de Usuários**                           |
+| ------------------------------------------------------------------------ | ---------------------------------------------------------------- | --------------------------------------------------- |
 | ![Matriz CSD e Mapa de Stakeholders](docs/images/matrizStakeholders.jpg) | ![Entrevista Qualitativa](docs/images/entrevistasHighlights.jpg) | ![Histórias de Usuários](docs/images/historias.jpg) |
 
-| **Brainstorming / Brainwriting**                          | **Mural de Possibilidades**                                    | **Priorização de Ideias**                              |
-| --------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------ |
+| **Brainstorming / Brainwriting**                               | **Mural de Possibilidades**                                         | **Priorização de Ideias**                                   |
+| -------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------- |
 | ![Brainstorming / Brainwriting](docs/images/brainstorming.jpg) | ![Mural de Possibilidades](docs/images/mural_de_possibilidades.jpg) | ![Priorização de Ideias](docs/images/priorizaçãoIdeias.jpg) |
 
 ### **Fluxo de Usuários**
@@ -79,8 +83,8 @@ Nosso público-alvo principal são jovens adultos e adultos, entre 20 e 50 anos,
 
 ## <a name="personas"></a>**Personas**
 
-|             **André Albuquerque**              |             **Aline Maia**              |              **Carlos Mendonça**              |
-| :--------------------------------------------: | :-------------------------------------: | :-------------------------------------------: |
+|                **André Albuquerque**                |                **Aline Maia**                |                **Carlos Mendonça**                 |
+| :-------------------------------------------------: | :------------------------------------------: | :------------------------------------------------: |
 | ![André Albuquerque](docs/images/andré_persona.jpg) | ![Aline Maia](docs/images/aline_persona.jpg) | ![Carlos Mendonça](docs/images/carlos_persona.jpg) |
 
 ## <a name="requisitos"></a>**Requisitos**
@@ -89,38 +93,36 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais detalh
 
 ### **Requisitos Funcionais e Não Funcionais**
 
-| **_Tela_**                                | **_Requisitos Funcionais (RF)_**                                                                                                                                                                                                                               | **_Requisitos Não Funcionais (RNF)_**                                                                                                                       |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **_1. Tela de Abertura_**                 | - Exibir o logotipo com animação<br>- Exibir botão para avançar à tela de cadastro/login ou redirecionar automaticamente após a animação.                                                                                                                     | - Animação com tempo de 2-3 segundos<br>- Design responsivo<br>- Transições suaves entre telas.                                                        |
-| **_2. Tela de Cadastro/Login_**          | - Login com e-mail e senha<br>- Opção de cadastro para novos usuários<br>- Links para recuperação de senha e alternar entre cadastro/login<br>- Login com Google.                                                                                           | - Segurança dos dados (senhas criptografadas)<br>- Resposta do sistema em < 2 segundos<br>- Design acessível e legível.                                  |
-| **_3. Tela de Tutorial_**                | - Exibir slides sobre o aplicativo<br>- Navegar entre slides com botões<br>- Opção de pular o Tutorial<br>- Registrar se o usuário completou o Tutorial.                                                                                                    | - Processo de Tutorial em 2-3 minutos<br>- Textos e gráficos simples e claros<br>- Compatível com dispositivos móveis e desktops.                       |
-| **_4. Tela de Dashboard_**               | - Exibir tarefas do dia/semana<br>- Atalhos para “Criar Tarefa”, “Sugestão” e “Cronograma semanal”<br>- Atualização em tempo real.                                                                                                                           | - Carregamento rápido das tarefas<br>- Design responsivo<br>- Suportar grande quantidade de tarefas sem perda de desempenho.                            |
-| **_5. Tela de Cronograma Diário/Semanal_**| - Exibir tarefas organizadas no cronograma<br>- Permitir arrastar e reorganizar tarefas<br>- Botão para adicionar nova tarefa.                                                                                                                              | - Transição rápida e sem travamentos<br>- Layout responsivo<br>- Reorganização de tarefas salva imediatamente.                                          |
-| **_6. Tela de Criação de Tarefas_**      | - Formulário para criar/editar tarefas<br>- Campos obrigatórios: nome, data/hora, prioridade, categoria e notificação<br>- Salvar tarefa e adicionar ao cronograma.                                                                                      | - Validação dos campos em tempo real<br>- Design intuitivo e responsivo<br>- Salvamento em < 1 segundo.                                               |
-| **_7. Tela de Sugestão_**                | - Exibir três tipos de sugestões: <br>1. Dicas para estudo <br>2. Dicas para descansar/dormir <br>3. Dicas para bom desempenho.                                                                                                                           | - Sugestões claras e interativas<br>- Análise rápida e baseada em dados reais<br>- Layout compatível com dispositivos móveis e desktops.               |
-| **_8. Tela de Perfil_**                  | - Permite editar informações pessoais: <br>Nome completo<br>Idade<br>Email<br>Nome de usuário <br>- Configurações de preferências, como notificações.                                                                                                       | - Design simples e acessível<br>- Alteração dos dados do perfil incluindo senha<br>- Configuração de notificações para manter o usuário atualizado.      |
-| **_9. Tela de Suporte/Feedback_**        | - Formulário para feedback e suporte<br>- Campos obrigatórios: descrição e categoria<br>- Envio do formulário e confirmação de recebimento.                                                                                                                 | - Resposta para envio do formulário em < 2 segundos<br>- Design simples e acessível<br>- Feedback registrado de forma segura e confidencial.            |
-
+| **_Tela_**                                 | **_Requisitos Funcionais (RF)_**                                                                                                                                    | **_Requisitos Não Funcionais (RNF)_**                                                                                                               |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **_1. Tela de Abertura_**                  | - Exibir o logotipo com animação<br>- Exibir botão para avançar à tela de cadastro/login ou redirecionar automaticamente após a animação.                           | - Animação com tempo de 2-3 segundos<br>- Design responsivo<br>- Transições suaves entre telas.                                                     |
+| **_2. Tela de Cadastro/Login_**            | - Login com e-mail e senha<br>- Opção de cadastro para novos usuários<br>- Links para recuperação de senha e alternar entre cadastro/login<br>- Login com Google.   | - Segurança dos dados (senhas criptografadas)<br>- Resposta do sistema em < 2 segundos<br>- Design acessível e legível.                             |
+| **_3. Tela de Tutorial_**                  | - Exibir slides sobre o aplicativo<br>- Navegar entre slides com botões<br>- Opção de pular o Tutorial<br>- Registrar se o usuário completou o Tutorial.            | - Processo de Tutorial em 2-3 minutos<br>- Textos e gráficos simples e claros<br>- Compatível com dispositivos móveis e desktops.                   |
+| **_4. Tela de Dashboard_**                 | - Exibir tarefas do dia/semana<br>- Atalhos para “Criar Tarefa”, “Sugestão” e “Cronograma semanal”<br>- Atualização em tempo real.                                  | - Carregamento rápido das tarefas<br>- Design responsivo<br>- Suportar grande quantidade de tarefas sem perda de desempenho.                        |
+| **_5. Tela de Cronograma Diário/Semanal_** | - Exibir tarefas organizadas no cronograma<br>- Permitir arrastar e reorganizar tarefas<br>- Botão para adicionar nova tarefa.                                      | - Transição rápida e sem travamentos<br>- Layout responsivo<br>- Reorganização de tarefas salva imediatamente.                                      |
+| **_6. Tela de Criação de Tarefas_**        | - Formulário para criar/editar tarefas<br>- Campos obrigatórios: nome, data/hora, prioridade, categoria e notificação<br>- Salvar tarefa e adicionar ao cronograma. | - Validação dos campos em tempo real<br>- Design intuitivo e responsivo<br>- Salvamento em < 1 segundo.                                             |
+| **_7. Tela de Sugestão_**                  | - Exibir três tipos de sugestões: <br>1. Dicas para estudo <br>2. Dicas para descansar/dormir <br>3. Dicas para bom desempenho.                                     | - Sugestões claras e interativas<br>- Análise rápida e baseada em dados reais<br>- Layout compatível com dispositivos móveis e desktops.            |
+| **_8. Tela de Perfil_**                    | - Permite editar informações pessoais: <br>Nome completo<br>Idade<br>Email<br>Nome de usuário <br>- Configurações de preferências, como notificações.               | - Design simples e acessível<br>- Alteração dos dados do perfil incluindo senha<br>- Configuração de notificações para manter o usuário atualizado. |
+| **_9. Tela de Suporte/Feedback_**          | - Formulário para feedback e suporte<br>- Campos obrigatórios: descrição e categoria<br>- Envio do formulário e confirmação de recebimento.                         | - Resposta para envio do formulário em < 2 segundos<br>- Design simples e acessível<br>- Feedback registrado de forma segura e confidencial.        |
 
 ## <a name="acoes"></a>**Ações do Usuário**
 
-
 As ações que o usuário pode realizar em cada tela do sistema são descritas na tabela a seguir.
 
-| **_Tela_**                                | **_Ações do Usuário_**                                                                                                                                                                                                                                               |
-|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **_1. Tela de Abertura_**                 | - Observar a animação do logotipo<br>- Clicar no botão para prosseguir, caso não redirecionado automaticamente                                                                                                                   |
-| **_2. Tela de Cadastro/Login_**          | - Inserir e-mail e senha para login<br>- Clicar na opção de cadastro<br>- Alternar entre login e cadastro<br>- Utilizar a opção de login com Google                                                                                                                      |
-| **_3. Tela de Tutorial_**                | - Navegar entre os slides<br>- Pular o Tutorial, se desejado<br>- Receber informações sobre o aplicativo                                                                                                                                                             |
-| **_4. Tela de Dashboard_**               | - Menu de navegação com 4 opções<br>- Área de mostragem de tarefas<br>- Clicar no calendário para exibir as tarefas<br>- Exibir gráfico com base no tempo gasto em cada categoria                                                                                       |
-| **_5. Tela de Cronograma Diário/Semanal_**| - Visualizar tarefas durante um período de 7 dias<br>- Filtrar semana do mês: Selecionar a semana desejada para visualizar<br>- Ver sugestões/dicas: Ir para a página de sugestões<br>- Adicionar tarefa: Ir para a página de criação de tarefas |
-| **_6. Tela de Criação de Tarefas_**      | - Escrever o nome da tarefa<br>- Escolher os dias de repetição da tarefa (se necessário)<br>- Escolher a hora, o dia e a prioridade da tarefa<br>- Escolher as categorias (lazer/trabalho/estudo)<br>- Exibir tarefas no calendário e gráfico       |
-| **_7. Tela de Sugestão_**                | - Menu de navegação com 3 opções: <br> - Ajuda com horários <br> - Dicas de estudo <br> - Dicas para descansar                                                                                                                    |
-| **_7.1 Dicas para Estudo_**              | - Clicar na roleta para exibir as 4 dicas<br>- Técnicas de estudo<br>- Organizar o tempo de estudo                                                                                                                                                                   |
-| **_7.2 Dicas para Dormir_**              | - Clicar na roleta para exibir as 4 dicas<br>- Calcular o horário de dormir e acordar<br>- Digitar o horário de deitar<br>- Digitar o horário do compromisso<br>- Exibir a hora de acordar e o tempo de sono                                         |
-| **_7.3 Dicas para Ter um Bom Desempenho_**| - Clicar na roleta para exibir as 4 dicas<br>- Mostrar a quantidade de tarefas por categoria<br>- Mostrar a quantidade de horas gastas por categoria                                                                                                                |
-| **_8. Tela de Perfil do Usuário_**       | - Editar nome completo<br>- Editar idade<br>- Editar e-mail<br>- Editar nome de usuário                                                                                                                                                                             |
-| **_9. Tela de Suporte/Feedback_**        | - Preencher e enviar o formulário de feedback/suporte<br>- Aguardar a confirmação de recebimento<br>- Enviar feedback<br>- Obter ajuda com o aplicativo                                                                                                            |
+| **_Tela_**                                 | **_Ações do Usuário_**                                                                                                                                                                                                                           |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **_1. Tela de Abertura_**                  | - Observar a animação do logotipo<br>- Clicar no botão para prosseguir, caso não redirecionado automaticamente                                                                                                                                   |
+| **_2. Tela de Cadastro/Login_**            | - Inserir e-mail e senha para login<br>- Clicar na opção de cadastro<br>- Alternar entre login e cadastro<br>- Utilizar a opção de login com Google                                                                                              |
+| **_3. Tela de Tutorial_**                  | - Navegar entre os slides<br>- Pular o Tutorial, se desejado<br>- Receber informações sobre o aplicativo                                                                                                                                         |
+| **_4. Tela de Dashboard_**                 | - Menu de navegação com 4 opções<br>- Área de mostragem de tarefas<br>- Clicar no calendário para exibir as tarefas<br>- Exibir gráfico com base no tempo gasto em cada categoria                                                                |
+| **_5. Tela de Cronograma Diário/Semanal_** | - Visualizar tarefas durante um período de 7 dias<br>- Filtrar semana do mês: Selecionar a semana desejada para visualizar<br>- Ver sugestões/dicas: Ir para a página de sugestões<br>- Adicionar tarefa: Ir para a página de criação de tarefas |
+| **_6. Tela de Criação de Tarefas_**        | - Escrever o nome da tarefa<br>- Escolher os dias de repetição da tarefa (se necessário)<br>- Escolher a hora, o dia e a prioridade da tarefa<br>- Escolher as categorias (lazer/trabalho/estudo)<br>- Exibir tarefas no calendário e gráfico    |
+| **_7. Tela de Sugestão_**                  | - Menu de navegação com 3 opções: <br> - Ajuda com horários <br> - Dicas de estudo <br> - Dicas para descansar                                                                                                                                   |
+| **_7.1 Dicas para Estudo_**                | - Clicar na roleta para exibir as 4 dicas<br>- Técnicas de estudo<br>- Organizar o tempo de estudo                                                                                                                                               |
+| **_7.2 Dicas para Dormir_**                | - Clicar na roleta para exibir as 4 dicas<br>- Calcular o horário de dormir e acordar<br>- Digitar o horário de deitar<br>- Digitar o horário do compromisso<br>- Exibir a hora de acordar e o tempo de sono                                     |
+| **_7.3 Dicas para Ter um Bom Desempenho_** | - Clicar na roleta para exibir as 4 dicas<br>- Mostrar a quantidade de tarefas por categoria<br>- Mostrar a quantidade de horas gastas por categoria                                                                                             |
+| **_8. Tela de Perfil do Usuário_**         | - Editar nome completo<br>- Editar idade<br>- Editar e-mail<br>- Editar nome de usuário                                                                                                                                                          |
+| **_9. Tela de Suporte/Feedback_**          | - Preencher e enviar o formulário de feedback/suporte<br>- Aguardar a confirmação de recebimento<br>- Enviar feedback<br>- Obter ajuda com o aplicativo                                                                                          |
 
 ## <a name="projetos"></a>**Projeto de Interface**
 
@@ -136,8 +138,8 @@ Desenvolvemos wireframes para o layout da plataforma, chamada _“Tempo Otimizad
 
 Estes são os protótipos de telas do sistema.
 
-|           **Título**           |                              **Imagem**                              | **Descrição**                                                                                                                                                                                                                                              |
-| :----------------------------: | :------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|           **Título**           |                                **Imagem**                                 | **Descrição**                                                                                                                                                                                                                                              |
+| :----------------------------: | :-----------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |       **Página Inicial**       |   ![Wireframe - Página inicial](docs/images/wireframePaginaInicial.png)   | Página inicial da plataforma, onde o usuário poderá ler sobre o projeto e acessar a página de acesso à conta.                                                                                                                                              |
 | **Página de Login e Registro** | ![Wireframe - Página de login e registro](docs/images/wireframeLogin.jpg) | Página que permite o usuário entrar na sua conta ou se registrar caso não possua uma conta. Possui um formulário simples para inserir os dados.                                                                                                            |
 |          **Tutorial**          |        ![Wireframe - Tutorial](docs/images/wireframeTutorial.jpg)         | Página que apresenta um guia interativo para os novos usuários, com explicações detalhadas sobre as funcionalidades do sistema, permitindo navegação entre os slides ou a opção de pular o tutorial.                                                       |
@@ -184,10 +186,9 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
 
-|          **Kanban**          |             **Planejamento das Sprints**             |         **Notas e próximos passos**          |
-| :--------------------------: | :--------------------------------------------------: | :------------------------------------------: |
+|            **Kanban**             |               **Planejamento das Sprints**                |            **Notas e próximos passos**            |
+| :-------------------------------: | :-------------------------------------------------------: | :-----------------------------------------------: |
 | ![Kanban](docs/images/Kanban.jpg) | ![Planejamento das Sprints](docs/images/planejamento.jpg) | ![Notas e próximos passos](docs/images/notas.jpg) |
-
 
 ---
 
@@ -212,7 +213,9 @@ A estrutura do projeto está organizada em pastas para facilitar a compreensão 
 - **/pages**: Páginas HTML que compõem o sistema.
 
 ---
+
 ### Como Executar o Projeto
+
 - DIGITE " npm start " no terminal
 - Vá para o arquivo " about.html " e acione o live server
 - Leia sobre o projeto e inicie o app clicando no botao " Iniciar App "
