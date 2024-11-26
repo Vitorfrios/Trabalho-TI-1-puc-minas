@@ -73,29 +73,13 @@ Nosso público-alvo principal são jovens adultos e adultos, entre 20 e 50 anos,
 
 ## <a name="design-thinking"></a>**Projeto de Design Thinking**
 
-### **Matriz CSD e Mapa de Stakeholders**
+| **Matriz CSD e Mapa de Stakeholders**                               | **Entrevista Qualitativa**                                  | **Histórias de Usuários**                      |
+| ------------------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------------- |
+| ![Matriz CSD e Mapa de Stakeholders](images/matrizStakeholders.jpg) | ![Entrevista Qualitativa](images/entrevistasHighlights.jpg) | ![Histórias de Usuários](images/historias.jpg) |
 
-![Matriz CSD e Mapa de Stakeholders](images/matrizStakeholders.jpg)
-
-### **Entrevista Qualitativa**
-
-![Entrevista Qualitativa](images/entrevistasHighlights.jpg)
-
-### **Histórias de Usuários**
-
-![Histórias de Usuários](images/historias.jpg)
-
-### **Brainstorming / Brainwriting**
-
-![Brainstorming / Brainwriting](images/brainstorming.jpg)
-
-### **Mural de Possibilidades**
-
-![Mural de Possibilidades](images/mural_de_possibilidades.jpg)
-
-### **Priorização de Ideias**
-
-![Priorização de Ideias](images/priorizaçãoIdeias.jpg)
+| **Brainstorming / Brainwriting**                          | **Mural de Possibilidades**                                    | **Priorização de Ideias**                              |
+| --------------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------ |
+| ![Brainstorming / Brainwriting](images/brainstorming.jpg) | ![Mural de Possibilidades](images/mural_de_possibilidades.jpg) | ![Priorização de Ideias](images/priorizaçãoIdeias.jpg) |
 
 ### **Fluxo de Usuários**
 
@@ -103,8 +87,8 @@ Nosso público-alvo principal são jovens adultos e adultos, entre 20 e 50 anos,
 
 ## <a name="personas"></a>**Personas**
 
-|                **André Albuquerque**                |                **Aline Maia**                |                **Carlos Mendonça**                 |
-| :-------------------------------------------------: | :------------------------------------------: | :------------------------------------------------: |
+|             **André Albuquerque**              |             **Aline Maia**              |              **Carlos Mendonça**              |
+| :--------------------------------------------: | :-------------------------------------: | :-------------------------------------------: |
 | ![André Albuquerque](images/andré_persona.jpg) | ![Aline Maia](images/aline_persona.jpg) | ![Carlos Mendonça](images/carlos_persona.jpg) |
 
 ## <a name="requisitos"></a>**Requisitos**
