@@ -75,37 +75,37 @@ Nosso público-alvo principal são jovens adultos e adultos, entre 20 e 50 anos,
 
 ### **Matriz CSD e Mapa de Stakeholders**
 
-![Matriz CSD e Mapa de Stakeholders](docs/images/matrizStakeholders.jpg)
+![Matriz CSD e Mapa de Stakeholders](images/matrizStakeholders.jpg)
 
 ### **Entrevista Qualitativa**
 
-![Entrevista Qualitativa](docs/images/entrevistasHighlights.jpg)
+![Entrevista Qualitativa](images/entrevistasHighlights.jpg)
 
 ### **Histórias de Usuários**
 
-![Histórias de Usuários](docs/images/historias.jpg)
+![Histórias de Usuários](images/historias.jpg)
 
 ### **Brainstorming / Brainwriting**
 
-![Brainstorming / Brainwriting](docs/images/brainstorming.jpg)
+![Brainstorming / Brainwriting](images/brainstorming.jpg)
 
 ### **Mural de Possibilidades**
 
-![Mural de Possibilidades](docs/images/mural_de_possibilidades.jpg)
+![Mural de Possibilidades](images/mural_de_possibilidades.jpg)
 
 ### **Priorização de Ideias**
 
-![Priorização de Ideias](docs/images/priorizaçãoIdeias.jpg)
+![Priorização de Ideias](images/priorizaçãoIdeias.jpg)
 
 ### **Fluxo de Usuários**
 
-![Fluxo de Usuários](docs/images/userflow.jpg)
+![Fluxo de Usuários](images/userflow.jpg)
 
 ## <a name="personas"></a>**Personas**
 
 |                **André Albuquerque**                |                **Aline Maia**                |                **Carlos Mendonça**                 |
 | :-------------------------------------------------: | :------------------------------------------: | :------------------------------------------------: |
-| ![André Albuquerque](docs/images/andré_persona.jpg) | ![Aline Maia](docs/images/aline_persona.jpg) | ![Carlos Mendonça](docs/images/carlos_persona.jpg) |
+| ![André Albuquerque](images/andré_persona.jpg) | ![Aline Maia](images/aline_persona.jpg) | ![Carlos Mendonça](images/carlos_persona.jpg) |
 
 ## <a name="requisitos"></a>**Requisitos**
 
