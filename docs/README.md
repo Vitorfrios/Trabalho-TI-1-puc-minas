@@ -1,13 +1,5 @@
 # **Tempo Otimizado**
 
-## **Para utilizar nosso app clique no botão abaixo[](./public/pages/02_Inicio_logo.html)**
-
-[Iniciar App ](./public/pages/02_Inicio_logo.html)
-
-## **Conheça mais sobre o projeto[](./public/pages/01_Telas.html)**
-
-[Ver Informações ](./public/pages/01_Telas.html)
-
 ## **Menu de Navegação**
 
 A documentação do projeto é estruturada da seguinte forma:
