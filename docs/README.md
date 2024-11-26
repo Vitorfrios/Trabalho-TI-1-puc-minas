@@ -183,7 +183,6 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 **Google Docs**  -  Antes da documentação ser passada ao GitHub em formato Markdown, ela era feita inicialmente no Google Docs, que permite o compartilhamento e edição entre o grupo, além de diversas opções para formatação do texto.
 
 ### **Gerenciamento do Projeto**
-
 Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
 
 | ![Kanban](images/Kanban.jpg) | ![Planejamento das Sprints](images/planejamento.jpg) | ![Notas e próximos passos](images/notas.jpg) |
