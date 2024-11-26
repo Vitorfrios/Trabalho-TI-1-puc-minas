@@ -104,9 +104,10 @@ header {
     text-align: center;
     border-bottom: 5px solid #00a4cc; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding-bottom: 0;
 }
 h1{
-    font-size: 30px;
+    font-size: 40px;
 }
 .btn {
     display: flex;
@@ -133,7 +134,7 @@ h1{
     padding: 12px 25px;
     border: none;
     border-radius: 30px;
-    font-size: 20px; 
+    font-size: 25px; 
     transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
@@ -257,7 +258,7 @@ button {
     padding: 10px 15px;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin: 15px;
 }
@@ -345,13 +346,12 @@ CSS DO RELOGIO
 }
 
 .clock {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border: 8px solid #000;
     border-radius: 50%;
     position: relative;
     background-color: #fff; 
-    margin-bottom: 5px; 
 }
 
 .clock-face {
