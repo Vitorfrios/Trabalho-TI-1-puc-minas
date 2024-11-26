@@ -71,7 +71,9 @@ Personas:
 
 | André Albuquerque               | Aline Maia                                 | Carlos Mendonça                        |
 | ------------------------------- | ------------------------------------------ | -------------------------------------- |
-| André, um desenvolvedor de software de 19 anos, está lutando para equilibrar seu trabalho e  estudos com sua paixão por jogos  eletrônicos e eSports. Ele busca uma maneira de organizar melhor seu tempo para poder se dedicar aos jogos sem comprometer sua carreira. | Aline, coordenadora de 43 anos, está sobrecarregada com suas responsabilidades profissionais, o que está causando estresse e afetando sua produtividade e vida pessoal. Ela deseja melhorar sua organização para equilibrar suas tarefas profissionais e tempo para relaxar e aproveitar seus hobbies. | Carlos, um professor de 30 anos, enfrenta dificuldades para encontrar tempo para seu hobby de restaurar carros clássicos devido às crescentes responsabilidades no trabalho. Ele quer gerenciar melhor sua agenda para poder se dedicar mais à restauração dos carros sem prejudicar sua carreira.            |
+| ![Diagrama de Persona - André Albuquerque](docs/images/andré_persona.jpg) | ![Diagrama de Persona - Aline Maia](docs/images/aline_persona.jpg)
+ | ![Diagrama de Persona - Carlos Mendonça](docs/images/carlos_persona.jpg)
+ |
 
 
 # Product Discovery
@@ -87,21 +89,6 @@ Personas:
 ![Matriz CSD e Mapa de Stakeholders - Miro](images/entrevistasHighlights.jpg)
 
 
-## Etapa de Definição
-
-### Personas
-
- **André Albuquerque**
-
-![Diagrama de Persona - André Albuquerque](images/personaAndre.png)
-
-**Aline Maia**
-
-![Diagrama de Persona - Aline Maia](images/personaAline.png)
-
-**Carlos Mendonça**
-
-![Diagrama de Persona - Carlos Mendonça](images/personaCarlos.png)
 
 
 # Product Design
@@ -111,18 +98,7 @@ Nesse momento, vamos transformar os insights e validações obtidos em soluçõe
 ## Histórias de Usuários
 
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
-
-| EU COMO...`PERSONA` | QUERO/PRECISO ...`FUNCIONALIDADE`        | PARA ...`MOTIVO/VALOR`               |
-| --------------------- | ------------------------------------------ | -------------------------------------- |
-| Estudante e Estagiário   | Gerenciar meu tempo | Equilibrar melhor meus estudos, trabalho e hobbies de jogos eletrônicos.             |
-| Entusiasta de Jogos         | Uma plataforma para conectar com outros desenvolvedores      | Acelerar o tempo para o compartilhamento de  ideias e projetos |
-| Aspirante a ter um próprio estúdio de jogos        | Acesso a recursos e tutoriais para melhorar a administração do tempo      | Melhorar minhas habilidades e alcançar o sucesso financeiro |
-| Professor universitário       | Uma ferramenta para organizar melhor minha agenda      | Ter mais tempo para me dedicar aos hobbies sem prejudicar minha carreira acadêmica. |
-| Restaurador de carros clássicos         | Organizar meu tempo enquanto pesquiso fornecedores      | Garantir a originalidade e qualidade das minhas restaurações |
-| Amante de veículos antigos         | Oportunidades para melhorar minhas técnicas de administração de tempo      | Contribuir para a execução das minhas tarefas diárias e ter mais tempo para o hobby |
-| Coordenadora escolar         | Menos demandas adjacentes      | Realizar minha função principal no tempo de trabalho |
-| Trabalhadora e mãe         | Definir limites de tarefas diárias      | Evitar trabalho sendo levado para casa |
-| Admiradora de passeios com a família         | Organizar o tempo de forma eficiente      | Produzir no trabalho e aproveitar a vida pessoal junto da família |
+![Historias dos usuarios](docs/images/historias.jpg)
 
 ## Proposta de Valor
 
