@@ -45,13 +45,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     highlightActiveItem();
 });
-// Função para buscar o nome do usuário do arquivo db.json
+// Função para buscar o nome do último usuário cadastrado no arquivo db.json
 fetch('/codigo/db/db.json')
   .then(response => response.json())
   .then(data => {
-    const nomeDePerfil = data.usuarios[0].nome;
-
-    document.querySelector('.name').textContent = nomeDePerfil;
+    if (data.usuarios && data.usuarios.length > 0) {
+      const ultimoUsuario = data.usuarios[data.usuarios.length - 1];
+      document.querySelector('.name').textContent = ultimoUsuario.nome;
+    } else {
+      console.error('Nenhum usuário encontrado no arquivo JSON.');
+    }
   })
   .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
 
