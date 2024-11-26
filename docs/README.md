@@ -96,7 +96,7 @@ Nesse momento, vamos transformar os insights e validações obtidos em soluçõe
 ## Histórias de Usuários
 
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
-![Historias dos usuarios](docs/images/historias.jpg)
+![Historias dos usuarios](images/historias.jpg)
 
 ## Proposta de Valor
 
