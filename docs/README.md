@@ -71,8 +71,7 @@ Personas:
 
 | André Albuquerque               | Aline Maia                                 | Carlos Mendonça                        |
 | ------------------------------- | ------------------------------------------ | -------------------------------------- |
-| ![Diagrama de Persona - André Albuquerque](docs/images/andré_persona.jpg) | ![Diagrama de Persona - Aline Maia](docs/images/aline_persona.jpg)
- | ![Diagrama de Persona - Carlos Mendonça](docs/images/carlos_persona.jpg)
+| ![Diagrama de Persona - André Albuquerque](docs/images/andré_persona.jpg) | ![Diagrama de Persona - Aline Maia](docs/images/aline_persona.jpg) | ![Diagrama de Persona - Carlos Mendonça](docs/images/carlos_persona.jpg)|
 
 
 # Product Discovery
