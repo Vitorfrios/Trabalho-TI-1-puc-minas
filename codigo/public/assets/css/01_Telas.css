@@ -45,10 +45,10 @@ button {
     background-color: #00a4cc; /* Cor vibrante do botão */
     color: #000000; /* Texto branco */
     cursor: pointer;
-    padding: 12px 25px;
+    padding: 12px 20px;
     border: none;
     border-radius: 30px;
-    font-size: 30px; /* Tamanho do texto ajustado */
+    font-size: 25px; /* Tamanho do texto ajustado */
     margin-bottom: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para interações */
 }
