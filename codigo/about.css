@@ -7,6 +7,8 @@ html {
     overflow-y: auto; 
     overflow-x: auto; 
     scrollbar-width: overflow-y none; 
+    scroll-behavior: smooth; /* Para suavizar a rolagem */
+
 }
 
 
@@ -70,11 +72,21 @@ body {
     padding: 20px;
     overflow-y: auto; 
     height: auto;    
+
 }
 .nav-container.scrolled {
-    top: 30px; 
-}
+    position: sticky; 
+    top: 50%; 
+    left: 0; 
+    transform: translateY(-50%); 
+    width: 340px; 
+    background-color: #fff;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; 
+    height: auto;     
+    transition: top 0.3s ease, transform 0.3s ease-out; 
 
+}
 .nav-container h2 {
     font-size: 2rem;
     color: #333;
