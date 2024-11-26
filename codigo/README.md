@@ -1,92 +1,116 @@
-# Código Fonte
+# Sistema de Otimização de tempo
 
-Essa é a pasta para a manter o programa que vocês vão construir no contexto dessa disciplina. 
+Este sistema web foi desenvolvido para oferecer uma solução completa de organização e produtividade. Ele possibilita o gerenciamento de tarefas, acompanhamento de progresso e sugestões para melhoria pessoal.
 
-Se necessário, descreva neste arquivo aspectos relevantes da estrutura de diretórios criada para organização do código.
+---
 
-Uma sugestão da estrutura de diretórios para o projeto é a seguinte:
+## Estrutura do Projeto
 
-```plaintext
-codigo/  (essa pasta aqui)
-│
-├── db/
-│   └── db.json (estruturas de dados)
-│
-├── public/ (seu site - front end)
-│   ├── assets/
-│   │   ├── css/
-│   │   │   ├── styles.css
-│   │   │   └── (outros arquivos .css)
-│   │   │
-│   │   ├── js/
-│   │   │   ├── app.js
-│   │   │   └── (outros arquivos .js)
-│   │   │
-│   │   ├── images/
-│   │   │   ├── logo.png
-│   │   │   └── (outras imagens)
-│   │   │
-│   │   └── fonts/
-│   │       ├── font1.ttf
-│   │       └── (outras fontes)
-│   │
-│   ├── modulos/
-│   │   ├── modulo-1/
-│   │   │   └── (arquivos do módulo)
-│   │   │
-│   │   └── modulo-2/
-│   │       └── (arquivos do módulo)
-│   │
-│   ├── index.html (página inicial front end)
-│   ├── about.html
-│   ├── contact.html
-│   └── (outras páginas)
-│
-│── index.js (app back end)
-│── package.json (configuração back end)
-└── README.md (este arquivo aqui)
-```
+A estrutura do projeto está organizada em pastas para facilitar a compreensão e o desenvolvimento.
 
-## Parte Front End
+### Diretórios Principais
 
-Para montar seu site, edite os arquivos existentes e crie novos arquivos na pasta `public` que mantem todos os arquivos da parte de Front End do site, a interface que é vista pelo usuário no navegador.
+- **/assets**: Contém arquivos estáticos.
+  - **/css**: Arquivos de estilo que definem a aparência das páginas.
+  - **/images**: Imagens utilizadas no design da interface.
+  - **/js**: Scripts que adicionam funcionalidades dinâmicas ao sistema.
+- **/pages**: Páginas HTML que compõem o sistema.
 
-Nesta pasta public, sugerimos que você organize os arquivos do seu site da seguinte maneira:
+---
 
-* Pasta `assets`: os arquivos de formatação (CSS), os scripts (JS), as imagens utilizadas no site (JPG, PNG, GIF, SVG, etc), fontes (TTF) e outros arquivos gerais utilizados por todo o site.
-* Pasta `modulos`: os arquivos utilizados na implementação das funcionalidades do site. Separe uma sub-pasta para cada novo módulo ou funcionalidade. Pode também ser utilizado para dividir o trabalho de cada membro do grupo.
-* Arquivo `index.html`: arquivo que representa a "home page" do site.
+## Telas e Funcionalidades
+### 1. Logo (`01_logo.html`)
+- Exibe o logotipo do sistema em uma página inicial de carregamento, garantindo uma introdução visual.
 
-## Parte Back End
+---
 
-Para esse projeto vamos utilizar o ambiente de execução **[Node.js](https://nodejs.org/)** para montar um Back End bem simplificado, porém poderoso que utiliza o módulo **[JSON Server](https://github.com/typicode/json-server#readme)**. Não se preocupe, você não precisa conhecer como programar para o ambiente Node.js e nem alterar estes arquivos para colocar o seu site funcionando.
+### 2. Login (`02_Login.html`)
+- Permite que os usuários autentiquem suas contas inserindo email e senha.
+- Opções de criação de conta para novos usuários.
+- Validação de campos com mensagens de erro em tempo real.
 
-Na estrutura de arquivos que vocês estão recebendo, você vai encontrar, ainda, outra pasta e alguns arquivos. São eles:
+---
 
-* Pasta `db`: local onde é armazenado o arquivo com as estruturas de dados utilizadas pela aplicação. O conteúdo é composto apenas pelo arquivo `db.json`.
-* Arquivo `index.js`: arquivo que inicializa o servidor web e a aplicação de back end no ambiente do Node.js, fornecendo uma API RESTful a partir do arquivo `db.json`. Evite alterar esse arquivo
-* Arquivo `package.js`: arquivo com as configurações da aplicação de back end.
+### 3. Tutorial (`03_Tutorial.html`)
+- Apresenta um guia interativo para usuários iniciantes.
+- Explicações detalhadas sobre como usar cada funcionalidade do sistema.
 
-## Setup e execução do ambiente
+---
 
-Para executar a apilcação de back end e permitir o acesso ao seu site, você deverá instalar o Node.js no seu computador. Para isso siga as instruções no site do [**Node.js**](https://nodejs.org/), fazendo o download da versão LTS (versão mais estável do ambiente).
+### 4. Dashboard (`04_Dashboard.html`)
+- Menu de navegação com 4 opções principais.
+- Área de mostragem de tarefas organizadas.
+- Acesso ao calendário para exibir tarefas específicas.
+- Mostragem de gráficos detalhados, exibindo o tempo gasto em cada categoria (trabalho, lazer, estudo, etc.).
 
-Assim que o Node.js estiver instalado no seu computador, você deve abrir o terminal na pasta do seu projeto e executar os seguintes comandos:
+---
 
-```
-$> npm install
-```
+### 5. Cronograma Diário (`05_Cronograma_Diario.html`)
+- Exibição de tarefas organizadas por um período de 7 dias.
+- Filtros para selecionar a semana desejada dentro de um mês.
+- Opção de adicionar tarefas, direcionando para a página de criação.
+- Botão para acessar sugestões ou dicas relacionadas às tarefas.
 
-Isso fará com que o NPM instale todos os pacotes necessários para executar o Back End. O NPM é o aplicativo que gerencia dependências de um projeto e instala os pacotes do Node.JS.
+---
 
-Em seguida, com os pacotes já instalados, basta executar o seguinte comando:
+### 6. Criação de Tarefas (`06_Criacao_Tarefas.html`)
+- Formulário para adicionar tarefas:
+  - Nome da tarefa.
+  - Escolha dos dias de repetição (opcional).
+  - Hora e dia para execução.
+  - Definição de prioridade (Alta, Média, Baixa).
+  - Seleção de categorias (Lazer, Trabalho, Estudo, etc.).
+- Mostragem de tarefas criadas com opções de edição ou exclusão.
+- Clique no calendário para exibir as tarefas criadas.
+- Visualização de um gráfico que mostra o tempo gasto em cada categoria.
 
-```
-$> npm start
-```
+---
 
-Isso fará com que o Node.js execute sua aplicação de Back End, subindo o servidor Web e a API RESTful que é provida pelo JSON Server a partir do arquivo `db.json`.
+### 8. Sugestões (`07_Sugestao.html`)
+- Combinação de dicas personalizadas com base nos hábitos do usuário.
+- Navegação por categorias, como dicas de estudo, sono e desempenho.
 
-## Dúvidas e Suporte
+---
 
-Se tiver dúvidas, procure a monitoria para que te ajudem a entender todo o ambiente e te ajudem na implementação do seu projeto.
+#### 8.1 Dicas para Estudo (`07.1_Dicas_para_Estudo.html`)
+- Clique na roleta para exibir dicas aleatórias.
+- Sugestões de técnicas como método Pomodoro e mapas mentais.
+- Organização de tempo e gerenciamento de prazos.
+
+---
+
+#### 8.2 Dicas para Dormir (`07.2_Dicas_para_Dormir.html`)
+- Clique na roleta para exibir dicas de sono.
+- Calculadora de horários de dormir e acordar, considerando ciclos de sono.
+- Entrada de dados para compromissos, exibindo horário ideal para acordar e tempo total de descanso.
+
+---
+
+#### 8.3 Dicas para Desempenho (`07.3_Dicas_para_Desempenho.html`)
+- Clique na roleta para acessar dicas de produtividade.
+- Avaliação de tarefas por categoria e tempo gasto.
+
+---
+
+### 9. Perfil (`08_Perfil.html`)
+- Permite editar informações pessoais:
+  - Nome completo.
+  - Idade.
+  - Email.
+  - Nome de usuário.
+- Configurações de preferências, como notificações.
+
+---
+
+### 10. Suporte e Feedback (`09_Suporte_Feedback.html`)
+- Formulário para envio de dúvidas, relatórios de problemas ou sugestões.
+- Integração com o email para notificação direta da equipe de suporte.
+- FAQ com respostas para as questões mais frequentes.
+
+---
+
+## Como Executar o Projeto
+- DIGITE " npm start " no terminal
+- Vá para o arquivo " about.html " e acione o live server
+- Leia sobre o projeto
+- Para iniciar o projeto você deve ler as 
