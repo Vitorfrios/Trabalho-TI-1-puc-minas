@@ -1,6 +1,6 @@
-# **Tempo Otimizado**
+# <a name="menu"></a>**Tempo Otimizado**
 
-## <a name="menu"></a> **Menu de Navegação**
+## **Menu de Navegação**
 
 A documentação do projeto é estruturada da seguinte forma:
 
