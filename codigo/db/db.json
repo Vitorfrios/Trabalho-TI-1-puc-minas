@@ -1,37 +1,8 @@
 {
-  "usuarios": [
-    {
-      "id": "1",
-      "nome": "o Siste",
-      "email": "admin@abc.com",
-      "login": "admin"
-    },
-    {
-      "id": "d44efd33-0b63-4362-b5db-6f4589ae8133",
-      "login": "web",
-      "nome": "ewqrbqer",
-      "email": "vitor@gmail.com"
-    }
-  ],
-  "senhas": [
-    {
-      "id": "1",
-      "usuarioIdS": "1",
-      "senha": "123esgweg"
-    },
-    {
-      "id": "ce3361eb-7049-470f-b076-14c98452fa71",
-      "usuarioIdS": "d44efd33-0b63-4362-b5db-6f4589ae8133",
-      "senha": "2345"
-    }
-  ],
-  "configuracoes": [
-    {
-      "usuarioId": "1",
-      "notificacoes": true,
-      "id": "15b6"
-    }
-  ],
+  "usuarios": [],
+  "senhas": [],
+  "configuracoes": [],
+  
   "telas": {
     "tela2": [
       {
@@ -242,7 +213,7 @@
     },
     "sugestaoI": {
       "topicos": [
-        "Menu navegação de 4 opções:",
+        "Menu navegação de 3 opções:",
         "Ajuda com horários",
         "Dicas de estudo",
         "Dicas para descansar"
@@ -270,14 +241,6 @@
         "Clique na roleta para exibir as 4 dicas",
         "Mostra o tanto de tarefas por categoria",
         "Mostra o tanto de horas gastas por categoria"
-      ]
-    },
-    "progresso": {
-      "topicos": [
-        "Exibir gráfico de tarefas concluídas",
-        "Exibir gráfico de tarefas não concluídas",
-        "Exibir tempo gasto por categoria: Trabalho, Lazer, Estudo",
-        "Exibir gráfico de média entre trabalho, lazer e estudo"
       ]
     },
     "suporte-feedback": {

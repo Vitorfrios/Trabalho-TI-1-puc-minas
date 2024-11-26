@@ -42,6 +42,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     highlightActiveItem();
 });
+// Função para buscar o nome do usuário do arquivo db.json
+fetch('/codigo/db/db.json')
+  .then(response => response.json())
+  .then(data => {
+    const nomeDePerfil = data.usuarios[0].nome;
+
+    document.querySelector('.name').textContent = nomeDePerfil;
+  })
+  .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
 
 // ------------------- FIM DA SIDE BAR ------------------- //
 

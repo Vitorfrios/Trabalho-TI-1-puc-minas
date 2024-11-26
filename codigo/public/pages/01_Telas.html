@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tempo Otimizado - Telas</title>
     <link rel="stylesheet" href="../assets/css/01_Telas.css">
-    <!-- Arquivos CSS -->
 
 
 </head>
@@ -19,13 +18,13 @@
             <div>
                 <h2>Para utilizar nosso app clique no botão abaixo</h2>
                 <a href="../pages/02_Inicio_logo.html">
-                    <button style="padding: 10px 20px; font-size: 20px;">Iniciar App</button>
+                    <button >Iniciar App</button>
                 </a>
             </div>
             <div>
                 <h2>Conheça mais sobre o projeto</h2>
                 <a href="/codigo/about.html">
-                    <button style="padding: 10px 20px; font-size: 20px;">Ver Informações</button>
+                    <button >Ver Informações</button>
                 </a>
             </div>
         </div>
@@ -113,29 +112,10 @@
             </div>
         </section>
 
-        <!-- Progresso -->
-        <section>
-            <h2>7. Progresso </h2>
-            <p>
-                - Mostra a porcentagem em forma de gráfico horizontal de tarefas concluídas.<br>
-                - Mostra a porcentagem em forma de gráfico horizontal de acordo com as tarefas que ainda não foram feitas.<br>
-                <br>
-                - Categorias:<br>
-                &nbsp;&nbsp;&bull; Tempo gasto por categoria:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&bull; Trabalho - Quantidade de horas gastas por trabalho.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&bull; Lazer - Quantidade de horas gastas por lazer.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&bull; Estudo - Quantidade de horas gastas por estudo.<br>
-                <br>
-                - Gráfico exibindo a média de horas dedicadas a Trabalho, Lazer e Estudo.
-            </p>
-            <div class="content">
-                <iframe src="..\pages\07_Progresso.html"></iframe>
-            </div>
-        </section>
 
 
         <section>
-            <h2>8. Sugestões </h2>
+            <h2>7. Sugestões </h2>
             <p>
                 - Combinação de dicas personalizadas com base nos hábitos do usuário.<br>
                 - Navegação por categorias, como dicas de estudo, sono e desempenho.<br>
@@ -150,7 +130,7 @@
         </section>
         
         <section>
-            <h2>08.1 Dicas para Estudo </h2>
+            <h2>07.1 Dicas para Estudo </h2>
             <p>
                 - Clique na roleta para exibir as 4 dicas.<br>
                 - Técnicas de estudo.<br>
@@ -162,7 +142,7 @@
         </section>
         
         <section>
-            <h2>08.2 Dicas para Dormir </h2>
+            <h2>07.2 Dicas para Dormir </h2>
             <p>
                 - Clique na roleta para exibir as 4 dicas.<br>
                 - Digite o horário de deitar.<br>
@@ -176,7 +156,7 @@
         </section>
         
         <section>
-            <h2>08.3 Dicas para Desempenho </h2>
+            <h2>07.3 Dicas para Desempenho </h2>
             <p>
                 - Clique na roleta para exibir as 4 dicas.<br>
                 - Mostra o tanto de tarefas por categoria.<br>
@@ -188,7 +168,24 @@
         </section>
         
         <section>
-            <h2>10. Suporte e Feedback </h2>
+            <h2>8. Perfil </h2>
+            <p>
+                - Permite editar informações pessoais: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Nome completo. <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;- Idade. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Email. <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Nome de usuário. <br>
+                - Configurações de preferências, como notificações.
+            </p>
+            <div class="content">
+                <iframe src="../pages/09_Perfil.html"></iframe>
+            </div>
+        </section>
+
+
+
+        <section>
+            <h2>9. Suporte e Feedback </h2>
             <p>
                 - Formulário para envio de dúvidas, relatórios de problemas ou sugestões.<br>
                 - Integração com o email para notificação direta da equipe de suporte.<br>
@@ -197,7 +194,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&bull; Obter ajuda com o aplicativo.
             </p>
             <div class="content">
-                <iframe src="..\pages\11_Suporte_Feedback.html"></iframe>
+                <iframe src="..\pages\10_Suporte_Feedback.html"></iframe>
             </div>
         </section>
         
@@ -205,7 +202,7 @@
 
 
 
-
+    <!--Script para impedir que a sidebar funcione-->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const iframes = document.querySelectorAll("iframe");

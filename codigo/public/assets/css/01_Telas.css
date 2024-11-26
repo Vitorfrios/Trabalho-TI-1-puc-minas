@@ -1,63 +1,100 @@
+html {
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    scrollbar-width: none; /* Remove a barra de rolagem no Firefox */
+}
+
+/* Oculta a barra de rolagem */
+html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    background-color: #f4f4f4; /* Fundo suave para a página */
+    color: #333; /* Cor do texto principal */
 }
 
-
+main {
+    padding: 15px;
+    padding-bottom: 0;
+}
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
+    background: #333; /* Cor de fundo escura para o cabeçalho */
+    color: #fff; /* Texto branco */
+    padding: 20px 30px;
     text-align: center;
+    border-bottom: 5px solid #00a4cc; /* Linha colorida para destacar o cabeçalho */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
-header h2{
-    color: #fff;
 
+header h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
 }
-button{
-    background-color: #00a4cc;
-    color: #000000;
+
+button {
+    margin-top: 10px;
+    background-color: #00a4cc; /* Cor vibrante do botão */
+    color: #000000; /* Texto branco */
     cursor: pointer;
-    padding: 10px 10px;
+    padding: 12px 25px;
     border: none;
     border-radius: 30px;
-    font-size: 25px;
-    margin-bottom: 10px;
+    font-size: 30px; /* Tamanho do texto ajustado */
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para interações */
+}
+
+button:hover {
+    background-color: #008c99; /* Cor mais escura no hover */
+    transform: scale(1.05); /* Aumenta um pouco o tamanho ao passar o mouse */
 }
 
 section {
     padding: 20px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; /* Linha separadora suave */
+    margin-bottom: 30px; /* Espaçamento maior entre seções */
+    background-color: #fff; /* Fundo branco para as seções */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave nas seções */
+    border-radius: 8px; /* Bordas arredondadas */
 }
 
 h2 {
     color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .content {
     margin: 20px 0;
 }
 
-
 iframe {
     width: 100%;
     height: 800px;
     border: 1px solid #ccc;
-    overflow: hidden;
+    border-radius: 8px; /* Borda arredondada para os iframes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px;
 }
-
 
 iframe {
-    transform: scale(0.8); 
-    transform-origin: 0 0; 
-    width: 125%; 
+    transform: scale(0.8);
+    transform-origin: 0 0;
+    width: 125%;
 }
 
-
-p{
+p {
     font-size: 20px;
+    color: #555; /* Cor do texto do parágrafo mais suave */
+    line-height: 1.8; /* Melhora a legibilidade */
 }

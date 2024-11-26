@@ -88,7 +88,7 @@ body {
     border: 2px solid #00A4CC;
     text-decoration: none;
     color: #000000;
-    font-size: 18px;
+    font-size: 25px;
     background-color: #3bb5d3;
     cursor: pointer;
     padding: 8.5px;
@@ -353,6 +353,7 @@ td#HOUR {
     align-items: center;
     margin: 20px 0;
     margin-top: 30px;
+    font-size: 25px;
 }
 
 .legend div {
