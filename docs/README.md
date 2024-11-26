@@ -185,4 +185,7 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 ### **Gerenciamento do Projeto**
 Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
 
-| ![Kanban](images/Kanban.jpg) | ![Planejamento das Sprints](images/planejamento.jpg) | ![Notas e próximos passos](images/notas.jpg) |
+| **Kanban** | **Planejamento das Sprints** | **Notas e próximos passos** |
+|:----------:|:----------------------------:|:---------------------------:|
+| ![Kanban](docs/images/Kanban.jpg) | ![Planejamento das Sprints](docs/images/planejamento.jpg) | ![Notas e próximos passos](docs/images/notas.jpg) |
+
