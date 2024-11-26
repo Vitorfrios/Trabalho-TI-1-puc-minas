@@ -1,17 +1,16 @@
 # **Tempo Otimizado**
 
-## **Menu de Navegação**
+## <a name="menu"></a> **Menu de Navegação**
 
 A documentação do projeto é estruturada da seguinte forma:
 
-| **Links**                                                 |
-|:----------------------------------------------|:------------------------------------------|
-| - [Introdução](#introducao)                   | - [Requisitos](#requisitos)               |
-| - [Contexto](#contexto)                       | - [Ações do Usuário](#acoes)              |
-| - [Projeto de Design thinking](#design-thinking) | - [Projeto de Interfaces](#projetos)      |
-| - [Personas](#personas)                       | - [Metodologia](#metodologia)             |
-|                                               | - [Como usar](#iniciar)                   |
-
+| **Links**                                        |
+| :----------------------------------------------- | :----------------------------------- |
+| - [Menu](#menu)                                  | - [Requisitos](#requisitos)          |
+| - [Contexto](#contexto)                          | - [Ações do Usuário](#acoes)         |
+| - [Projeto de Design thinking](#design-thinking) | - [Projeto de Interfaces](#projetos) |
+| - [Personas](#personas)                          | - [Metodologia](#metodologia)        |
+| - [Introdução](#introducao)                      | - [Como usar](#iniciar)              |
 
 ## <a name="introducao"></a>**Introdução**
 
