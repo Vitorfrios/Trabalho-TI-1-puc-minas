@@ -4,7 +4,7 @@
 
 A documentação do projeto é estruturada da seguinte forma:
 
-| **Links - Parte 1**                           | **Links - Parte 2**                       |
+| **Links**                                                 |
 |:----------------------------------------------|:------------------------------------------|
 | - [Introdução](#introducao)                   | - [Requisitos](#requisitos)               |
 | - [Contexto](#contexto)                       | - [Ações do Usuário](#acoes)              |
