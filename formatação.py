@@ -37,33 +37,24 @@ print(f"\nTotal de linhas de código: {total_linhas}")
 
 
 
-
-
 import os
-import re
 
-# Função para substituir e remover elementos de arquivos HTML
-def modificar_html(arquivo):
-    with open(arquivo, 'r', encoding='utf-8') as f:
-        conteudo = f.read()
+# Caminho da pasta onde estão as imagens
+pasta_imagens = "docs\images"
 
-    # Substituir "./X_Perfil.html" por "./09_Perfil.html"
-    conteudo = re.sub(r'\./\d+_Perfil\.html', './09_Perfil.html', conteudo)
+# Lista de extensões consideradas como imagens
+extensoes_imagens = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff"}
 
-    # Remover a tag <span class="name">Nome de perfil</span>
-    conteudo = re.sub(r'<span class="name">[^<]*</span>', '', conteudo)
-
-    # Escrever o conteúdo modificado de volta no arquivo
-    with open(arquivo, 'w', encoding='utf-8') as f:
-        f.write(conteudo)
-
-# Caminho para o diretório onde estão os arquivos HTML
-diretorio = 'codigo'  # Coloque o diretório correto onde seus arquivos HTML estão localizados
-
-# Navegar por todos os arquivos do diretório
-for root, dirs, files in os.walk(diretorio):
-    for file in files:
-        if file.endswith('.html'):
-            caminho_arquivo = os.path.join(root, file)
-            modificar_html(caminho_arquivo)
-            print(f"Modificado: {caminho_arquivo}")
+# Verifica se a pasta existe
+if os.path.exists(pasta_imagens):
+    # Itera pelos arquivos na pasta
+    for nome_arquivo in os.listdir(pasta_imagens):
+        # Obtém a extensão do arquivo
+        _, extensao = os.path.splitext(nome_arquivo)
+        # Verifica se o arquivo é uma imagem
+        if extensao.lower() in extensoes_imagens:
+            # Exibe o caminho completo
+            caminho_completo = os.path.join(pasta_imagens, nome_arquivo)
+            print(caminho_completo)
+else:
+    print(f"A pasta '{pasta_imagens}' não foi encontrada.")
