@@ -66,33 +66,33 @@ A estrutura do projeto está organizada em pastas para facilitar a compreensão 
 
 ---
 
-### 8. Sugestões (`07_Sugestao.html`)
+### 7. Sugestões (`07_Sugestao.html`)
 - Combinação de dicas personalizadas com base nos hábitos do usuário.
 - Navegação por categorias, como dicas de estudo, sono e desempenho.
 
 ---
 
-#### 8.1 Dicas para Estudo (`07.1_Dicas_para_Estudo.html`)
+#### 7.1 Dicas para Estudo (`07.1_Dicas_para_Estudo.html`)
 - Clique na roleta para exibir dicas aleatórias.
 - Sugestões de técnicas como método Pomodoro e mapas mentais.
 - Organização de tempo e gerenciamento de prazos.
 
 ---
 
-#### 8.2 Dicas para Dormir (`07.2_Dicas_para_Dormir.html`)
+#### 7.2 Dicas para Dormir (`07.2_Dicas_para_Dormir.html`)
 - Clique na roleta para exibir dicas de sono.
 - Calculadora de horários de dormir e acordar, considerando ciclos de sono.
 - Entrada de dados para compromissos, exibindo horário ideal para acordar e tempo total de descanso.
 
 ---
 
-#### 8.3 Dicas para Desempenho (`07.3_Dicas_para_Desempenho.html`)
+#### 7.3 Dicas para Desempenho (`07.3_Dicas_para_Desempenho.html`)
 - Clique na roleta para acessar dicas de produtividade.
 - Avaliação de tarefas por categoria e tempo gasto.
 
 ---
 
-### 9. Perfil (`08_Perfil.html`)
+### 8. Perfil (`08_Perfil.html`)
 - Permite editar informações pessoais:
   - Nome completo.
   - Idade.
@@ -102,7 +102,7 @@ A estrutura do projeto está organizada em pastas para facilitar a compreensão 
 
 ---
 
-### 10. Suporte e Feedback (`09_Suporte_Feedback.html`)
+### 9. Suporte e Feedback (`09_Suporte_Feedback.html`)
 - Formulário para envio de dúvidas, relatórios de problemas ou sugestões.
 - Integração com o email para notificação direta da equipe de suporte.
 - FAQ com respostas para as questões mais frequentes.

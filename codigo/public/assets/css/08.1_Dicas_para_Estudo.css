@@ -267,21 +267,116 @@ button {
     color: inherit;
 }
 
-/* Dicas */
+
+/* Estilos principais */
 .dicas {
     display: flex;
     flex-direction: column; 
+    justify-content: center; 
     align-items: center; 
     gap: 5px; 
     border: 2px solid #00A4CC;
     padding: 10px;
     border-radius: 30px;
 }
-.dicas span {
-    font-size: 30px;
+
+.pomodoro {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
 }
-#F{
-    margin-bottom: 22px;
+
+#timer {
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    
+}
+
+.pomodoro label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#timeInput {
+    width: 60%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 2px solid #00A4CC;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
+.pomodoro button {
+    margin: 5px;
+    padding: 10px 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.pomodoro button:active {
+    transform: scale(0.95);
+}
+
+/* Estilo do ícone de tomate */
+.pomodoro-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.tomato {
+    width: 30px;
+    height: 30px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.stem {
+    width: 10px;
+    height: 5px;
+    background-color: #008000;
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    border-radius: 5px;
+}
+
+/* Animação de rotação */
+.rotating {
+    animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Alinhamento do layout com espaço entre os itens */
+.tempo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+
 }
 
 .borda {

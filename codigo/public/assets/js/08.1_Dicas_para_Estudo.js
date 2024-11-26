@@ -141,3 +141,77 @@ fetch('/codigo/db/db.json')
 
     }
 } 
+
+
+// ------------- CODIGO DO POMODORO ------------- //
+let timerInterval;
+let timeLeft;
+let isRunning = false;
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+    const seconds = (timeLeft % 60).toString().padStart(2, '0');
+    document.getElementById("timer").textContent = `${minutes}:${seconds}`;
+}
+
+function startTimer() {
+    if (isRunning) return; 
+
+    const timeInput = document.getElementById("timeInput").value;
+    if (!isRunning && !timeLeft) {
+        timeLeft = parseInt(timeInput) * 60;
+    }
+
+    if (timeLeft > 0) {
+        isRunning = true;
+        document.getElementById("pomodoroIconLeft").classList.add('rotating');
+        document.getElementById("pomodoroIconRight").classList.add('rotating');
+
+        timerInterval = setInterval(() => {
+            if (timeLeft > 0) {
+                timeLeft--;
+                updateTimerDisplay();
+            } else {
+                clearInterval(timerInterval);
+                isRunning = false;
+                document.getElementById("pomodoroIconLeft").classList.remove('rotating');
+                document.getElementById("pomodoroIconRight").classList.remove('rotating');
+                alert("Pomodoro finalizado! Hora de fazer uma pausa.");
+            }
+        }, 1000);
+    }
+}
+
+function pauseTimer() {
+    if (!isRunning) {
+        startTimer();
+    } else {
+        clearInterval(timerInterval);
+        isRunning = false;
+        document.getElementById("pomodoroIconLeft").classList.remove('rotating');
+        document.getElementById("pomodoroIconRight").classList.remove('rotating');
+    }
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    isRunning = false;
+    document.getElementById("timeInput").value = '';
+    document.getElementById("timer").textContent = '00:00';
+    document.getElementById("timeInput").disabled = false;
+    document.getElementById("pomodoroIconLeft").classList.remove('rotating');
+    document.getElementById("pomodoroIconRight").classList.remove('rotating');
+}
+
+document.getElementById("start").addEventListener("click", startTimer);
+document.getElementById("pause").addEventListener("click", pauseTimer);
+document.getElementById("reset").addEventListener("click", resetTimer);
+
+document.getElementById("timeInput").addEventListener("input", () => {
+    const timeInput = document.getElementById("timeInput").value;
+    timeLeft = parseInt(timeInput) * 60;
+    updateTimerDisplay();
+});
+
+timeLeft = 25 * 60;
+updateTimerDisplay();
