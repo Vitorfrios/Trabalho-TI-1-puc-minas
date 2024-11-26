@@ -189,16 +189,17 @@ Divisão de papéis no grupo e apresentação da estrutura da ferramenta de cont
 | ![Kanban](docs/images/Kanban.jpg) | ![Planejamento das Sprints](docs/images/planejamento.jpg) | ![Notas e próximos passos](docs/images/notas.jpg) |
 
 
+---
 
 ## <a name="iniciar"></a>**Como usar o app**
 
-# Sistema de Otimização de tempo
+### Sistema de Otimização de tempo
 
 Este sistema web foi desenvolvido para oferecer uma solução completa de organização e produtividade. Ele possibilita o gerenciamento de tarefas, acompanhamento de progresso e sugestões para melhoria pessoal.
 
 ---
 
-## Estrutura do Projeto
+### Estrutura do Projeto
 
 A estrutura do projeto está organizada em pastas para facilitar a compreensão e o desenvolvimento.
 
