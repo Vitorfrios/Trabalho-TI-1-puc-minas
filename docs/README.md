@@ -112,7 +112,6 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais detalh
 
 ## <a name="acoes"></a>**Ações do Usuário**
 
-## **Ações do Usuário**
 
 As ações que o usuário pode realizar em cada tela do sistema são descritas na tabela a seguir.
 
