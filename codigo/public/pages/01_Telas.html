@@ -200,25 +200,31 @@
 
 
 
-    <!--Script para impedir que a sidebar funcione-->
+    <!--Script para impedir que a sidebar e o perfil funcionem-->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const iframes = document.querySelectorAll("iframe");
-    
+
+            // Desativar todos os links dentro dos iframes
             iframes.forEach(iframe => {
                 iframe.addEventListener("load", () => {
                     const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-    
-                    const sidebarLinks = iframeDocument.querySelectorAll(".sidebar a");
-    
-                    sidebarLinks.forEach(link => {
-                        link.removeAttribute("href"); 
-                        link.stylepointerEvents = "none"; 
-                        link.style.cursor = "default"; 
+
+                    // Selecionar e desativar todos os links dentro do iframe
+                    const allLinks = iframeDocument.querySelectorAll("a");
+                    allLinks.forEach(link => {
+                        link.removeAttribute("href");
+                        link.style.pointerEvents = "none";
+                        link.style.cursor = "default";
+                        link.addEventListener("click", event => event.preventDefault());
                     });
                 });
             });
         });
+
+
+
+
     </script>
     
     
