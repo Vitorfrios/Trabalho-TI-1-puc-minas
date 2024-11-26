@@ -1,23 +1,23 @@
 html {
     overflow-y: auto; 
-    overflow-x: auto; /* Permite a rolagem horizontal */
-    scrollbar-width: overflow-y none; /* Para navegadores que suportam */
+    overflow-x: auto; 
+    scrollbar-width: overflow-y none; 
 }
 
-/* Oculta a barra de rolagem vertical */
+
 html::-webkit-scrollbar {
-    width: 0; /* Oculta a barra vertical */
-    height: auto; /* Permite a barra horizontal */
+    width: 0; 
+    height: auto; 
 }
 
-/* Estiliza a barra de rolagem horizontal, se necessário */
+
 html::-webkit-scrollbar:horizontal {
-    height: 10px; /* Altura da barra horizontal */
+    height: 10px; 
 }
 
 html::-webkit-scrollbar-thumb:horizontal {
-    background-color: rgba(0, 0, 0, 0.5); /* Cor da barra horizontal */
-    border-radius: 10px; /* Bordas arredondadas */
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
     margin-bottom: 60px;
 }
 
@@ -31,7 +31,7 @@ body {
     color: #333;
     box-sizing: border-box;
     font-size: 1rem;
-    display: flex; /* Usando flexbox para o layout */
+    display: flex; 
     flex-direction: column;
 
 }
@@ -40,34 +40,34 @@ body {
 }
 
 .main {
-    flex: 1; /* Permite que a div principal ocupe o espaço restante */
-    padding: 20px; /* Adiciona um espaçamento interno */
-    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    flex: 1; 
+    padding: 20px; 
+    box-sizing: border-box; 
 }
 
 .rigth-content {
     padding: 20px;
     background-color: #f9f9f9;
-    min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da página */
+    min-height: 100vh; 
     box-sizing: border-box;
     padding-left: 0;
     font-size: 18px;
 }
 
 
-/* Remove a fixação do menu, para que ele role junto com a página */
+
 .nav-container {
-    position: sticky; /* Fixa o nav em relação ao scroll */
-    top: 0; /* Define o limite superior como o início da tela */
-    width: 340px; /* Largura fixa do menu */
+    position: sticky; 
+    top: 0; 
+    width: 340px; 
     background-color: #fff;
     box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    overflow-y: auto; /* Permite rolagem interna, se necessário */
+    overflow-y: auto; 
     height: auto;    
 }
 .nav-container.scrolled {
-    top: 50px; /* Ajusta o espaço superior após o scroll */
+    top: 50px; 
 }
 
 .nav-container h2 {
@@ -98,39 +98,52 @@ body {
 
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 15px;
+    background: #333; 
+    color: #fff; 
+    padding: 20px 30px;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    border-bottom: 5px solid #00a4cc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
-
-header h1 {
-    margin: 0;
-    font-size: 3rem;
+h1{
+    font-size: 30px;
 }
-
-.header-button {
+.btn {
     display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
 }
 
-.header-button a {
-    background-color: #00a4cc;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s, transform 0.2s;
+.h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+    border-bottom: 0;
+
 }
 
-.header-button a:hover {
-    background-color: #008bb5;
-    transform: scale(1.05);
+.barra-info button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #00a4cc; 
+    color: #000000; 
+    cursor: pointer;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
+
+.barra-info button:hover {
+    background-color: #008c99; 
+    transform: scale(1.05); 
+}
+
+
+
 
 section {
     padding: 20px;
@@ -141,7 +154,14 @@ section {
     border-left: 5px solid #00a4cc;
     margin-bottom: 20px;
 }
-
+h3{
+    color: #333;
+    font-size: 1.23rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00a4cc;
+    display: inline-block;
+    padding-bottom: 5px;
+}
 h2 {
     color: #333;
     font-size: 1.8rem;
@@ -194,14 +214,30 @@ table tr:nth-child(even) {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     
 }
+
 .imgs{
     font-size: 15px;
 }
-#personas img{
-    max-width: 300px;   
-    height: auto;  
-    width: 300px; 
-    object-fit: contain; 
+
+#personas img {
+    max-width: 300px;
+    height: auto;
+    width: 300px;
+    object-fit: contain;
+    display: block; 
+    margin: 0 auto; 
+}
+
+#personas table {
+    margin: 0 auto; 
+    width: 100%; 
+    text-align: center; 
+}
+
+#personas td, #personas th {
+    text-align: center; 
+    vertical-align: middle; 
+    padding: 10px; 
 }
 
 a {
@@ -259,18 +295,18 @@ button:hover {
 .invisible-table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-/* Aumenta o tamanho dos itens dentro da tabela de navegação */
+
 .invisible-table ul {
-    font-size: 15px; /* Aumenta o tamanho da fonte dos itens da lista */
-    line-height: 15px; /* Aumenta o espaçamento entre as linhas */
+    font-size: 15px; 
+    line-height: 15px; 
     padding: 0;
 }
 
 .invisible-table ul li a {
-    font-size: 20px; /* Aumenta o tamanho da fonte dos links */
+    font-size: 20px; 
     color: #00a4cc;
     text-decoration: none;
-    display: block; /* Faz o link ocupar toda a largura do item */
+    display: block; 
     padding: 8px 0;
     transition: color 0.3s;
 }
@@ -281,14 +317,14 @@ button:hover {
 
 
 
-/* Ajustes para responsividade */
+
 @media (max-width: 768px) {
     .nav-container {
-        width: 180px;  /* Reduz a largura do menu em telas pequenas */
+        width: 180px;  
     }
 
     .rigth-content {
-        margin-left: 190px;  /* Ajusta o conteúdo ao lado do menu */
+        margin-left: 190px;  
     }
 
     header h1 {
@@ -309,13 +345,13 @@ CSS DO RELOGIO
 }
 
 .clock {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 8px solid #000;
     border-radius: 50%;
     position: relative;
     background-color: #fff; 
-    margin-bottom: 10px; 
+    margin-bottom: 5px; 
 }
 
 .clock-face {
