@@ -1,9 +1,23 @@
 {
   "usuarios": [
-
+    {
+      "id": "1",
+      "nome": "1",
+      "email": "1",
+      "login": "1",
+      "senha": "1",
+      "notificacoes": false
+    }
   ],
   "usuario_logado": [
-
+    {
+      "id": "1",
+      "nome": "1",
+      "email": "1",
+      "login": "1",
+      "senha": "1",
+      "notificacoes": false
+    }
   ],
   "telas": {
     "tela2": [
