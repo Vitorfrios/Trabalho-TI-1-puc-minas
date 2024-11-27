@@ -2,23 +2,32 @@
   "usuarios": [
     {
       "id": "1",
-      "nome": "1",
-      "email": "1",
-      "login": "1",
-      "senha": "1",
+      "nome": "Usuário 1",
+      "email": "usuario1@example.com",
+      "login": "usuario1",
+      "senha": "senha1",
       "notificacoes": true
-    }
-  ],
-  "usuario_logado": [
+    },
     {
-      "id": "1",
-      "nome": "1",
-      "email": "1",
-      "login": "1",
-      "senha": "1",
+      "id": "2",
+      "nome": "Usuário 2",
+      "email": "usuario2@example.com",
+      "login": "usuario2",
+      "senha": "senha2",
       "notificacoes": true
+    },
+    {
+      "id": "3",
+      "nome": "Usuário 3",
+      "email": "usuario3@example.com",
+      "login": "usuario3",
+      "senha": "senha3",
+      "notificacoes": false
     }
   ],
+  "usuario_logado": [],
+  
+  
   "telas": {
     "tela2": [
       {
