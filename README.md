@@ -24,7 +24,7 @@ Informações básicas do projeto.
   - [Vitor de Freitas Rios](https://github.com/Vitorfrios)
 
 ### Documentos:
-| ✅ [Telas do projeto](/codigo/about.html) | [✅ Código do projeto](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas/raw/main/docs/files/Trabalho-TI-1-puc-minas.zip)
+| ✅ [Telas do projeto](codigo\README.md) | [✅ Código do projeto](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas/raw/main/docs/files/Trabalho-TI-1-puc-minas.zip)
  | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
 
 
