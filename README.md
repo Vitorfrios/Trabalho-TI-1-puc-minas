@@ -18,10 +18,14 @@ Informações básicas do projeto.
 
 - **Projeto:** Tempo otimizado
 - **Repositório GitHub:** [ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo ](https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo)
+- **Repositório GitHub Pessoal**: [Trabalho-TI-1-puc-minas](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas)
+
 - **Membros da equipe:**
   - [Vitor de Freitas Rios](https://github.com/Vitorfrios)
 
-✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf)
+### Documentos:
+| ✅ [Telas do projeto](/codigo/about.html) | ✅ [Código do projeto](/docs/files/Trabalho-TI-1-puc-minas.zip) | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
+
 
 ## <a name="contexto"></a>**Contexto**
 
@@ -162,14 +166,16 @@ O desenvolvimento do projeto seguiu a metodologia SCRUM. Realizamos encontros se
 
 Relação de ferramentas empregadas pelo grupo durante o projeto.
 
-|        **Ambiente**         | **Plataforma** |                                                                         **Link de acesso**                                                                          |
-| :-------------------------: | :------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Processo de Design Thinking |      Miro      |                                     [PPLCC-M - G5 - Dificuldade em otimizar o tempo](https://miro.com/app/board/uXjVKn9kuFg=/)                                      |
-|    Repositório de código    |     GitHub     | [ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo](https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo) |
-|    Protótipo Interativo     |     Figma      |              [Tempo otimizado](https://www.figma.com/design/IEsgUebiFZGQOkeAWqdyTZ/Tempo-otimizado?node-id=0-1&node-type=canvas&t=I7xRj2ulRa4trN3M-0)               |
-|    Documentação inicial     |  Google/ Docs  |        [Documentação do projeto-G5 - Dificuldade em otimizar o tempo](https:///docs.google.com/document/d/1Q8gyPVwmVyhmgnTF2TCXz3vqIcY56G-rgm00SgYForM/edit)        |
-|    Comunicação e reunião    |    Discord     |                                                                                                                                                                     |
-|     Listas e anotações      |    DontPad     |                                                                                                                                                                     |
+| **Item**                     | **Plataforma** | **Link**                                                                                                                                                                  |
+|------------------------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Processo de Design Thinking   | Miro           | [PPLCC-M - G5 - Dificuldade em otimizar o tempo](https://miro.com/app/board/uXjVKn9kuFg=/)                                                                                |
+| Repositório de código PUC     | GitHub         | [ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo](https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo)          |
+| Repositório de código Pessoal | GitHub         | [Trabalho-TI-1-puc-minas](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas)                                                                                        |
+| Protótipo Interativo          | Figma          | [Tempo otimizado](https://www.figma.com/design/IEsgUebiFZGQOkeAWqdyTZ/Tempo-otimizado?node-id=0-1&node-type=canvas&t=I7xRj2ulRa4trN3M-0)                                |
+| Documentação inicial          | Google/Docs    | [Documentação do projeto-G5 - Dificuldade em otimizar o tempo](https:///docs.google.com/document/d/1Q8gyPVwmVyhmgnTF2TCXz3vqIcY56G-rgm00SgYForM/edit)                   |
+| Comunicação e reunião         | Discord        |                                                                                                                                                                           |
+| Listas e anotações            | DontPad        |                                                                                                                                                                           |
+
 
 **Miro**  -  Utilizado para o Design Thinking, aproveitando o modelo já disponibilizado para nós. Possui uma diversidade de opções e permite a colaboração com a equipe, tornando-se uma ótima opção.
 

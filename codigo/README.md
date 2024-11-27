@@ -1,8 +1,17 @@
-# Sistema de Otimização de tempo
+## Introdução
 
-Este sistema web foi desenvolvido para oferecer uma solução completa de organização e produtividade. Ele possibilita o gerenciamento de tarefas, acompanhamento de progresso e sugestões para melhoria pessoal.
+O projeto "Tempo Otimizado" apresenta uma interface com diversas telas que têm como objetivo facilitar a interação do usuário com as funcionalidades da plataforma. Cada tela foi projetada para oferecer uma experiência intuitiva e eficiente, com foco na otimização do tempo e no gerenciamento de tarefas. A seguir, serão apresentadas as principais telas e suas funcionalidades.
 
----
+- **Projeto**: Tempo otimizado
+- **Repositório GitHub**: [ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo](https://github.com/ICEI-PUC-Minas-PPLCC-TI/ti-1-ppl-cc-m-2024-2-g5-dificuldade-em-otimizacao-do-tempo)
+- **Repositório GitHub Pessoal**: [Trabalho-TI-1-puc-minas](https://github.com/Vitorfrios/Trabalho-TI-1-puc-minas)
+
+- **Membros da equipe**:
+    - [Vitor de Freitas Rios](https://github.com/Vitorfrios)
+    
+### Documentos:
+| ✅ [Telas do projeto](/codigo/about.html) | ✅ [Código do projeto](/docs/files/Trabalho-TI-1-puc-minas.zip) | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
+
 
 ## Estrutura do Projeto
 
