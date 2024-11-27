@@ -6,7 +6,7 @@
       "email": "1",
       "login": "1",
       "senha": "1",
-      "notificacoes": false
+      "notificacoes": true
     }
   ],
   "usuario_logado": [
@@ -16,7 +16,7 @@
       "email": "1",
       "login": "1",
       "senha": "1",
-      "notificacoes": false
+      "notificacoes": true
     }
   ],
   "telas": {
