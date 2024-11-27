@@ -77,12 +77,10 @@ async function salvaLogin(event) {
 // Função para substituir o usuário logado
 async function salvaUsuarioLogado(usuario) {
     try {
-        // Deletar o usuário logado anterior
         const usuarioLogadoResponse = await fetch(SERVER_URL_USUARIO);
         const usuarioLogado = await usuarioLogadoResponse.json();
 
         if (usuarioLogado.length > 0) {
-            // Apaga o usuário logado anterior
             const usuarioId = usuarioLogado[0].id;
 
             const responseDelete = await fetch(`${SERVER_URL_USUARIO}/${usuarioId}`, {
@@ -96,7 +94,6 @@ async function salvaUsuarioLogado(usuario) {
             console.log('Usuário logado anterior apagado com sucesso');
         }
 
-        // Adiciona o novo usuário logado
         const response = await fetch(SERVER_URL_USUARIO, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -113,7 +110,6 @@ async function salvaUsuarioLogado(usuario) {
     }
 }
 
-// Função para processar o login
 async function loginUser(username, password) {
     const usuario = db_usuarios.usuarios.find(u => u.login === username && u.senha === password);
     if (!usuario) {
@@ -122,15 +118,12 @@ async function loginUser(username, password) {
     }
     usuarioCorrente = usuario;
 
-    // Deleta o usuário logado anterior e salva o novo
     await salvaUsuarioLogado(usuario);
     return true;
 }
 
-// Evento para salvar o usuário
 document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
 
-// Declara uma função para processar o formulário de login
 async function processaFormLogin(event) {
     event.preventDefault();
 
@@ -165,6 +158,9 @@ document.getElementById('btn-login').addEventListener('click', async function ()
 
         const resultado = await loginUser(username, password);
         if (resultado) {
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+
             window.location.href = './04_Tutorial.html';
         } else {
             alert("Usuário não cadastrado ou senha inválida.");
@@ -174,7 +170,7 @@ document.getElementById('btn-login').addEventListener('click', async function ()
     }
 });
 
-// Event listener para processar o formulário de login
+
 document.getElementById('login-form').addEventListener('submit', processaFormLogin);
 
 document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
