@@ -33,21 +33,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     highlightActiveItem();
 });
-// Função para buscar o nome do último usuário cadastrado no arquivo db.json
-fetch('/codigo/db/db.json')
-  .then(response => response.json())
-  .then(data => {
-    if (data.usuarios && data.usuarios.length > 0) {
-      const ultimoUsuario = data.usuarios[data.usuarios.length - 1];
-      document.querySelector('.name').textContent = ultimoUsuario.nome;
-    } else {
-      console.error('Nenhum usuário encontrado no arquivo JSON.');
+
+// Função para carregar o nome do usuário logado
+async function carregarNomeUsuarioLogado() {
+    try {
+        const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+        const usuarioLogado = await usuarioLogadoResponse.json();
+
+        if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+            console.error('Usuário logado não encontrado!');
+            return;
+        }
+
+        document.querySelector('.name').textContent = usuarioLogado[0].nome || 'Nome não encontrado';
+    } catch (error) {
+        console.error('Erro ao carregar o nome do usuário logado:', error);
     }
-  })
-  .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+}
+
+carregarNomeUsuarioLogado();
+
+
 
 // ------------------- FIM DA SIDE BAR ------------------- //
-
 // ------------------- CODIGO DO SUPORTE -----------------//
 let feedbackCount = 1;
 let suporteCount = 1;

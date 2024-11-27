@@ -37,8 +37,27 @@ npm start
                 <span class="setAnalise"> <img src="../assets/images/seta-para-cima.png" alt="seta-para-cima"></span>
                 <span class="setSugestao"> <img src="../assets/images/seta-para-cima.png" alt="seta-para-cima"></span>
             </div>
-            <div class="descricao"></div>
-        </div>
+            <div class="descricao">
+                <h2 class="div_descricao">Clique em algum dos 4 tópicos ao lado para ver o tutorial</h2>
+                <script>
+                    document.getElementById('AdicionarTarefas').addEventListener('click', function() {
+                        document.querySelector('.descricao').innerHTML = ''; 
+                    });
+
+                    document.getElementById('CronogramaSemanal').addEventListener('click', function() {
+                        document.querySelector('.descricao').innerHTML = ''; 
+                    });
+
+                    document.getElementById('Analise').addEventListener('click', function() {
+                        document.querySelector('.descricao').innerHTML = ''; 
+                    });
+
+                    document.getElementById('Sugestao').addEventListener('click', function() {
+                        document.querySelector('.descricao').innerHTML = ''; 
+                    });
+
+                </script>
+            </div>
     </div>
     <script src="../assets/js/04_Tutorial.js"></script>
 </body>

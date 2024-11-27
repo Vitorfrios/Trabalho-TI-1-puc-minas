@@ -43,21 +43,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
     highlightActiveItem();
 });
-// Função para buscar o nome do último usuário cadastrado no arquivo db.json
-fetch('/codigo/db/db.json')
-  .then(response => response.json())
-  .then(data => {
-    if (data.usuarios && data.usuarios.length > 0) {
-      const ultimoUsuario = data.usuarios[data.usuarios.length - 1];
-      document.querySelector('.name').textContent = ultimoUsuario.nome;
-    } else {
-      console.error('Nenhum usuário encontrado no arquivo JSON.');
+
+// Função para carregar o nome do usuário logado
+async function carregarNomeUsuarioLogado() {
+    try {
+        const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+        const usuarioLogado = await usuarioLogadoResponse.json();
+
+        if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+            console.error('Usuário logado não encontrado!');
+            return;
+        }
+
+        document.querySelector('.name').textContent = usuarioLogado[0].nome || 'Nome não encontrado';
+    } catch (error) {
+        console.error('Erro ao carregar o nome do usuário logado:', error);
     }
-  })
-  .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+}
+
+carregarNomeUsuarioLogado();
+
+
 
 // ------------------- FIM DA SIDE BAR ------------------- //
-
 
 
 // ---------------------- TAREFAS ---------------------- //
@@ -66,6 +74,7 @@ fetch('/codigo/db/db.json')
 
 
 // --- INICIALIZAÇÃO DE botao dE PRIORIDADES ---
+
 // Inicializar botões de prioridade
 function initializePriorityButtons() {
     document.querySelectorAll('.priority-button').forEach(button => {
@@ -83,20 +92,19 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
-// Função para recuperar o maior ID já registrado, garantindo que ele seja tratado como número
 function getMaxTaskId(tasks) {
     return tasks.reduce((maxId, task) => {
-        const numericId = parseInt(task.id, 10); // Converte a ID para número
+        const numericId = parseInt(task.id, 10); 
         return numericId > maxId ? numericId : maxId;
-    }, 0); // Se não houver tarefas, o valor inicial será 0
+    }, 0); 
 }
 
 
 // Função para obter tarefas salvas do servidor ou de algum armazenamento
 function fetchSavedTasks() {
-    return fetch("http://localhost:4000/adicionarTarefas") // Modifique para seu endpoint real
+    return fetch("http://localhost:4000/adicionarTarefas") 
         .then(response => response.json())
-        .catch(() => []);  // Retorna uma lista vazia caso haja erro na busca
+        .catch(() => []);  
 }
 
 
@@ -160,10 +168,8 @@ fetchSavedTasks().then(savedTasks => {
         fetch("http://localhost:4000/grafico")
             .then(response => response.json())
             .then(graficoTempo => {
-                // Soma incremental do tempo estimado para a categoria
                 graficoTempo[category] = (graficoTempo[category] || 0) + estimatedDuration;
     
-                // Envia atualização ao servidor
                 return fetch("http://localhost:4000/grafico", {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
@@ -217,7 +223,7 @@ async function removeTaskFromServer(taskId) {
     try {
         const normalizedTaskId = typeof taskId === 'number' ? taskId.toString() : taskId;
 
-        // Determinar o endpoint correto
+        
         const endpointMap = {
             adicionarTarefas: parseInt(normalizedTaskId, 10) >= 205,
             listaDeTarefas: parseInt(normalizedTaskId, 10) < 205
@@ -226,19 +232,19 @@ async function removeTaskFromServer(taskId) {
         const endpoint = endpointMap.adicionarTarefas ? 'adicionarTarefas' : 'listaDeTarefas';
         const url = `http://localhost:4000/${endpoint}/${normalizedTaskId}`;
 
-        // Recupera a tarefa para obter a categoria e o tempo estimado antes de excluí-la
+        
         const taskResponse = await fetch(url);
         if (!taskResponse.ok) {
             throw new Error(`Erro ao recuperar a tarefa: ${taskResponse.statusText}`);
         }
         const taskDetails = await taskResponse.json();
 
-        // Exclui a tarefa do servidor
+        
         const response = await fetch(url, { method: 'DELETE', headers: { 'Content-Type': 'application/json' } });
         if (response.ok) {
             console.log(`Tarefa com ID ${normalizedTaskId} removida de ${url}`);
 
-            // Atualiza graficoTempo subtraindo a duração da tarefa removida
+            
             atualizarGraficoTempoRemocao(taskDetails.category, taskDetails.estimatedDuration);
         } else {
             console.error(`Erro ao remover tarefa de ${url}:`, response.statusText);
@@ -257,7 +263,7 @@ async function atualizarGraficoTempoRemocao(category, estimatedDuration) {
         const graficoTempo = await response.json();
 
         if (graficoTempo[category] !== undefined) {
-            graficoTempo[category] = Math.max(0, graficoTempo[category] - estimatedDuration); // Evita valores negativos
+            graficoTempo[category] = Math.max(0, graficoTempo[category] - estimatedDuration); 
 
             await fetch("http://localhost:4000/grafico", {
                 method: "PUT",
@@ -464,7 +470,7 @@ async function loadChart() {
 
         const data = await response.json();
 
-        // Inicializando os dados do gráfico
+        
         const chartData = {
             Trabalho: 0,
             Estudo: 0,
@@ -473,7 +479,7 @@ async function loadChart() {
 
         if (data) {
             for (const category in data) {
-                // Somando os dados de cada categoria, garantindo que o valor seja numérico e válido
+                
                 const value = parseInt(data[category], 10);
                 if (!isNaN(value) && value >= 0) {
                     chartData[category] += value;
@@ -481,7 +487,7 @@ async function loadChart() {
             }
         }
 
-        // Preparando os dados para o gráfico
+        
         const formattedChartData = {
             labels: Object.keys(chartData),
             datasets: [{
@@ -492,7 +498,7 @@ async function loadChart() {
 
         const ctx = document.getElementById('progressChart').getContext('2d');
         if (window.progressChart instanceof Chart) {
-            window.progressChart.destroy(); // Destrói o gráfico existente, se houver
+            window.progressChart.destroy(); 
         }
 
         // Criando um novo gráfico com os dados formatados
@@ -532,7 +538,7 @@ function updateChart(categoryDurations) {
     };
 
     for (const category in categoryDurations) {
-        // Verificando se a duração é válida antes de adicionar
+        
         const duration = categoryDurations[category];
         if (typeof duration === 'number' && !isNaN(duration) && duration >= 0) {
             chartData[category] += duration;
@@ -549,7 +555,7 @@ function updateChart(categoryDurations) {
 
     const ctx = document.getElementById('progressChart').getContext('2d');
     if (window.progressChart instanceof Chart) {
-        window.progressChart.destroy(); // Destrói o gráfico existente, se houver
+        window.progressChart.destroy(); 
     }
 
     window.progressChart = new Chart(ctx, {

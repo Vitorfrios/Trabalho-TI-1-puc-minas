@@ -25,6 +25,40 @@ function setClock() {
 
 setClock(); 
 
+// Função para deletar o usuário logado
+async function deletarUsuarioLogado() {
+    try {
+        const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+        const usuarioLogado = await usuarioLogadoResponse.json();
+
+        if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+            console.log('Nenhum usuário logado encontrado.');
+            return;
+        }
+
+        const usuarioId = usuarioLogado[0].id;
+
+        const response = await fetch(`http://localhost:3000/usuario_logado/${usuarioId}`, {
+            method: 'DELETE'
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao excluir o usuário logado');
+        }
+
+        console.log('Usuário logado excluído com sucesso!');
+    } catch (error) {
+        console.error('Erro ao tentar deletar o usuário logado:', error);
+    }
+}
+
+if (!localStorage.getItem('paginaCarregada')) {
+    localStorage.setItem('paginaCarregada', 'true');
+
+    window.addEventListener('load', function () {
+        deletarUsuarioLogado();
+    });
+}
 
 
 

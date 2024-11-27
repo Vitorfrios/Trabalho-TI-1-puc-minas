@@ -369,7 +369,6 @@ button {
     }
 }
 
-/* Alinhamento do layout com espaço entre os itens */
 .tempo {
     display: flex;
     justify-content: space-evenly;

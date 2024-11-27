@@ -35,21 +35,29 @@ document.addEventListener("DOMContentLoaded", function() {
     
     highlightActiveItem();
 });
-// Função para buscar o nome do último usuário cadastrado no arquivo db.json
-fetch('/codigo/db/db.json')
-  .then(response => response.json())
-  .then(data => {
-    if (data.usuarios && data.usuarios.length > 0) {
-      const ultimoUsuario = data.usuarios[data.usuarios.length - 1];
-      document.querySelector('.name').textContent = ultimoUsuario.nome;
-    } else {
-      console.error('Nenhum usuário encontrado no arquivo JSON.');
+
+// Função para carregar o nome do usuário logado
+async function carregarNomeUsuarioLogado() {
+    try {
+        const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+        const usuarioLogado = await usuarioLogadoResponse.json();
+
+        if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+            console.error('Usuário logado não encontrado!');
+            return;
+        }
+
+        document.querySelector('.name').textContent = usuarioLogado[0].nome || 'Nome não encontrado';
+    } catch (error) {
+        console.error('Erro ao carregar o nome do usuário logado:', error);
     }
-  })
-  .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+}
+
+carregarNomeUsuarioLogado();
+
+
 
 // ------------------- FIM DA SIDE BAR ------------------- //
-
 
 // ------------- FILTRO MENU --------------------- //
 
@@ -198,7 +206,7 @@ function desenharCalendario() {
 
     document.getElementById("semana").innerText = `Semana de ${primeiraData} a ${ultimaDataFormatada}`;
     
-    // Renderizar os dias da semana no cabeçalho do calendário
+    
     for (let i = 0; i < 7; i++) {
         const diaSpan = document.querySelector(`.dia${diasDaSemana[i]}`);
         diaSpan.innerText = ""; 
@@ -215,28 +223,28 @@ function desenharCalendario() {
         diaSpan.innerText = ` ${dia}/${mes} `; 
     }
     
-    // Limpar linhas antigas
+    
     const tbody = document.getElementById("linhas_calendario");
     tbody.innerHTML = "";
 
-    // Gerar linhas de horas em intervalos de 15 minutos para o calendário
+    
     for (let hora = 0; hora < 24; hora++) {
         for (let minuto = 0; minuto < 60; minuto += 15) {
             const tr = document.createElement("tr");
 
-            // Primeira célula com o horário
+            
             const tdHora = document.createElement("td");
             tdHora.id = "HOUR";
             tdHora.innerText = `${String(hora).padStart(2, '0')}:${String(minuto).padStart(2, '0')}`;
             tr.appendChild(tdHora);
 
-            // Células para cada dia da semana
+            
             for (let dia = 0; dia < 7; dia++) {
                 const tdDia = document.createElement("td");
                 tr.appendChild(tdDia);
             }
             
-            // Adicionar a linha ao tbody
+            
             tbody.appendChild(tr);
         }
     }
@@ -274,7 +282,7 @@ function carregarTarefas() {
                         const intervalos = Math.ceil(duracaoMinutos / 15);
                         const ultimoIntervaloIndex = horaIndex + intervalos - 1;
 
-                        // Adiciona a célula inicial
+                        
                         const cellInicio = horas[horaIndex].children[dia + 1];
                         cellInicio.classList.add('cursor-pointer');
                         const tarefaDiv = document.createElement('div');
@@ -287,7 +295,7 @@ function carregarTarefas() {
                             abrirModalEdicao(tarefa);
                         });
 
-                        // Adiciona a célula de término com cor cinza
+                        
                         let atualIndex = (horaIndex + intervalos - 1) % horas.length;
                         let atualDia = dia;
 
@@ -303,7 +311,7 @@ function carregarTarefas() {
                         fimDiv.innerText = `${tarefa.name} - fim da tarefa`;
                         cellFim.appendChild(fimDiv);
 
-                        // Abre o modal também ao clicar na célula de fim da tarefa
+                        
                         fimDiv.addEventListener('click', () => {
                             abrirModalEdicao(tarefa);
                         });
@@ -436,10 +444,10 @@ async function salvarDadosEditados() {
     try {
         let response;
         
-        // Calcula a diferença de duração para atualizar o gráfico de tempo
+        
         const diferencaDuracao = duracao - tarefaEditando.estimatedDuration;
 
-        // Se o ID for menor que 205, é para listaDeTarefas, senão é para adicionarTarefas
+        
         const endpoint = tarefaEditando.id < 205 ? 'listaDeTarefas' : 'adicionarTarefas';
         const url = `http://localhost:4000/${endpoint}/${tarefaEditando.id}`;
 
@@ -455,7 +463,7 @@ async function salvarDadosEditados() {
             throw new Error(`Erro ao salvar dados: ${errorText}`);
         }
 
-        // Atualiza o gráfico de tempo se houve alteração na estimatedDuration
+        
         if (diferencaDuracao !== 0) {
             await atualizarGrafico(categoria, diferencaDuracao);
         }
@@ -472,7 +480,7 @@ async function salvarDadosEditados() {
 // Função para atualizar o gráfico de tempo com a diferença de duração
 async function atualizarGrafico(category, diferenca) {
     try {
-        // Obter os dados atuais do gráfico de tempo
+        
         const response = await fetch("http://localhost:4000/grafico");
         if (!response.ok) {
             throw new Error(`Erro ao buscar gráfico de tempo: ${response.statusText}`);
@@ -480,11 +488,11 @@ async function atualizarGrafico(category, diferenca) {
         
         const grafico = await response.json();
 
-        // Verificar se a categoria existe no gráfico
+        
         if (grafico.hasOwnProperty(category)) {
             grafico[category] += diferenca;
             
-            // Enviar os dados atualizados para o servidor
+            
             const updateResponse = await fetch("http://localhost:4000/grafico", {
                 method: "PUT",
                 headers: {
@@ -502,7 +510,7 @@ async function atualizarGrafico(category, diferenca) {
             throw new Error(`Categoria "${category}" não encontrada no gráfico.`);
         }
     } catch (error) {
-        // Exibir o erro completo
+        
         console.error("Erro ao atualizar gráfico de tempo:", error);
         alert(`Erro ao atualizar gráfico de tempo: ${error.message}`);
     }
@@ -568,15 +576,15 @@ document.getElementById('btn-remover').addEventListener('click', async function(
     if (!confirmarRemocao) return;
 
     try {
-        // Remover a tarefa do servidor
+        
         await removeTaskFromServer(tarefaEditando.id);
 
-        // Atualizar grafico removendo a estimatedDuration da tarefa
+        
         await atualizarGraficoRemocao(tarefaEditando.category, tarefaEditando.estimatedDuration);
 
         alert('Tarefa removida com sucesso!');
         fecharModal();
-        desenharCalendario(); // Atualiza o calendário ou a lista de tarefas
+        desenharCalendario(); 
     } catch (error) {
         console.error('Erro ao remover a tarefa:', error.message);
         alert(`Erro ao remover a tarefa: ${error.message}`);

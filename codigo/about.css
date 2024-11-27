@@ -7,7 +7,7 @@ html {
     overflow-y: auto; 
     overflow-x: auto; 
     scrollbar-width: overflow-y none; 
-    scroll-behavior: smooth; /* Para suavizar a rolagem */
+    scroll-behavior: smooth;
 
 }
 

@@ -27,7 +27,7 @@ setClock();
 
 
 
-
+// ----------- Função para navegação ---------- //
 
 const navContainer = document.querySelector('.nav-container');
 const header = document.querySelector('header');
@@ -36,7 +36,7 @@ const navLinks = document.querySelectorAll('.nav-container ul li a');
 function updateNavPosition() {
     const scrollY = window.scrollY;
 
-    // Verifica se o topo do cabeçalho está completamente fora da tela
+    
     if (scrollY > header.offsetHeight) {
         navContainer.classList.add('scrolled');
     } else {
@@ -44,26 +44,26 @@ function updateNavPosition() {
     }
 }
 
-// Adiciona evento de rolagem
+
 window.addEventListener('scroll', function() {
     requestAnimationFrame(updateNavPosition);
 });
 
-// Adiciona evento de clique a todos os links dentro do nav-container
+
 navLinks.forEach(link => {
     link.addEventListener('click', function(event) {
-        event.preventDefault(); // Previne o comportamento padrão do link
+        event.preventDefault(); 
 
-        const targetId = this.getAttribute('href'); // Obtém o ID do alvo
-        const targetElement = document.querySelector(targetId); // Seleciona o elemento alvo
+        const targetId = this.getAttribute('href'); 
+        const targetElement = document.querySelector(targetId); 
 
-        // Rola suavemente até o elemento alvo
+        
         targetElement.scrollIntoView({
-            behavior: 'smooth', // Rolagem suave
-            block: 'start' // Alinha o topo do elemento ao topo da janela
+            behavior: 'smooth', 
+            block: 'start' 
         });
 
-        // Opcional: Adiciona a classe 'scrolled' ao nav-container
+        
         navContainer.classList.add('scrolled');
     });
 });

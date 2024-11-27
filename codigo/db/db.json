@@ -2,33 +2,42 @@
   "usuarios": [
     {
       "id": "1",
-      "nome": "s",
+      "nome": "ssssssssss",
       "email": "sdglsçv@sdkjvhgpusi",
-      "login": "1"
-    }
-  ],
-  "senhas": [
+      "login": "1",
+      "senha": "1123",
+      "notificacoes": false
+    },
     {
-      "id": "1",
-      "usuarioIdS": "1",
-      "senha": "1123"
-    }
-  ],
-  "configuracoes": [
+      "id": "2",
+      "nome": "s",
+      "email": "rtnrtnrtv@wevfahi",
+      "login": "1",
+      "senha": "1123",
+      "notificacoes": false
+    },
     {
-      "usuarioId": "1",
-      "notificacoes": true,
-      "id": 1
+      "id": "3",
+      "login": "vitor",
+      "nome": "vitor",
+      "email": "vitor@vitor",
+      "notificacoes": false
+    },
+    {
+      "id": "4",
+      "nome": "rio",
+      "email": "rios@rio",
+      "login": "rio",
+      "senha": "13123"
     }
   ],
   "usuario_logado": [
     {
-      "id": "1",
-      "nome": "s",
-      "email": "sdglsçv@sdkjvhgpusi",
-      "login": "1",
-      "senha": "1123",
-      "notificacoes": false 
+      "id": "4",
+      "nome": "rio",
+      "email": "rios@rio",
+      "login": "rio",
+      "senha": "13123"
     }
   ],
   "telas": {

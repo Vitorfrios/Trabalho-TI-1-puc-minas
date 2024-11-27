@@ -144,7 +144,11 @@ body {
     margin-bottom: 10px;
     color: #333;
 }
-
+.div_descricao {
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: #333; 
+}
 
 .descricao p {
     font-size: 20px;

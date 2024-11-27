@@ -295,6 +295,10 @@ body {
     position: relative;
     top: 18px;
 }
+#toggle-password {
+    position: absolute;
+    cursor: pointer;
+}
 
 
 /* Right Content */

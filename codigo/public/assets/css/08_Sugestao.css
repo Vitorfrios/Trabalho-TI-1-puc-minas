@@ -117,7 +117,6 @@ body {
     font-size: 22px; 
 }
 
-/* Para remover o fundo azul quando o link é clicado */
 .nav-list li a {
     color: #000000;
     text-decoration: none;
@@ -127,7 +126,6 @@ body {
     outline: none;
 }
 
-/* Para centralizar os links dentro do item da lista */
 .nav-list li a {
     display: block;
     width: 100%;

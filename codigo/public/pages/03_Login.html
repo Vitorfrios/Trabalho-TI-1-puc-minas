@@ -42,6 +42,21 @@ npm start
                                 <label for="password" class="text-info">Senha</label><br>
                                 <input type="password" name="password" id="password" class="form-control" style="border-radius: 30px; border: 2px solid #00A4CC; padding-right: 30px;">
                                 <i id="toggle-password" class="fa fa-eye"></i>
+                                
+                                <script>
+                                    
+                                    const passwordField = document.getElementById('password');
+                                    const togglePasswordIcon = document.getElementById('toggle-password');
+
+                                    togglePasswordIcon.addEventListener('click', function() {
+                                        const type = passwordField.type === 'password' ? 'text' : 'password';
+                                        passwordField.type = type;
+
+                                        this.classList.toggle('fa-eye');
+                                        this.classList.toggle('fa-eye-slash');
+                                    });
+
+                                </script>
                             </div>
                             
                             

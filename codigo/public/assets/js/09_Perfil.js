@@ -33,18 +33,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     highlightActiveItem();
 });
-// Função para buscar o nome do último usuário cadastrado no arquivo db.json
-fetch('/codigo/db/db.json')
-  .then(response => response.json())
-  .then(data => {
-    if (data.usuarios && data.usuarios.length > 0) {
-      const ultimoUsuario = data.usuarios[data.usuarios.length - 1];
-      document.querySelector('.name').textContent = ultimoUsuario.nome;
-    } else {
-      console.error('Nenhum usuário encontrado no arquivo JSON.');
+
+
+
+
+// Função para carregar o nome do usuário logado
+async function carregarNomeUsuarioLogado() {
+    try {
+        const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+        const usuarioLogado = await usuarioLogadoResponse.json();
+
+        if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+            console.error('Usuário logado não encontrado!');
+            return;
+        }
+
+        document.querySelector('.name').textContent = usuarioLogado[0].nome || 'Nome não encontrado';
+    } catch (error) {
+        console.error('Erro ao carregar o nome do usuário logado:', error);
     }
-  })
-  .catch(error => console.error('Erro ao carregar o arquivo JSON:', error));
+}
+
+carregarNomeUsuarioLogado();
+
+
 
 // ------------------- FIM DA SIDE BAR ------------------- //
 
@@ -53,28 +65,28 @@ async function carregarDadosUsuario() {
     try {
         const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
         const usuarioLogado = await usuarioLogadoResponse.json();
-        const configResponse = await fetch('http://localhost:3000/configuracoes?usuarioId=1');
-        const senhaResponse = await fetch('http://localhost:3000/senhas?usuarioId=1');
+
+        if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+            alert('Usuário não encontrado!');
+            return;
+        }
+
         
-        if (!usuarioLogadoResponse.ok || !configResponse.ok || !senhaResponse.ok) throw new Error('Erro ao buscar dados');
+        const usuario = usuarioLogado[0];
+        document.getElementById('nome-completo').textContent = usuario.nome || 'N/A';
+        document.getElementById('email').textContent = usuario.email || 'N/A';
+        document.getElementById('nome-usuario').textContent = usuario.login || 'N/A';
 
-        const configuracao = await configResponse.json();
-        const senha = await senhaResponse.json();
+        
+        document.getElementById('notification-toggle').checked = usuario.notificacoes || false;
 
-        // Exibe os dados do usuário logado
-        document.getElementById('nome-completo').textContent = usuarioLogado[0]?.nome || 'N/A';
-        document.getElementById('email').textContent = usuarioLogado[0]?.email || 'N/A';
-        document.getElementById('nome-usuario').textContent = usuarioLogado[0]?.login || 'N/A';
+        
+        document.getElementById('edit-nome').value = usuario.nome || '';
+        document.getElementById('edit-email').value = usuario.email || '';
+        document.getElementById('edit-login').value = usuario.login || '';
 
-        document.getElementById('notification-toggle').checked = configuracao[0]?.notificacoes || false;
-
-        // Preenche os campos de edição com os dados do usuário logado
-        document.getElementById('edit-nome').value = usuarioLogado[0]?.nome || '';
-        document.getElementById('edit-email').value = usuarioLogado[0]?.email || '';
-        document.getElementById('edit-login').value = usuarioLogado[0]?.login || '';
-
-        // Preenche a senha existente (sem alteração direta no usuario_logado)
-        document.getElementById('new-password').value = senha[0]?.senha || '';
+        
+        document.getElementById('new-password').value = usuario.senha || '';  
     } catch (error) {
         console.error('Erro ao carregar os dados do usuário:', error);
     }
@@ -82,128 +94,173 @@ async function carregarDadosUsuario() {
 
 // Função para salvar o estado de notificações
 async function salvarEstadoNotificacoes(ativo) {
+    const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+    const usuarioLogado = await usuarioLogadoResponse.json();
+
+    if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+        alert('Usuário não encontrado!');
+        return;
+    }
+
+    const usuarioId = usuarioLogado[0].id; 
+
     try {
-        const response = await fetch('http://localhost:3000/usuario_logado/1', {
+        
+        const responseUsuarios = await fetch(`http://localhost:3000/usuarios/${usuarioId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ usuarioId: "1", notificacoes: ativo })
+            body: JSON.stringify({
+                id: usuarioId,
+                nome: usuarioLogado[0].nome, 
+                email: usuarioLogado[0].email, 
+                login: usuarioLogado[0].login, 
+                senha: usuarioLogado[0].senha, 
+                notificacoes: ativo 
+            })
         });
-        if (!response.ok) throw new Error('Erro ao salvar estado de notificações');
+
+        if (!responseUsuarios.ok) {
+            throw new Error('Erro ao atualizar notificações no endpoint usuarios');
+        }
+
+        
+        const responseUsuarioLogado = await fetch(`http://localhost:3000/usuario_logado/${usuarioId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: usuarioId,
+                nome: usuarioLogado[0].nome, 
+                email: usuarioLogado[0].email, 
+                login: usuarioLogado[0].login, 
+                senha: usuarioLogado[0].senha, 
+                notificacoes: ativo 
+            })
+        });
+
+        if (!responseUsuarioLogado.ok) {
+            throw new Error('Erro ao atualizar notificações no endpoint usuario_logado');
+        }
+
     } catch (error) {
         console.error('Erro ao salvar o estado de notificações:', error);
+        alert(`Erro ao salvar as notificações: ${error.message}`);
     }
 }
 
-// Função para salvar os dados editados (nome, email, login) no endpoint 'usuarios' e no 'usuario_logado'
+
+document.getElementById('notification-toggle').onclick = function() {
+    const isAtivo = this.checked;
+    salvarEstadoNotificacoes(isAtivo);
+};
+
+
+carregarDadosUsuario();
+
+// Função para salvar os dados editados
 async function salvarDadosEditados() {
+    const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+    const usuarioLogado = await usuarioLogadoResponse.json();
+
+    if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+        alert('Usuário não encontrado!');
+        return;
+    }
+
+    const usuarioId = usuarioLogado[0].id; 
     const novoNome = document.getElementById('edit-nome').value;
     const novoEmail = document.getElementById('edit-email').value;
     const novoLogin = document.getElementById('edit-login').value;
 
     try {
-        // Atualizando os dados no endpoint 'usuarios'
-        const response = await fetch('http://localhost:3000/usuarios/1', {
+        
+        const response = await fetch(`http://localhost:3000/usuarios/${usuarioId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
-                id: "1",  // ID do usuário logado
+                id: usuarioId, 
                 nome: novoNome, 
                 email: novoEmail, 
-                login: novoLogin 
+                login: novoLogin, 
+                senha: document.getElementById('new-password').value 
             })
         });
         if (!response.ok) throw new Error('Erro ao salvar dados no endpoint usuarios');
 
-        // Atualizando os dados no endpoint 'usuario_logado'
-        const updateUsuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado/1', {
+        
+        const updateUsuarioLogadoResponse = await fetch(`http://localhost:3000/usuario_logado/${usuarioId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                id: "1", 
+                id: usuarioId, 
                 nome: novoNome,
                 email: novoEmail,
-                login: novoLogin
+                login: novoLogin,
+                senha: document.getElementById('new-password').value 
             })
         });
 
         if (!updateUsuarioLogadoResponse.ok) throw new Error('Erro ao salvar dados no endpoint usuario_logado');
 
-        // Atualiza a interface
+        
         document.getElementById('nome-completo').textContent = novoNome;
         document.getElementById('email').textContent = novoEmail;
         document.getElementById('nome-usuario').textContent = novoLogin;
 
-        // Atualiza o usuário logado na memória (não no banco, já que é apenas leitura)
-        usuario_logado[0].nome = novoNome;
-        usuario_logado[0].email = novoEmail;
-        usuario_logado[0].login = novoLogin;
-
         document.getElementById('edit-form').style.display = 'none';
+        alert('Alterações salvas com sucesso!');
     } catch (error) {
         console.error('Erro ao salvar os dados do usuário:', error);
     }
 }
 
-// Função para salvar a nova senha no endpoint 'senhas' e atualizar apenas a senha no 'usuario_logado'
+// Função para salvar a nova senha no endpoint 'usuarios' e atualizar a senha no 'usuario_logado'
 async function salvarNovaSenha() {
+    const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+    const usuarioLogado = await usuarioLogadoResponse.json();
+
+    if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+        alert('Usuário não encontrado!');
+        return;
+    }
+
+    const usuarioId = usuarioLogado[0].id; 
     const novaSenha = document.getElementById('new-password').value;
 
     try {
-        const senhaResponse = await fetch('http://localhost:3000/senhas?usuarioIdS=1');
-        const senhaExistente = await senhaResponse.json();
+        
+        const response = await fetch(`http://localhost:3000/usuarios/${usuarioId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: usuarioId, 
+                nome: document.getElementById('edit-nome').value, 
+                email: document.getElementById('edit-email').value, 
+                login: document.getElementById('edit-login').value, 
+                senha: novaSenha 
+            })
+        });
 
-        if (!senhaResponse.ok) {
-            throw new Error(`Erro ao buscar senha existente. Status: ${senhaResponse.status}`);
+        if (!response.ok) {
+            throw new Error(`Erro ao alterar a senha no endpoint usuarios. Status: ${response.status}`);
         }
 
-        if (senhaExistente.length > 0) {
-            const senhaId = senhaExistente[0].id;
+        const updateUsuarioLogadoResponse = await fetch(`http://localhost:3000/usuario_logado/${usuarioId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: usuarioId,
+                nome: document.getElementById('edit-nome').value,
+                email: document.getElementById('edit-email').value,
+                login: document.getElementById('edit-login').value,
+                senha: novaSenha
+            })
+        });
 
-            // Atualizando a senha no endpoint 'senhas'
-            const response = await fetch(`http://localhost:3000/senhas/${senhaId}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    id: senhaId,                      
-                    usuarioIdS: "1",                      
-                    senha: novaSenha                  
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error(`Erro ao alterar a senha. Status: ${response.status}`);
-            }
-
-            // Atualizando a senha no endpoint 'usuario_logado', mantendo os outros dados intactos
-            const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
-            const usuarioLogado = await usuarioLogadoResponse.json();
-
-            if (usuarioLogado.length > 0) {
-                const usuarioLogadoAtualizado = {
-                    id: usuarioLogado[0].id,
-                    nome: usuarioLogado[0].nome, // Manter nome atual
-                    email: usuarioLogado[0].email, // Manter email atual
-                    login: usuarioLogado[0].login, // Manter login atual
-                    senha: novaSenha // Atualiza somente a senha
-                };
-
-                // Enviar atualização para o endpoint 'usuario_logado'
-                const updateUsuarioLogadoResponse = await fetch(`http://localhost:3000/usuario_logado/1`, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(usuarioLogadoAtualizado)
-                });
-
-                if (!updateUsuarioLogadoResponse.ok) {
-                    throw new Error('Erro ao atualizar senha no usuario_logado');
-                }
-            }
-
-            alert('Senha alterada com sucesso!');
-        } else {
-            throw new Error('Senha não encontrada para o usuário.');
+        if (!updateUsuarioLogadoResponse.ok) {
+            throw new Error(`Erro ao atualizar a senha no endpoint usuario_logado. Status: ${updateUsuarioLogadoResponse.status}`);
         }
 
+        alert('Senha alterada com sucesso!');
         document.getElementById('password-modal').style.display = 'none';
     } catch (error) {
         console.error('Erro ao alterar a senha:', error);
@@ -211,19 +268,13 @@ async function salvarNovaSenha() {
     }
 }
 
-
-// Evento de clique no toggle de notificações
-document.getElementById('notification-toggle').onclick = function() {
-    const isAtivo = this.checked;
-    salvarEstadoNotificacoes(isAtivo);
-};
-
 // Eventos de clique para abrir e fechar os modais
 document.getElementById('edit-profile').onclick = () => {
     document.getElementById('edit-form').style.display = 'flex';
 };
 document.getElementById('change-password').onclick = () => {
     document.getElementById('password-modal').style.display = 'flex';
+    carregarDadosUsuario(); 
 };
 document.getElementById('close-edit-form').onclick = () => {
     document.getElementById('edit-form').style.display = 'none';
