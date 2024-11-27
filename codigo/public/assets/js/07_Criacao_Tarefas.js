@@ -322,7 +322,7 @@ async function loadTasks(dayOfWeek) {
         updateChart(categoryDurations);
         
     } catch (error) {
-        document.querySelector('.empty').innerHTML = 'Selecione um dia para ver as tarefas';
+        document.querySelector('.empty').innerHTML = 'Selecione um dia do calendário para ver as tarefas e gerar o gráfico';
     }
 }
 

@@ -236,6 +236,9 @@ body {
 
 
 /* Tasks da main content(onde aparece as tarefas)*/
+.empty{
+    font-size: 1.5rem;
+}
 .tasks {
     background-color: #B0C4DE;
     padding: 10px;

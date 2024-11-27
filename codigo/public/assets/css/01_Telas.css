@@ -1,4 +1,4 @@
-
+/*
 COPIAR CODIGO NO TERMINAL PARA INICIALIZAR O JSON SERVER
 npm start 
 */
@@ -31,7 +31,7 @@ body {
     background-color: #f9f9f9;
     color: #333;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 2rem;
     display: flex; 
     flex-direction: column;
 
@@ -119,7 +119,7 @@ header {
     padding-bottom: 0;
 }
 h1{
-    font-size: 40px;
+    font-size: 50px;
 }
 .btn {
     display: flex;
@@ -128,14 +128,101 @@ h1{
     margin-top: 0;
 }
 
-.h2 {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 0;
-    font-weight: 600;
-    border-bottom: 0;
 
+
+h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00a4cc;
+    display: inline-block;
+    padding-bottom: 5px;
 }
+
+p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+ul, ol {
+    margin: 10px 0 20px 20px;
+}
+
+ul li, ol li {
+    font-size: 1.5rem;
+
+    margin: 8px 0;
+}
+
+
+
+a {
+    color: #00a4cc;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 22px;
+}
+
+a:hover {
+    color: #008bb5;
+    
+}
+
+button {
+    background-color: #00a4cc;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 15px;
+}
+
+button:hover {
+    background-color: #008bb5;
+    transform: scale(1.05);
+}
+
+
+.invisible-table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invisible-table th, .invisible-table td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+    padding-bottom: 0;
+}
+
+.invisible-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.invisible-table ul {
+    font-size: 15px; 
+    line-height: 15px; 
+    padding: 0;
+}
+
+.invisible-table ul li a {
+    font-size: 20px; 
+    color: #00a4cc;
+    text-decoration: none;
+    display: block; 
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.invisible-table ul li a:hover {
+    color: #008bb5;
+}
+
+
 
 .barra-info button {
     margin-top: 10px;
@@ -300,93 +387,6 @@ iframe {
 
 
 
-
-h2 {
-    color: #333;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #00a4cc;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-ul, ol {
-    margin: 10px 0 20px 20px;
-}
-
-ul li, ol li {
-    margin: 8px 0;
-}
-
-
-a {
-    color: #00a4cc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #008bb5;
-}
-
-button {
-    background-color: #00a4cc;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 15px;
-}
-
-button:hover {
-    background-color: #008bb5;
-    transform: scale(1.05);
-}
-
-
-.invisible-table {
-    border: none;
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-.invisible-table th, .invisible-table td {
-    padding: 10px;
-    text-align: left;
-    border: none;
-}
-
-.invisible-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.invisible-table ul {
-    font-size: 15px; 
-    line-height: 15px; 
-    padding: 0;
-}
-
-.invisible-table ul li a {
-    font-size: 20px; 
-    color: #00a4cc;
-    text-decoration: none;
-    display: block; 
-    padding: 8px 0;
-    transition: color 0.3s;
-}
-
-.invisible-table ul li a:hover {
-    color: #008bb5;
-}
 
 
 
