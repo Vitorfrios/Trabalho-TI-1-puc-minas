@@ -103,31 +103,7 @@ async function loginUser(username, password) {
     return true;
 }
 
-document.getElementById('btn-login').addEventListener('click', async function () {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
 
-    if (username === "" || password === "") {
-        alert("Preencha todos os campos.");
-        return;
-    }
-
-    await initLoginApp();
-    const loginSucesso = await loginUser(username, password);
-
-    if (loginSucesso) {
-        console.log('Redirecionando para a página de tutorial...');
-        console.log('Caminho usado:', window.location.href);
-
-        alert('Login bem-sucedido!');
-        setTimeout(() => {
-            window.location.href = '/codigo/public/pages/04_Tutorial.html';
-        }, 500); 
-    } else {
-        console.log('Erro no processo de login.');
-        alert('Erro ao realizar login.');
-    }
-});
 
 
 // Evento para salvar o usuário
