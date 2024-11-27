@@ -3,7 +3,6 @@ const SERVER_URL = 'http://localhost:3000/usuarios';
 const SERVER_URL_USUARIO = 'http://localhost:3000/usuario_logado';
 
 var db_usuarios = { usuarios: [] };
-
 var usuarioCorrente = {};
 
 // Função para carregar os usuários
@@ -75,19 +74,43 @@ async function salvaLogin(event) {
     });
 }
 
-// Função para salvar o usuário logado no endpoint
-function salvaUsuarioLogado(usuario) {
-    fetch(SERVER_URL_USUARIO, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(usuario)
-    })
-    .then(() => {
-        console.log('Usuário logado salvo com sucesso');
-    })
-    .catch(error => {
-        console.error("Erro ao salvar o usuário logado:", error);
-    });
+// Função para substituir o usuário logado
+async function salvaUsuarioLogado(usuario) {
+    try {
+        // Deletar o usuário logado anterior
+        const usuarioLogadoResponse = await fetch(SERVER_URL_USUARIO);
+        const usuarioLogado = await usuarioLogadoResponse.json();
+
+        if (usuarioLogado.length > 0) {
+            // Apaga o usuário logado anterior
+            const usuarioId = usuarioLogado[0].id;
+
+            const responseDelete = await fetch(`${SERVER_URL_USUARIO}/${usuarioId}`, {
+                method: 'DELETE',
+            });
+
+            if (!responseDelete.ok) {
+                throw new Error('Erro ao deletar o usuário logado anterior');
+            }
+
+            console.log('Usuário logado anterior apagado com sucesso');
+        }
+
+        // Adiciona o novo usuário logado
+        const response = await fetch(SERVER_URL_USUARIO, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(usuario)
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao salvar o novo usuário logado');
+        }
+
+        console.log('Novo usuário logado salvo com sucesso');
+    } catch (error) {
+        console.error("Erro ao substituir o usuário logado:", error);
+    }
 }
 
 // Função para processar o login
@@ -99,16 +122,13 @@ async function loginUser(username, password) {
     }
     usuarioCorrente = usuario;
 
-    salvaUsuarioLogado(usuario);
+    // Deleta o usuário logado anterior e salva o novo
+    await salvaUsuarioLogado(usuario);
     return true;
 }
 
-
-
-
 // Evento para salvar o usuário
 document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
-
 
 // Declara uma função para processar o formulário de login
 async function processaFormLogin(event) {
@@ -124,7 +144,6 @@ async function processaFormLogin(event) {
         alert('Usuário não identificado. Por favor, crie um novo usuário.');
     }
 }
-
 
 // Função para validar e realizar o login
 document.getElementById('btn-login').addEventListener('click', async function () {
@@ -155,10 +174,7 @@ document.getElementById('btn-login').addEventListener('click', async function ()
     }
 });
 
-
-
-
-
+// Event listener para processar o formulário de login
 document.getElementById('login-form').addEventListener('submit', processaFormLogin);
 
 document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
