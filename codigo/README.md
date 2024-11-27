@@ -112,5 +112,5 @@ A estrutura do projeto está organizada em pastas para facilitar a compreensão 
 ## Como Executar o Projeto
 - DIGITE " npm start " no terminal
 - Vá para o arquivo " about.html " e acione o live server
-- Leia sobre o projeto
-- Para iniciar o projeto você deve ler as 
+- Leia sobre o projeto e inicie o app clicando no botao " Iniciar App "
+- Caso queira saber mais sobre o projeto clique em " Ver Informações ", você será encaminhado a uma pagina que contém todas as telas funcionando, entretanto em miniatura

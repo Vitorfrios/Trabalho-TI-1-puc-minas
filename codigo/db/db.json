@@ -1,8 +1,36 @@
 {
-  "usuarios": [],
-  "senhas": [],
-  "configuracoes": [],
-  
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "s",
+      "email": "sdglsçv@sdkjvhgpusi",
+      "login": "1"
+    }
+  ],
+  "senhas": [
+    {
+      "id": "1",
+      "usuarioIdS": "1",
+      "senha": "1123"
+    }
+  ],
+  "configuracoes": [
+    {
+      "usuarioId": "1",
+      "notificacoes": true,
+      "id": 1
+    }
+  ],
+  "usuario_logado": [
+    {
+      "id": "1",
+      "nome": "s",
+      "email": "sdglsçv@sdkjvhgpusi",
+      "login": "1",
+      "senha": "1123",
+      "notificacoes": false 
+    }
+  ],
   "telas": {
     "tela2": [
       {

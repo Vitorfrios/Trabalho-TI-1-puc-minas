@@ -30,38 +30,33 @@ function generateUUID() {
 }
 
 // Inicializa o usuarioCorrente e banco de dados de usuários da aplicação de Login
-function initLoginApp() {
-    // Verifica se o usuário corrente está no sessionStorage
-    const usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
-    if (usuarioCorrenteJSON) {
-        usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
-    }
+async function initLoginApp() {
+    try {
+        // Carrega os usuários
+        console.log("Iniciando carregamento de usuários...");
+        const response = await fetch(SERVER_URL);
+        if (!response.ok) {
+            throw new Error(`Erro ao carregar usuários: ${response.statusText}`);
+        }
 
-    // Exibe os dados do usuário logado (se presente)
-    if (usuarioCorrente && usuarioCorrente.nome) {
-        console.log("Usuário logado: " + usuarioCorrente.nome);
-        // Você pode usar essa informação na UI, por exemplo:
-        document.querySelector('.name').textContent = usuarioCorrente.nome;
-    } else {
-        console.log("Nenhum usuário logado");
-    }
+        const data = await response.json();
+        db_usuarios = { usuarios: data };
 
-    // Requisição GET para carregar usuários do servidor
-    fetch(SERVER_URL)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao carregar usuários");
-            }
-            return response.json();
-        })
-        .then(data => {
-            db_usuarios = data;
-        })
-        .catch(error => {
-            console.error("Erro:", error);
-            alert('Erro ao carregar dados de usuários do servidor.');
-        });
+        console.log("Usuários carregados com sucesso:", db_usuarios.usuarios);
+
+        // Verifica o usuário logado atual
+        const usuarioCorrenteJSON = sessionStorage.getItem('usuarioCorrente');
+        if (usuarioCorrenteJSON) {
+            usuarioCorrente = JSON.parse(usuarioCorrenteJSON);
+            console.log("Usuário logado:", usuarioCorrente);
+        }
+    } catch (error) {
+        console.error("Erro ao inicializar a aplicação de login:", error);
+        alert('Erro ao carregar dados do servidor.');
+    }
 }
+
+
 
 // Função para alternar a visibilidade da senha
 document.getElementById('toggle-password').addEventListener('click', function () {
@@ -74,91 +69,109 @@ document.getElementById('toggle-password').addEventListener('click', function ()
 });
 
 // Declara uma função para processar o formulário de login
-function processaFormLogin (event) {                
-    // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+async function processaFormLogin(event) {
     event.preventDefault();
 
-    // Obtem os dados de login e senha a partir do formulário de login
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    // Valida login e se estiver ok, redireciona para tela inicial da aplicação
-    resultadoLogin = loginUser(username, password);
+    var resultadoLogin = await loginUser(username, password);
     if (resultadoLogin) {
         window.location.href = './04_Tutorial.html';
-    } else { // Se login falhou, avisa ao usuário
-        // Exibe um popup com a mensagem de erro
+    } else {
         alert('Usuário não identificado. Por favor, crie um novo usuário.');
     }
 }
 
+
 // Função para validar e realizar o login
-document.getElementById('btn-login').addEventListener('click', function () {
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+document.getElementById('btn-login').addEventListener('click', async function () {
+    try {
+        console.log("Tentando autenticar o usuário...");
+        
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
 
-    // Verifica se os campos de login e senha estão preenchidos
-    if (username === "" || password === "") {
-        alert("Preencha todos os campos");
-        return;
-    }
+        // Verifica se os campos estão preenchidos
+        if (username === "" || password === "") {
+            alert("Preencha todos os campos.");
+            return;
+        }
 
-    // Verifica se o usuário está cadastrado
-    var usuarioExistente = loginUser(username, password);
+        // Carrega os usuários se ainda não estiverem carregados
+        if (db_usuarios.usuarios.length === 0) {
+            console.log("Carregando usuários antes do login...");
+            await initLoginApp();
+        }
 
-    if (usuarioExistente) {
-        // Se o usuário estiver cadastrado, redireciona para a próxima página
-        window.location.href = './04_Tutorial.html';
-    } else {
-        // Caso o usuário não esteja cadastrado, mostra um alerta
-        alert("Usuário não cadastrado. Por favor, crie um novo usuário.");
-        // Opcional: abrir um modal para criar um novo usuário, caso necessário
+        // Autentica o usuário
+        const resultado = await loginUser(username, password);
+        if (resultado) {
+            window.location.href = './04_Tutorial.html';
+        } else {
+            alert("Usuário não cadastrado ou senha inválida.");
+        }
+    } catch (error) {
+        console.error("Erro durante o login:", error);
     }
 });
 
+
+
+
 // Função para verificar se o login existe
-function loginUser(username, password) {
-    for (let usuario of db_usuarios.usuarios) {
-        if (usuario.login === username) {
-            // Verifica a senha associada ao usuário
-            fetch(`${SERVER_URL_SENHAS}?usuarioIdS=${usuario.id}`)
-                .then(response => response.json())
-                .then(senhas => {
-                    if (senhas.length > 0 && senhas[0].senha === password) {
-                        // Se a senha for correta, armazena o usuário logado
-                        usuarioCorrente = usuario;
-                        sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente)); // Salva no sessionStorage
-
-                        // Salva o usuário logado no banco de dados (se necessário)
-                        fetch(SERVER_URL_USUARIO, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(usuarioCorrente)
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log('Dados do usuário logado salvos com sucesso no servidor.');
-                        })
-                        .catch(error => console.error('Erro ao salvar usuário logado no servidor:', error));
-                        
-                        return true;
-                    } else {
-                        alert("Senha incorreta");
-                        return false;
-                    }
-                })
-                .catch(error => {
-                    console.error('Erro ao verificar a senha:', error);
-                    return false;
-                });
+async function loginUser(username, password) {
+    try {
+        // Certifique-se de que os usuários foram carregados
+        if (db_usuarios.usuarios.length === 0) {
+            console.error("Nenhum usuário encontrado em db_usuarios");
+            alert("Erro interno: não foi possível acessar os dados do servidor.");
+            return false;
         }
+
+        // Procure o usuário pelo login
+        const usuario = db_usuarios.usuarios.find(u => u.login === username);
+        if (!usuario) {
+            alert("Usuário não encontrado.");
+            return false;
+        }
+
+        // Verifique a senha correspondente
+        const response = await fetch(`${SERVER_URL_SENHAS}?usuarioIdS=${usuario.id}`);
+        const senhas = await response.json();
+        if (senhas.length === 0 || senhas[0].senha !== password) {
+            alert("Senha incorreta.");
+            return false;
+        }
+
+        // Usuário autenticado com sucesso
+        usuarioCorrente = usuario;
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
+
+        // Salve o usuário logado no servidor
+        const logadoResponse = await fetch(SERVER_URL_USUARIO, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: usuario.id,
+                login: usuario.login,
+                nome: usuario.nome,
+                email: usuario.email,
+                senha: senhas[0].senha  // Incluindo a senha também no usuario_logado
+            })
+        });
+
+        if (!logadoResponse.ok) {
+            console.error("Erro ao salvar usuário logado no servidor.");
+        }
+
+        return true;
+
+    } catch (error) {
+        console.error("Erro no login:", error);
+        return false;
     }
-
-    return false; // Retorna falso se o usuário não for encontrado
 }
-
 
 // Função para salvar um novo usuário
 function salvaLogin(event) {
@@ -194,12 +207,13 @@ function salvaLogin(event) {
 
     // Chama a função para pegar o próximo ID antes de salvar
     getNextUserId().then(nextId => {
-        // Cria um novo usuário com o ID incrementado
+        // Cria um novo usuário com o ID incrementado e notificações: false
         let usuario = { 
             "id": nextId.toString(),  // ID incrementado
             "login": login, 
             "nome": nome, 
-            "email": email 
+            "email": email,
+            "notificacoes": false  // Novo campo de notificações
         };
 
         // Cria um objeto de senha com o mesmo ID do usuário
@@ -230,6 +244,27 @@ function salvaLogin(event) {
             .then(response => response.json())
             .then(data => {
                 alert('Senha salva com sucesso!');
+
+                // Agora inclui o novo usuário no `usuario_logado`
+                fetch(SERVER_URL_USUARIO, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        id: usuario.id,
+                        login: usuario.login,
+                        nome: usuario.nome,
+                        email: usuario.email,
+                        senha: senhaObj.senha, // Inclui a senha ao salvar no usuario_logado
+                        notificacoes: usuario.notificacoes // Inclui notificações ao salvar no usuario_logado
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Usuário logado salvo com sucesso');
+                })
+                .catch(error => {
+                    console.error('Erro ao salvar usuário logado no servidor:', error);
+                });
             })
             .catch(error => {
                 console.error('Erro ao salvar a senha:', error);
@@ -240,6 +275,7 @@ function salvaLogin(event) {
         });
     });
 }
+
 
 
 // Função para fazer logout

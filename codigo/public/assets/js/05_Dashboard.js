@@ -28,14 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('cronograma').classList.add('active');
         } else if (currentPage === '07_Criacao_Tarefas.html') {
             document.getElementById('tarefas').classList.add('active');
-        } else if (currentPage === '07_Progresso.html') {
-            document.getElementById('progresso').classList.add('active');
-        } else if (currentPage === '10_Perfil.html') {
-            document.getElementById('perfil').classList.add('active');
-        } else if (currentPage === '11_Suporte_Feedback.html') {
-            document.getElementById('feedback').classList.add('active');
         } else if (currentPage === '08_Sugestao.html') {
             document.getElementById('sugestao').classList.add('active');
+        } else if (currentPage === '09_Perfil.html') {
+            document.getElementById('perfil').classList.add('active');
+        } else if (currentPage === '10_Suporte_Feedback.html') {
+            document.getElementById('feedback').classList.add('active');
         }
     }
 
