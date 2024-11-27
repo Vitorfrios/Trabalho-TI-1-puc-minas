@@ -171,6 +171,9 @@ async function salvarDadosEditados() {
     const novoEmail = document.getElementById('edit-email').value;
     const novoLogin = document.getElementById('edit-login').value;
 
+    
+    const notificacoesAtivas = usuarioLogado[0].notificacoes;
+
     try {
         
         const response = await fetch(`http://localhost:3000/usuarios/${usuarioId}`, {
@@ -181,7 +184,8 @@ async function salvarDadosEditados() {
                 nome: novoNome, 
                 email: novoEmail, 
                 login: novoLogin, 
-                senha: document.getElementById('new-password').value 
+                senha: document.getElementById('new-password').value, 
+                notificacoes: notificacoesAtivas 
             })
         });
         if (!response.ok) throw new Error('Erro ao salvar dados no endpoint usuarios');
@@ -195,7 +199,8 @@ async function salvarDadosEditados() {
                 nome: novoNome,
                 email: novoEmail,
                 login: novoLogin,
-                senha: document.getElementById('new-password').value 
+                senha: document.getElementById('new-password').value, 
+                notificacoes: notificacoesAtivas 
             })
         });
 
@@ -206,12 +211,15 @@ async function salvarDadosEditados() {
         document.getElementById('email').textContent = novoEmail;
         document.getElementById('nome-usuario').textContent = novoLogin;
 
+        
         document.getElementById('edit-form').style.display = 'none';
         alert('Alterações salvas com sucesso!');
     } catch (error) {
         console.error('Erro ao salvar os dados do usuário:', error);
+        alert(`Erro ao salvar os dados: ${error.message}`);
     }
 }
+
 
 // Função para salvar a nova senha no endpoint 'usuarios' e atualizar a senha no 'usuario_logado'
 async function salvarNovaSenha() {
@@ -226,6 +234,9 @@ async function salvarNovaSenha() {
     const usuarioId = usuarioLogado[0].id; 
     const novaSenha = document.getElementById('new-password').value;
 
+    
+    const notificacoesAtivas = usuarioLogado[0].notificacoes;
+
     try {
         
         const response = await fetch(`http://localhost:3000/usuarios/${usuarioId}`, {
@@ -236,7 +247,8 @@ async function salvarNovaSenha() {
                 nome: document.getElementById('edit-nome').value, 
                 email: document.getElementById('edit-email').value, 
                 login: document.getElementById('edit-login').value, 
-                senha: novaSenha 
+                senha: novaSenha, 
+                notificacoes: notificacoesAtivas 
             })
         });
 
@@ -244,6 +256,7 @@ async function salvarNovaSenha() {
             throw new Error(`Erro ao alterar a senha no endpoint usuarios. Status: ${response.status}`);
         }
 
+        
         const updateUsuarioLogadoResponse = await fetch(`http://localhost:3000/usuario_logado/${usuarioId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -252,7 +265,8 @@ async function salvarNovaSenha() {
                 nome: document.getElementById('edit-nome').value,
                 email: document.getElementById('edit-email').value,
                 login: document.getElementById('edit-login').value,
-                senha: novaSenha
+                senha: novaSenha,
+                notificacoes: notificacoesAtivas 
             })
         });
 
@@ -267,6 +281,7 @@ async function salvarNovaSenha() {
         alert(`Erro ao alterar a senha: ${error.message}`);
     }
 }
+
 
 // Eventos de clique para abrir e fechar os modais
 document.getElementById('edit-profile').onclick = () => {
