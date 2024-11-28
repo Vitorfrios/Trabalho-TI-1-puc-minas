@@ -206,6 +206,11 @@ Divisão de papéis no grupo e apresentação da estrutura da ferramenta de cont
 Este sistema web foi desenvolvido para oferecer uma solução completa de organização e produtividade. Ele possibilita o gerenciamento de tarefas, acompanhamento de progresso e sugestões para melhoria pessoal.
 
 ---
+### Como Executar o Projeto
+
+- DIGITE " npm start " no terminal
+- Leia sobre o projeto e inicie o app clicando no botao " Iniciar App "
+- Caso queira saber mais sobre o projeto clique em " Ver Informações ", você será encaminhado a uma pagina que contém todas as telas funcionando, entretanto em miniatura
 
 ### Estrutura do Projeto
 
@@ -213,16 +218,45 @@ A estrutura do projeto está organizada em pastas para facilitar a compreensão 
 
 ### Diretórios Principais
 
-- **/assets**: Contém arquivos estáticos.
-  - **/css**: Arquivos de estilo que definem a aparência das páginas.
-  - **/images**: Imagens utilizadas no design da interface.
-  - **/js**: Scripts que adicionam funcionalidades dinâmicas ao sistema.
-- **/pages**: Páginas HTML que compõem o sistema.
+# Estrutura do Projeto
+
+Abaixo está a estrutura de diretórios do projeto, com uma descrição detalhada sobre cada pasta e arquivo.
+
+- **codigo/**  : - Pasta principal
+│
+├── - **db/**  : - Dados do back end
+│   ├── - **db.json**  : - Estruturas de dados principais do sistema
+│   └── - **DB.json**  : - Segunda estrutura de dados
+│
+├── - **public/**  : - Seu site - Front end
+│   ├── - **assets/**  : - Arquivos estáticos utilizados pelo site
+│   │   ├── - **css/**  : - Estilos CSS que definem a aparência das páginas
+│   │   │   └── : - Outros arquivos .css usados no design do site
+│   │   │
+│   │   ├── - **js/**  : - Scripts JavaScript que adicionam funcionalidades dinâmicas ao sistema
+│   │   │   └── : - Outros arquivos .js que controlam interatividade
+│   │   │
+│   │   ├── - **images/**  : - Imagens utilizadas no design da interface
+│   │   │   ├── icone_padrão.png  : - Ícone padrão utilizado no site
+│   │   │   ├── seta-para-cima.png  : - Imagem de seta usada para navegação
+│   │   │   └── : - Outras imagens usadas no design do site
+│   │
+│   ├── - **docs/**  : - Documentação e arquivos auxiliares
+│   │   ├── - **files/**  : - Arquivos de documentos como PDFs e outros tipos de arquivo
+│   │   │   └── : - Outros arquivos de documentos importantes
+│   │   ├── - **images/**  : - Imagens de documentos ou auxiliares usados na documentação
+│   │   │   └── : - Outras imagens que ilustram ou complementam a documentação
+│   │   ├── - **README.md**  : - Arquivo README.md que descreve a estrutura do projeto
+│   │   └── : - Outros arquivos de docs que contêm informações adicionais
+│   │
+│   ├── - **pages/**  : - Páginas HTML que compõem o sistema
+│   │   └── : - Outras páginas HTML que formam a navegação do site
+│   │
+│   └── : - Outros arquivos do site que podem incluir bibliotecas e recursos
+│
+└── - **README.md**  : - Arquivo README.md das telas do sistema
+- **package.json**  : - Configuração do back end com dependências e scripts
+- **README.md**  : - Arquivo README.md principal com informações gerais sobre o projeto
 
 ---
 
-### Como Executar o Projeto
-
-- DIGITE " npm start " no terminal
-- Leia sobre o projeto e inicie o app clicando no botao " Iniciar App "
-- Caso queira saber mais sobre o projeto clique em " Ver Informações ", você será encaminhado a uma pagina que contém todas as telas funcionando, entretanto em miniatura

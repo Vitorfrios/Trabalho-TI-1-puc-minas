@@ -6,46 +6,42 @@ Se necessário, descreva neste arquivo aspectos relevantes da estrutura de diret
 
 Uma sugestão da estrutura de diretórios para o projeto é a seguinte:
 
-```plaintext
-codigo/  (essa pasta aqui)
+- **codigo/**  : - Pasta principal
 │
-├── db/
-│   └── db.json (estruturas de dados)
+├── - **db/**  : - Dados do back end
+│   ├── - **db.json**  : - Estruturas de dados principais do sistema
+│   └── - **DB.json**  : - Segunda estrutura de dados
 │
-├── public/ (seu site - front end)
-│   ├── assets/
-│   │   ├── css/
-│   │   │   ├── styles.css
-│   │   │   └── (outros arquivos .css)
+├── - **public/**  : - Seu site - Front end
+│   ├── - **assets/**  : - Arquivos estáticos utilizados pelo site
+│   │   ├── - **css/**  : - Estilos CSS que definem a aparência das páginas
+│   │   │   └── : - Outros arquivos .css usados no design do site
 │   │   │
-│   │   ├── js/
-│   │   │   ├── app.js
-│   │   │   └── (outros arquivos .js)
+│   │   ├── - **js/**  : - Scripts JavaScript que adicionam funcionalidades dinâmicas ao sistema
+│   │   │   └── : - Outros arquivos .js que controlam interatividade
 │   │   │
-│   │   ├── images/
-│   │   │   ├── logo.png
-│   │   │   └── (outras imagens)
-│   │   │
-│   │   └── fonts/
-│   │       ├── font1.ttf
-│   │       └── (outras fontes)
+│   │   ├── - **images/**  : - Imagens utilizadas no design da interface
+│   │   │   ├── icone_padrão.png  : - Ícone padrão utilizado no site
+│   │   │   ├── seta-para-cima.png  : - Imagem de seta usada para navegação
+│   │   │   └── : - Outras imagens usadas no design do site
 │   │
-│   ├── modulos/
-│   │   ├── modulo-1/
-│   │   │   └── (arquivos do módulo)
-│   │   │
-│   │   └── modulo-2/
-│   │       └── (arquivos do módulo)
+│   ├── - **docs/**  : - Documentação e arquivos auxiliares
+│   │   ├── - **files/**  : - Arquivos de documentos como PDFs e outros tipos de arquivo
+│   │   │   └── : - Outros arquivos de documentos importantes
+│   │   ├── - **images/**  : - Imagens de documentos ou auxiliares usados na documentação
+│   │   │   └── : - Outras imagens que ilustram ou complementam a documentação
+│   │   ├── - **README.md**  : - Arquivo README.md que descreve a estrutura do projeto
+│   │   └── : - Outros arquivos de docs que contêm informações adicionais
 │   │
-│   ├── index.html (página inicial front end)
-│   ├── about.html
-│   ├── contact.html
-│   └── (outras páginas)
+│   ├── - **pages/**  : - Páginas HTML que compõem o sistema
+│   │   └── : - Outras páginas HTML que formam a navegação do site
+│   │
+│   └── : - Outros arquivos do site que podem incluir bibliotecas e recursos
 │
-│── index.js (app back end)
-│── package.json (configuração back end)
-└── README.md (este arquivo aqui)
-```
+└── - **README.md**  : - Arquivo README.md das telas do sistema
+- **package.json**  : - Configuração do back end com dependências e scripts
+- **README.md**  : - Arquivo README.md principal com informações gerais sobre o projeto
+
 
 ## Parte Front End
 

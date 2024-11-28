@@ -61,6 +61,7 @@ npm start
                                 <li><a href="#acoes">Ações do Usuário</a></li>
                                 <li><a href="#projetos">Projeto de Interfaces</a></li>
                                 <li><a href="#metodologia">Metodologia</a></li>
+                                <li><a href="#intapp">Como usar</a></li>
                             </ul>
                         </td>
                     </tr>
@@ -718,11 +719,69 @@ npm start
                     <h3 id="gerenciamento-do-projeto">Gerenciamento do Projeto</h3>
                     <p>Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).</p>
                     <div class="space-img">
-    
+                        
                         <img src="../docs/images/Kanban.jpg" alt="Kanban"> <img src="../docs/images/planejamento.jpg"
-                            alt="Planejamento das Sprints"><img src="../docs/images/notas.jpg" alt="Notas e próximos passos">
+                        alt="Planejamento das Sprints"><img src="../docs/images/notas.jpg" alt="Notas e próximos passos">
                     </div>
                 </section>
+                <section id="intapp">
+                    
+                    <h2>Como Executar o Projeto</h2>
+                    <p>Para rodar o projeto, siga os seguintes passos:</p>
+                    <ol>
+                      <li>Abra o terminal e digite <code>npm start</code></li>
+                      <li>Leia sobre o projeto e inicie o app clicando no botão <strong>"Iniciar App"</strong></li>
+                      <li>Caso queira saber mais sobre o projeto, clique em <strong>"Ver Informações"</strong>, você será encaminhado a uma página que contém todas as telas funcionando, entretanto, em miniatura.</li>
+                    </ol>
+
+                    <h2>Estrutura do Projeto</h2>
+                    <p>A estrutura do projeto está organizada em pastas para facilitar a compreensão e o desenvolvimento.</p>
+                    
+                    <h3>Diretórios Principais</h3>
+                    <pre>
+                        # Estrutura do Projeto
+
+                        Abaixo está a estrutura de diretórios do projeto, com uma descrição detalhada sobre cada pasta e arquivo.
+                        
+                        codigo/  - Pasta principal
+                        │
+                        ├── db/  - Dados do back end
+                        │   ├── db.json  - Estruturas de dados principais do sistema
+                        │   └── DB.json  - Segunda estrutura de dados
+                        │
+                        ├── public/  - Seu site - Front end
+                        │   ├── assets/  - Arquivos estáticos utilizados pelo site
+                        │   │   ├── css/  - Estilos CSS que definem a aparência das páginas
+                        │   │   │   └── - Outros arquivos .css usados no design do site
+                        │   │   │
+                        │   │   ├── js/  - Scripts JavaScript que adicionam funcionalidades dinâmicas ao sistema
+                        │   │   │   └── - Outros arquivos .js que controlam interatividade
+                        │   │   │
+                        │   │   ├── images/  - Imagens utilizadas no design da interface
+                        │   │   │   ├── icone_padrão.png  - Ícone padrão utilizado no site
+                        │   │   │   ├── seta-para-cima.png  - Imagem de seta usada para navegação
+                        │   │   │   └── - Outras imagens usadas no design do site
+                        │   │
+                        │   ├── docs/  - Documentação e arquivos auxiliares
+                        │   │   ├── files/  - Arquivos de documentos como PDFs e outros tipos de arquivo
+                        │   │   │   └── - Outros arquivos de documentos importantes
+                        │   │   ├── images/  - Imagens de documentos ou auxiliares usados na documentação
+                        │   │   │   └── - Outras imagens que ilustram ou complementam a documentação
+                        │   │   ├── README.md  - Arquivo README.md que descreve a estrutura do projeto
+                        │   │   └── - Outros arquivos de docs que contêm informações adicionais
+                        │   │
+                        │   ├── pages/  - Páginas HTML que compõem o sistema
+                        │   │   └── - Outras páginas HTML que formam a navegação do site
+                        │   │
+                        │   └── - Outros arquivos do site que podem incluir bibliotecas e recursos
+                        │
+                        └── README.md  - Arquivo README.md das telas do sistema
+                        package.json  - Configuração do back end com dependências e scripts
+                        README.md  - Arquivo README.md principal com informações gerais sobre o projeto
+                        
+                    </pre>
+                </section>
+
         </div>
     </div>
 
