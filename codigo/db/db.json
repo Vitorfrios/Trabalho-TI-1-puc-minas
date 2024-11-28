@@ -23,16 +23,24 @@
       "login": "usuario3",
       "senha": "senha3",
       "notificacoes": false
+    },
+    {
+      "id": "4",
+      "nome": "nomes",
+      "email": "usuario@emails",
+      "login": "usuarios",
+      "senha": "senhass",
+      "notificacoes": true
     }
   ],
   "usuario_logado": [
     {
-      "id": "3",
-      "nome": "Usuário 3",
-      "email": "usuario3@example.com",
-      "login": "usuario3",
-      "senha": "senha3",
-      "notificacoes": false
+      "id": "4",
+      "nome": "nomes",
+      "email": "usuario@emails",
+      "login": "usuarios",
+      "senha": "senhass",
+      "notificacoes": true
     }
   ],
   "telas": {
@@ -177,30 +185,7 @@
     ]
   },
   "feedback": [
-    {
-      "id": "suporte1",
-      "tipo": "suporte",
-      "mensagem": "dgdfgdf",
-      "data": "2024-11-27T21:28:52.798Z"
-    },
-    {
-      "id": "feedback1",
-      "tipo": "feedback",
-      "mensagem": "dfgdfgfdgdgd",
-      "data": "2024-11-27T21:28:57.764Z"
-    },
-    {
-      "id": "suporte2",
-      "tipo": "suporte",
-      "mensagem": "dfgdfgfdg",
-      "data": "2024-11-27T21:29:03.242Z"
-    },
-    {
-      "id": "feedback2",
-      "tipo": "feedback",
-      "mensagem": "fdgdfgfdg",
-      "data": "2024-11-27T21:29:09.041Z"
-    }
+
   ],
   "conteudo": {
     "dashboard": {

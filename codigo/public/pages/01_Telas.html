@@ -18,7 +18,7 @@ npm start
 
 <body>
     
-    <header>
+    <header id="introducao">
         <div class="barra-info">
             <nav class="menu" id="menu">
                 <div class="header-buttons" style="display: flex; justify-content: space-between; align-items: center;">
@@ -68,7 +68,7 @@ npm start
         <div class="rigth-content">
     
                 <!-- Seção: Introdução -->
-                <section id="introducao">
+                <section>
                     <h2>Introdução</h2>
                     <p>O projeto "Tempo Otimizado" apresenta uma interface com diversas telas que têm como objetivo facilitar a interação do usuário com as funcionalidades da plataforma. Cada tela foi projetada para oferecer uma experiência intuitiva e eficiente, com foco na otimização do tempo e no gerenciamento de tarefas. A seguir, serão apresentadas as principais telas e suas funcionalidades.</p>
                     <ul>
@@ -96,86 +96,90 @@ npm start
                         <p>✅ <a href="../pages/00_Sobre.html">Documentação geral do projeto</a></p>
                         <p>✅ <a href="../docs/files/Doc.pdf" download>Documentação do Projeto (pdf)</a></p>
                         <p>✅ <a href="../docs/files/processo-dt-G5.pdf" download>Documentação de Design Thinking (MIRO)</a></p>
-                    </div>          
-                    
-                </section>
+                    </div>  
+                    <h2></h2>
+                    <div style="display: flex; justify-content: space-around">
+                        <p> <a href="../pages/00_Sobre.html" style="color: black;">Tela da documentação</a></p>
+                        <p> <a href="../pages/01_Telas.html" style="color: black;">Telas do projeto</a></p>
+
+                    </div>        
+
+                    <div class="video" style="display: flex; justify-content: space-between;">
+                        <video class="iframe-00" src="../docs/gif/00_Sobre.mp4"loop autoplay muted></video>
+                        <video class="iframe-01" src="../docs/gif/01_Telas.mp4"loop autoplay muted></video>
+                    </div>
                 
 
             <!-- Logo -->
             <section id="logo">
-                <h2>1. Logo </h2>
+                <h2>02. Logo </h2>
                 <p>- Exibe o logotipo do sistema em uma página inicial de carregamento, garantindo uma introdução visual.</p>
-                <div class="iframe-telas">
+                <video class="iframe" src="../docs/gif/02_Logo.mp4"loop autoplay muted></video>
 
-                    <iframe class="iframe-logo" src="../pages/02_Inicio_logo.html"></iframe>
-                </div>
                 
             </section>
         
             <!-- Login -->
             <section id="login">
-                <h2>2. Login </h2>
+                <h2>03. Login </h2>
                 <p>
                     - Permite que os usuários autentiquem suas contas inserindo email e senha.<br>
                     - Opções de criação de conta para novos usuários.<br>
                     - Validação de campos com mensagens de erro em tempo real.
                 </p>
-                <div class="iframe-telas">
+                <video class="iframe" id="loop" src="../docs/gif/03_Login.mp4"loop autoplay muted></video>
 
-                    <iframe class="iframe-login" src="../pages/03_Login.html"></iframe>
-                </div>
+
                 
             </section>
         
             <!-- Tutorial -->
             <section id="tutorial">
-                <h2>3. Tutorial </h2>
+                <h2>04. Tutorial </h2>
                 <p>
                     - Apresenta um guia interativo para usuários iniciantes.<br>
                     - Explicações detalhadas sobre como usar cada funcionalidade do sistema.
                 </p>
-                <div class="iframe-telas">
 
-                    <iframe class="iframe-tutorial" src="../pages/04_Tutorial.html"></iframe>
-                </div>
+                <video class="iframe" id="loop" src="../docs/gif/04_Tutorial.mp4"loop autoplay muted></video>
+
+
                 
             </section>
         
             <!-- Dashboard -->
             <section id="dashboard">
-                <h2>4. Dashboard </h2>
+                <h2>05. Dashboard </h2>
                 <p>
                     - Menu de navegação com 4 opções principais.<br>
                     - Área de mostragem de tarefas organizadas.<br>
                     - Acesso ao calendário para exibir tarefas específicas.<br>
                     - Mostragem de gráficos detalhados, exibindo o tempo gasto em cada categoria (trabalho, lazer, estudo, etc.).
                 </p>
-                <div class="iframe-telas">
+                
+                <video class="iframe" id="loop" src="../docs/gif/05_Dashboard.mp4"loop autoplay muted></video>
 
-                    <iframe class="iframe-dashboard" src="../pages/05_Dashboard.html"></iframe>
-                </div>
                 
             </section>
         
             <!-- Cronograma Diário -->
             <section id="cronograma">
-                <h2>5. Cronograma Diário </h2>
+                <h2>06. Cronograma Diário </h2>
                 <p>
                     - Exibição de tarefas organizadas por um período de 7 dias.<br>
                     - Filtros para selecionar a semana desejada dentro de um mês.<br>
                     - Opção de adicionar tarefas, direcionando para a página de criação.<br>
                     - Botão para acessar sugestões ou dicas relacionadas às tarefas.
                 </p>
-                <div class="iframe-telas">
+                
+                <video class="iframe" id="loop" src="../docs/gif/06_Cronograma.mp4"loop autoplay muted></video>
 
-                    <iframe class="iframe-cronograma" src="../pages/06_Cronograma_Diario.html"></iframe>
-                </div>
                 
             </section>
         
             <!-- Criação de Tarefas -->
             <section id="tasks">
-                <h2>6. Criação de Tarefas </h2>
+                <h2>07. Criação de Tarefas </h2>
                 <p>
                     - Formulário para adicionar tarefas:<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&bull; Nome da tarefa.<br>
@@ -188,12 +192,13 @@ npm start
                     - Visualização de um gráfico que mostra o tempo gasto em cada categoria.
                 </p>
 
-                    <iframe class="iframe-tasks" src="../pages/07_Criacao_Tarefas.html"></iframe>
+                <video class="iframe" id="loop" src="../docs/gif/07_Tarefas.mp4"loop autoplay muted> </video>
+
                 
             </section>
         
             <section id="sugestao">
-                <h2>7. Sugestões </h2>
+                <h2>08. Sugestões </h2>
                 <p>
                     - Combinação de dicas personalizadas com base nos hábitos do usuário.<br>
                     - Navegação por categorias, como dicas de estudo, sono e desempenho.<br>
@@ -202,15 +207,14 @@ npm start
                     &nbsp;&nbsp;&nbsp;&nbsp;&bull; Dicas de estudo.<br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&bull; Dicas para descansar.
                 </p>
-                <div class="iframe-telas">
+                
+                <video class="iframe" id="loop" src="../docs/gif/08_Sugestao.mp4"loop autoplay muted></video>
 
-                    <iframe class="iframe-sugestao" src="../pages/08_Sugestao.html"></iframe>
-                </div>
                 
             </section>
             
             <section id="sugestao1">
-                <h2>07.1 Dicas para Estudo </h2>
+                <h2>08.1 Dicas para Estudo </h2>
                 <p>
                     - Clique na roleta para exibir as 4 dicas.<br>
                     - Técnicas de estudo.<br>
@@ -218,61 +222,56 @@ npm start
                     - Técnica Pomodoro: <br>
                     - Divida o estudo em blocos de 25 minutos (com intervalos de 5 minutos).
                 </p>
-                <div class="iframe-telas">
+                
+                <video class="iframe"  id="loop" src="../docs/gif/08.1_Estudo.mp4" loop autoplay muted></video>
 
-                    <iframe class="iframe-sugestao1" src="../pages/08.1_Dicas_para_Estudo.html"></iframe>
-                </div>
                 
             </section>
             
             <section id="sugestao2">
-                <h2>07.2 Dicas para Dormir </h2>
+                <h2>08.2 Dicas para Dormir </h2>
                 <p>
                     - Sugestões para dormir melhor.<br>
                     - Padrões de sono saudáveis.
                 </p>
-                <div class="iframe-telas">
+                
+                <video class="iframe"  id="loop" src="../docs/gif/08.2_Dormir.mp4" loop autoplay muted></video>
 
-                    <iframe class="iframe-sugestao2" src="../pages/08.2_Dicas_para_Dormir.html"></iframe>
-                </div>
                 
             </section>
         
             <section id="sugestao3">
-                <h2>07.3 Dicas para Desempenho</h2>
+                <h2>08.3 Dicas para Desempenho</h2>
                 <p>
                     - Como melhorar seu desempenho.<br>
                     - Organize seu espaço de trabalho.<br>
                     - Dicas para otimizar tarefas e melhorar a produtividade.
                 </p>
-                <div class="iframe-telas">
+                
+                <video class="iframe"  id="loop" src="../docs/gif/08.3_Desempenho.mp4" loop autoplay muted></video>
 
-                    <iframe class="iframe-sugestao3" src="../pages/08.3_Dicas_para_Desempenho.html"></iframe>
-                </div>
                 
             </section>
         
             <section id="perfil">
-                <h2>8. Perfil </h2>
+                <h2>9. Perfil </h2>
                 <p>- Visualização do perfil do usuário e suas informações.</p>
-                <div class="iframe-telas">
+                
+                <video class="iframe" id="loop" src="../docs/gif/09_Perfil.mp4" loop autoplay muted></video>
 
-                    <iframe class="iframe-perfil" src="../pages/09_Perfil.html"></iframe>
-                </div>
                 
             </section>
         
             <section id="suporte-feedback">
-                <h2>9. Suporte e Feedback </h2>
+                <h2>10. Suporte e Feedback </h2>
                 <p>
                     - Exibe área de suporte para o usuário tirar dúvidas.<br>
                     - Solicitação de feedback sobre o sistema.<br>
                     - Opções para entrar em contato com o suporte técnico.
                 </p>
-                <div class="iframe-telas">
+                
+                <video class="iframe" id="loop" src="../docs/gif/10_Suporte.mp4" loop autoplay muted></video>
 
-                    <iframe class="iframe-suporte-feedback" src="../pages/10_Suporte_Feedback.html"></iframe>
-                </div>
                 
             </section>
     

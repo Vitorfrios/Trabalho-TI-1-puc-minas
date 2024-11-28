@@ -2,13 +2,13 @@
   "mes_calendar": [
     {
       "id": "2686",
-      "value": 4,
+      "value": 11,
       "year": 2024
     }
   ],
   "grafico": {
     "Trabalho": 927,
-    "Estudo": 780,
+    "Estudo": 660,
     "Lazer": 665
   },
   "adicionarTarefas": [],
@@ -488,18 +488,6 @@
         5
       ],
       "estimatedDuration": 38
-    },
-    {
-      "id": "39",
-      "name": "Estudar para um Exame",
-      "time": "23:42",
-      "category": "Estudo",
-      "priority": "Média",
-      "Udate": "2024-11-13",
-      "date": [
-        3
-      ],
-      "estimatedDuration": 120
     },
     {
       "id": "40",

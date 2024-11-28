@@ -57,9 +57,36 @@ carregarNomeUsuarioLogado();
 
 // ------------------- FIM DA SIDE BAR ------------------- //
 // ------------------- CODIGO DO SUPORTE -----------------//
-let feedbackCount = localStorage.getItem('feedbackCount') ? parseInt(localStorage.getItem('feedbackCount')) : 1;
-let suporteCount = localStorage.getItem('suporteCount') ? parseInt(localStorage.getItem('suporteCount')) : 1;
+let lastFeedbackId = 0;
+let lastSuporteId = 0;
 
+// Verifica os IDs existentes no servidor ao carregar a página
+async function initializeIds() {
+    try {
+        const response = await fetch('http://localhost:3000/feedback');
+        const feedbacks = await response.json();
+
+        // Filtrar os IDs de feedback e suporte e pegar o maior número
+        const feedbackIds = feedbacks
+            .filter(f => f.tipo === "feedback")
+            .map(f => parseInt(f.id.replace("feedback", "")));
+        const suporteIds = feedbacks
+            .filter(f => f.tipo === "suporte")
+            .map(f => parseInt(f.id.replace("suporte", "")));
+
+        // Define o último ID como o maior número encontrado ou 0
+        lastFeedbackId = feedbackIds.length > 0 ? Math.max(...feedbackIds) : 0;
+        lastSuporteId = suporteIds.length > 0 ? Math.max(...suporteIds) : 0;
+
+        // Salva no localStorage
+        localStorage.setItem('lastFeedbackId', lastFeedbackId);
+        localStorage.setItem('lastSuporteId', lastSuporteId);
+    } catch (error) {
+        console.error("Erro ao inicializar os IDs:", error);
+    }
+}
+
+// Função de envio
 function enviarFeedback() {
     const tipo = document.getElementById('tipo').value;
     const mensagem = document.getElementById('mensagem').value;
@@ -71,13 +98,13 @@ function enviarFeedback() {
 
     let id;
     if (tipo === "feedback") {
-        id = `feedback${feedbackCount}`;
-        feedbackCount++;  // Incrementa para a próxima postagem de feedback
-        localStorage.setItem('feedbackCount', feedbackCount);  // Salva o contador no localStorage
+        lastFeedbackId++; // Incrementa o ID para o próximo feedback
+        id = `feedback${lastFeedbackId}`;
+        localStorage.setItem('lastFeedbackId', lastFeedbackId); // Atualiza o localStorage
     } else if (tipo === "suporte") {
-        id = `suporte${suporteCount}`;
-        suporteCount++;  // Incrementa para a próxima postagem de suporte
-        localStorage.setItem('suporteCount', suporteCount);  // Salva o contador no localStorage
+        lastSuporteId++; // Incrementa o ID para o próximo suporte
+        id = `suporte${lastSuporteId}`;
+        localStorage.setItem('lastSuporteId', lastSuporteId); // Atualiza o localStorage
     } else {
         alert("Selecione um tipo de feedback antes de enviar.");
         return;
@@ -108,6 +135,8 @@ function enviarFeedback() {
     });
 }
 
+// Inicializa os IDs ao carregar a página
+initializeIds();
 
 
 // -------------- CODIGO DAS SOLUÇÕES RAPIDAS -------------- //
