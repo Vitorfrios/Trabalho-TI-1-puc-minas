@@ -66,7 +66,7 @@ async function initializeIds() {
         const response = await fetch('http://localhost:3000/feedback');
         const feedbacks = await response.json();
 
-        // Filtrar os IDs de feedback e suporte e pegar o maior número
+        
         const feedbackIds = feedbacks
             .filter(f => f.tipo === "feedback")
             .map(f => parseInt(f.id.replace("feedback", "")));
@@ -74,11 +74,11 @@ async function initializeIds() {
             .filter(f => f.tipo === "suporte")
             .map(f => parseInt(f.id.replace("suporte", "")));
 
-        // Define o último ID como o maior número encontrado ou 0
+        
         lastFeedbackId = feedbackIds.length > 0 ? Math.max(...feedbackIds) : 0;
         lastSuporteId = suporteIds.length > 0 ? Math.max(...suporteIds) : 0;
 
-        // Salva no localStorage
+        
         localStorage.setItem('lastFeedbackId', lastFeedbackId);
         localStorage.setItem('lastSuporteId', lastSuporteId);
     } catch (error) {
@@ -98,13 +98,13 @@ function enviarFeedback() {
 
     let id;
     if (tipo === "feedback") {
-        lastFeedbackId++; // Incrementa o ID para o próximo feedback
+        lastFeedbackId++; 
         id = `feedback${lastFeedbackId}`;
-        localStorage.setItem('lastFeedbackId', lastFeedbackId); // Atualiza o localStorage
+        localStorage.setItem('lastFeedbackId', lastFeedbackId); 
     } else if (tipo === "suporte") {
-        lastSuporteId++; // Incrementa o ID para o próximo suporte
+        lastSuporteId++; 
         id = `suporte${lastSuporteId}`;
-        localStorage.setItem('lastSuporteId', lastSuporteId); // Atualiza o localStorage
+        localStorage.setItem('lastSuporteId', lastSuporteId); 
     } else {
         alert("Selecione um tipo de feedback antes de enviar.");
         return;

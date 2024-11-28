@@ -172,6 +172,17 @@ section {
     border-left: 5px solid #00a4cc;
     margin-bottom: 20px;
 }
+.iframe-00,.iframe-01{
+    width: 49%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    gap: 1;
+}
+
 h3{
     color: #333;
     font-size: 1.23rem;
@@ -188,7 +199,11 @@ h2 {
     display: inline-block;
     padding-bottom: 5px;
 }
-
+hr {
+    color: #333;
+    font-size: 2rem;
+    border-bottom: 2px solid #00a4cc;
+}
 p {
     font-size: 1.1rem;
     margin: 10px 0;
