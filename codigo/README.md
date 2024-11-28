@@ -10,7 +10,7 @@ O projeto "Tempo Otimizado" apresenta uma interface com diversas telas que têm 
     - [Vitor de Freitas Rios](https://github.com/Vitorfrios)
     
 ### Documentos:
-| ✅ [Informações do projeto](/README.md) | ✅ [Documentação do Projeto (pdf)](/codigo/public/docs/files/Documentação%20G5-Dificuldade%20em%20otimizar%20o%20tempo.pdf) | ✅ [Documentação de Design Thinking (MIRO)](/codigo/public/docs/files/processo-dt-G5.pdf) |
+| ✅ [Informações do projeto](/README.md) | ✅ [Documentação do Projeto (pdf)](../codigo/public/docs/files/Doc.pdf) | ✅ [Documentação de Design Thinking (MIRO)](../codigo/public/docs/files/processo-dt-G5.pdf) |
 
 ## Estrutura do Projeto
 
