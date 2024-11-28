@@ -24,7 +24,7 @@ Informações básicas do projeto.
   - [Vitor de Freitas Rios](https://github.com/Vitorfrios)
 
 ### Documentos:
-| ✅ [Telas do projeto](codigo\README.md) | ✅ [Documentação do Projeto (pdf)](/docs/files/Documentação%20G5-Dificuldade%20em%20otimizar%20o%20tempo.pdf) | ✅ [Documentação de Design Thinking (MIRO)](/docs/files/processo-dt-G5.pdf) |
+| ✅ [Telas do projeto](codigo\README.md) | ✅ [Documentação do Projeto (pdf)](/codigo/public/docs/files/Documentação%20G5-Dificuldade%20em%20otimizar%20o%20tempo.pdf) | ✅ [Documentação de Design Thinking (MIRO)](/codigo/public/docs/files/processo-dt-G5.pdf) |
 
 
 ## <a name="contexto"></a>**Contexto**
