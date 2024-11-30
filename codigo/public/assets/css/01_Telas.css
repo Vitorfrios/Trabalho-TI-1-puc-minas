@@ -46,7 +46,6 @@ body {
     width: auto; 
     padding: 20px;
     box-sizing: border-box;
-    flex: 0 0 290px; 
 }
 
 .rigth-content {
@@ -62,26 +61,29 @@ body {
 .nav-container {
     position: sticky; 
     top: 0; 
-    width: 290px; 
+    width: 340px; 
     background-color: #fff;
     box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     overflow-y: auto; 
-    height: auto;   
-    
-}
-.nav-container.scrolled {
-    position: sticky; 
-    top: 50%; 
-    left: 0; 
-    transform: translateY(-50%); 
-    width: 290px; 
-    background-color: #fff;
-    height: auto;     
-    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
-    transition: top 0.3s ease, transform 0.3s ease-out; 
+    height: auto;    
 
 }
+/* Classe para nav-container quando está scrolled */
+.nav-container.scrolled1 {
+    position: sticky; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+/* Classe para nav-container2 quando está scrolled no final da página */
+.nav-container2.scrolled {
+    position: sticky; 
+    top: 50%;
+    transform: translateY(-4%); 
+}
+
+
 .nav-container h2 {
     font-size: 1.5rem;
     color: #333;
@@ -117,6 +119,7 @@ header {
     border-bottom: 5px solid #00a4cc; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     padding-bottom: 0;
+    z-index: 20;
 }
 h1{
     font-size: 50px;

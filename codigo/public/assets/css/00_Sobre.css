@@ -74,18 +74,20 @@ body {
     height: auto;    
 
 }
-.nav-container.scrolled {
+/* Classe para nav-container quando está scrolled */
+.nav-container.scrolled1 {
     position: sticky; 
-    top: 50%; 
-    left: 0; 
-    transform: translateY(-50%); 
-    width: 340px; 
-    background-color: #fff;
-    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
-    overflow-y: auto; 
-    height: auto;     
-    transition: top 0.3s ease, transform 0.3s ease-out; 
 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+/* Classe para nav-container2 quando está scrolled no final da página */
+.nav-container2.scrolled {
+    position: sticky; 
+
+    top: 50%;
+    transform: translateY(-8%); 
 }
 .nav-container h2 {
     font-size: 2rem;
