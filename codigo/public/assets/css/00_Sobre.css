@@ -353,19 +353,38 @@ button:hover {
 
 
 
+
+pre {
+    white-space: pre-wrap; /* Quebra as linhas para evitar overflow */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-x: auto; /* Adiciona rolagem horizontal, se necessário */
+    background-color: #f9f9f9; /* Fundo claro para destacar o texto */
+    padding: 10px; /* Espaçamento interno para melhor leitura */
+    border: 1px solid #ccc; /* Borda leve para destaque */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 1rem; /* Tamanho de fonte confortável */
+    line-height: 1.5; /* Melhor legibilidade */
+}
+
+
+
+
 @media (max-width: 768px) {
     .nav-container {
         width: 180px;  
     }
 
     .rigth-content {
-        margin-left: 190px;  
+        margin-left: 0;  
     }
 
     header h1 {
         font-size: 1.5rem;
     }
 }
+
+
+
 
 /*
 CSS DO RELOGIO
@@ -423,18 +442,4 @@ CSS DO RELOGIO
     font-size: 36px;
     color: #000; 
     margin-bottom: 60px; 
-}
-
-.enter-btn {
-    background-color: #3bb5d3; 
-    color: #000000;
-    border: none;
-    padding: 20px 50px;
-    font-size: 50px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.enter-btn:hover {
-    background-color: #4bb3c2;
 }
