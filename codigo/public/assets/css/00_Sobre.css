@@ -74,7 +74,7 @@ body {
     height: auto;    
 
 }
-/* Classe para nav-container quando está scrolled */
+
 .nav-container.scrolled1 {
     position: sticky; 
 
@@ -82,7 +82,7 @@ body {
     transform: translateY(-50%); 
 }
 
-/* Classe para nav-container2 quando está scrolled no final da página */
+
 .nav-container2.scrolled {
     position: sticky; 
 
@@ -355,15 +355,15 @@ button:hover {
 
 
 pre {
-    white-space: pre-wrap; /* Quebra as linhas para evitar overflow */
-    word-wrap: break-word; /* Quebra palavras longas */
-    overflow-x: auto; /* Adiciona rolagem horizontal, se necessário */
-    background-color: #f9f9f9; /* Fundo claro para destacar o texto */
-    padding: 10px; /* Espaçamento interno para melhor leitura */
-    border: 1px solid #ccc; /* Borda leve para destaque */
-    border-radius: 5px; /* Cantos arredondados */
-    font-size: 1rem; /* Tamanho de fonte confortável */
-    line-height: 1.5; /* Melhor legibilidade */
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    overflow-x: auto; 
+    background-color: #f9f9f9; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    line-height: 1.5; 
 }
 
 
@@ -381,7 +381,13 @@ pre {
     header h1 {
         font-size: 1.5rem;
     }
+
+        pre {
+        font-size: 0.9rem; 
+        padding: 5px; 
+    }
 }
+
 
 
 
