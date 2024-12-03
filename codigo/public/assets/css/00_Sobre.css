@@ -27,7 +27,7 @@ html::-webkit-scrollbar-thumb:horizontal {
     margin-bottom: 60px;
 }
 
-/* Animação de fade e slide (entrada) */
+/* Animação de entrada */
 @keyframes pageTransition {
     0% {
         opacity: 0;
@@ -44,7 +44,7 @@ html::-webkit-scrollbar-thumb:horizontal {
     animation: pageTransition 0.8s ease-out;
 }
 
-/* Animação de saída para quando uma página desaparecer */
+/* Animação de saída */
 @keyframes pageTransitionOut {
     0% {
         opacity: 1;
