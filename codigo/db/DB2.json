@@ -7,25 +7,12 @@
     }
   ],
   "grafico": {
-    "Trabalho": 756,
+    "Trabalho": 710,
     "Estudo": 660,
-    "Lazer": 665
+    "Lazer": 588
   },
   "adicionarTarefas": [],
   "listaDeTarefas": [
-    {
-      "id": "1",
-      "name": "Fazer um Tour de Vinhos",
-      "time": "03:27",
-      "category": "Lazer",
-      "priority": "Baixa",
-      "Udate": "2024-11-13",
-      "date": [
-        4,
-        2
-      ],
-      "estimatedDuration": 77
-    },
     {
       "id": "2",
       "name": "Fazer um Curso de Culinária",
@@ -438,18 +425,6 @@
         3
       ],
       "estimatedDuration": 102
-    },
-    {
-      "id": "37",
-      "name": "Fazer um Workshop de Habilidades",
-      "time": "01:51",
-      "category": "Trabalho",
-      "priority": "Média",
-      "Udate": "2024-11-13",
-      "date": [
-        4
-      ],
-      "estimatedDuration": 46
     },
     {
       "id": "38",

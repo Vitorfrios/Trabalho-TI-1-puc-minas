@@ -165,11 +165,19 @@ body {
 }
 
 #subtopicoBotoes {
-    text-align: center; 
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: nowrap;
 }
 
 #subtopicoBotoes button {
-    font-size: 15px; 
+    font-size: 15px;
+    padding: 8px;
+    background-color: #76cad8;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 
