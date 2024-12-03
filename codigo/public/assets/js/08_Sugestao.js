@@ -75,13 +75,13 @@ function exibirConteudo() {
         return;
     }
 
-    fetch('/codigo/db/db.json')
+    fetch('http://localhost:3000/conteudo2')  
         .then(response => response.json())
         .then(data => {
             const conteudoExibicao = document.getElementById('conteudo-exibicao');
             conteudoExibicao.innerHTML = '';
 
-            const conteudo = data.conteudo2[opcaoSelecionada];
+            const conteudo = data[opcaoSelecionada];
             if (conteudo && conteudo.topicos) {
                 conteudoExibicao.style.border = '3px solid #210af3';
                 conteudo.topicos.forEach(topico => {

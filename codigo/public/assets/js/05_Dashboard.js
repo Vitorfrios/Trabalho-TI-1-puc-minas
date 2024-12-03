@@ -103,21 +103,32 @@ function createTaskRow(task) {
 // Função para carregar tarefas do JSON e atualizar o cronograma
 async function loadTasks(dayOfWeek) {
     try {
-        const response = await fetch('/codigo/db/DB2.json');
-        if (!response.ok) throw new Error(`Erro ao carregar tarefas: status ${response.status}`);
-
-        const data = await response.json();
-        
-        if (!data) {
-            throw new Error("Estrutura de dados 'tarefas' não encontrada no JSON.");
+        const selectedDayElement = document.querySelector('.selected-day');
+        if (!selectedDayElement) {
+            document.querySelector('.empty').innerHTML = 'Selecione um dia do calendário para carregar as tarefas.';
+            return;
         }
+
+        const selectedDay = new Date(currentYear, currentMonth, parseInt(selectedDayElement.textContent));
+        const selectedDate = selectedDay.toISOString().split('T')[0];
+
+        const responses = await Promise.all([
+            fetch("http://localhost:4000/adicionarTarefas"),
+            fetch("http://localhost:4000/listaDeTarefas")
+        ]);
+
+        if (!responses.every(response => response.ok)) {
+            throw new Error("Erro ao carregar os dados dos endpoints.");
+        }
+
+        const [adicionarTarefas, listaDeTarefas] = await Promise.all(responses.map(res => res.json()));
 
         const taskList = document.querySelector(".task-list");
         const notice = document.querySelector('.empty');
-        
+
         taskList.innerHTML = '';
-        notice.innerHTML = '';  
-        
+        notice.innerHTML = '';
+
         let tasksFound = false;
         let tasksForTheDay = [];
         let categoryDurations = {
@@ -126,8 +137,8 @@ async function loadTasks(dayOfWeek) {
             Trabalho: 0,
         };
 
-        if (Array.isArray(data.listaDeTarefas)) {
-            data.listaDeTarefas.forEach(task => {
+        if (Array.isArray(listaDeTarefas)) {
+            listaDeTarefas.forEach(task => {
                 if (task.date.includes(dayOfWeek + 1)) {
                     tasksForTheDay.push(task);
                     tasksFound = true;
@@ -136,12 +147,9 @@ async function loadTasks(dayOfWeek) {
             });
         }
 
-        if (Array.isArray(data.adicionarTarefas)) {
-            const selectedDay = new Date(currentYear, currentMonth, parseInt(document.querySelector('.selected-day').textContent));
-            const selectedDate = selectedDay.toISOString().split('T')[0]; 
-
-            data.adicionarTarefas.forEach(task => {
-                const taskUdate = task.Udate; 
+        if (Array.isArray(adicionarTarefas)) {
+            adicionarTarefas.forEach(task => {
+                const taskUdate = task.Udate;
                 const taskRecurrenceDays = task.date;
 
                 if (taskUdate === selectedDate) {
@@ -161,7 +169,7 @@ async function loadTasks(dayOfWeek) {
         tasksForTheDay.sort((a, b) => convertTimeToNumber(a.time) - convertTimeToNumber(b.time));
 
         tasksForTheDay.forEach(task => {
-            taskList.appendChild(createTaskRow(task)); 
+            taskList.appendChild(createTaskRow(task));
         });
 
         if (!tasksFound) {
@@ -169,10 +177,13 @@ async function loadTasks(dayOfWeek) {
         }
 
         updateChart(categoryDurations);
-        
+
     } catch (error) {
-document.querySelector('.empty').innerHTML = 'Selecione um dia do calendário para ver as tarefas e gerar o gráfico';    }
+        document.querySelector('.empty').innerHTML = 'Selecione um dia do calendário para ver as tarefas e gerar o gráfico';
+        console.error(error);
+    }
 }
+
 
 // --- GERAÇÃO E NAVEGAÇÃO DO CALENDÁRIO ---
 

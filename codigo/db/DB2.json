@@ -2,12 +2,12 @@
   "mes_calendar": [
     {
       "id": "2686",
-      "value": 11,
+      "value": 12,
       "year": 2024
     }
   ],
   "grafico": {
-    "Trabalho": 927,
+    "Trabalho": 756,
     "Estudo": 660,
     "Lazer": 665
   },
@@ -66,16 +66,17 @@
       "estimatedDuration": 93
     },
     {
-      "id": "6",
       "name": "Participar de um Seminário",
       "time": "23:09",
-      "category": "Estudo",
+      "description": "undefined",
       "priority": "Baixa",
-      "Udate": "2024-11-13",
+      "category": "Estudo",
       "date": [
-        2
+        2,
+        3
       ],
-      "estimatedDuration": 59
+      "estimatedDuration": 59,
+      "id": "6"
     },
     {
       "id": "7",
@@ -90,19 +91,6 @@
         3
       ],
       "estimatedDuration": 39
-    },
-    {
-      "id": "8",
-      "name": "Fazer um Relatório de Pesquisa",
-      "time": "03:01",
-      "category": "Trabalho",
-      "priority": "Baixa",
-      "Udate": "2024-11-13",
-      "date": [
-        1,
-        2
-      ],
-      "estimatedDuration": 63
     },
     {
       "id": "9",
@@ -283,19 +271,6 @@
         7
       ],
       "estimatedDuration": 53
-    },
-    {
-      "id": "23",
-      "name": "Fazer um Relatório de Pesquisa",
-      "time": "02:53",
-      "category": "Trabalho",
-      "priority": "Média",
-      "Udate": "2024-11-13",
-      "date": [
-        5,
-        1
-      ],
-      "estimatedDuration": 108
     },
     {
       "id": "24",

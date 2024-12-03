@@ -126,7 +126,12 @@ function enviarFeedback() {
     })
     .then(response => response.json())
     .then(data => {
-        alert("Seu feedback foi enviado com sucesso!");
+        // Alerta com mensagem personalizada dependendo do tipo
+        if (tipo === "feedback") {
+            alert("Seu feedback foi enviado com sucesso!");
+        } else if (tipo === "suporte") {
+            alert("Seu pedido de suporte foi enviado com sucesso!");
+        }
         document.getElementById('suporteForm').reset();
     })
     .catch(error => {
@@ -135,13 +140,15 @@ function enviarFeedback() {
     });
 }
 
+
 // Inicializa os IDs ao carregar a página
 initializeIds();
 
 
 // -------------- CODIGO DAS SOLUÇÕES RAPIDAS -------------- //
 function exibirConteudo() {
-    const opcaoSelecionada = document.getElementById('opcoes').value;
+    const opcaoSelecionada = document.getElementById('opcoes').value.trim();  
+    console.log('Opção selecionada:', opcaoSelecionada); 
 
     if (!opcaoSelecionada) {
         document.getElementById('conteudo-exibicao').innerHTML = '';
@@ -149,21 +156,32 @@ function exibirConteudo() {
         return;
     }
 
-    fetch('/codigo/db/db.json')
+    fetch('http://localhost:3000/conteudo')  
         .then(response => response.json())
         .then(data => {
+            console.log('Dados recebidos:', data); 
+
             const conteudoExibicao = document.getElementById('conteudo-exibicao');
             conteudoExibicao.innerHTML = '';
 
-            const conteudo = data.conteudo[opcaoSelecionada];
-            if (conteudo && conteudo.topicos) {
-                conteudoExibicao.style.border = '3px solid #210af3';
-                conteudo.topicos.forEach(topico => {
-                    const p = document.createElement('p');
-                    p.textContent = "• " + topico;
-                    conteudoExibicao.appendChild(p);
-                });
+            
+            if (data && data[opcaoSelecionada]) {
+                const conteudo = data[opcaoSelecionada];
+
+               
+                if (conteudo.topicos && Array.isArray(conteudo.topicos)) {
+                    conteudoExibicao.style.border = '3px solid #210af3';
+                    conteudo.topicos.forEach(topico => {
+                        const p = document.createElement('p');
+                        p.textContent = "• " + topico;
+                        conteudoExibicao.appendChild(p);
+                    });
+                } else {
+                    conteudoExibicao.style.border = 'none';
+                }
             } else {
+                
+                conteudoExibicao.innerHTML = '<p>Conteúdo não encontrado.</p>';
                 conteudoExibicao.style.border = 'none';
             }
 
@@ -174,6 +192,7 @@ function exibirConteudo() {
             document.getElementById('conteudo-exibicao').style.border = 'none';
         });
 }
+
 
 
 

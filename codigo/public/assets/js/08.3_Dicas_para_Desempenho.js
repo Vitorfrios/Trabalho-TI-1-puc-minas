@@ -40,152 +40,175 @@ document.addEventListener("DOMContentLoaded", function() {
 
     highlightActiveItem();
 });
+// Função para carregar o nome do usuário logado
+async function carregarNomeUsuarioLogado() {
+    try {
+        const usuarioLogadoResponse = await fetch('http://localhost:3000/usuario_logado');
+        const usuarioLogado = await usuarioLogadoResponse.json();
 
-
-
-{// ------------- Codigo para a roleta ------------- //
-    let data;  
-    let numerosDisponiveis = [1, 2, 3, 4, 5]; 
-    let estaGirando = false;  
-
-    async function carregarDados() {  
-        const response = await fetch('/codigo/db/db.json');  
-        data = await response.json();  
-    }  
-
-    carregarDados(); 
-
-    function girarRoleta() {
-        if (estaGirando) {
-            return;  
+        if (!usuarioLogadoResponse.ok || usuarioLogado.length === 0) {
+            console.error('Usuário logado não encontrado!');
+            return;
         }
 
-        if (!data) {  
-            alert("Os dados ainda estão sendo carregados. Tente novamente mais tarde.");  
-            return;  
-        }  
+        document.querySelector('.name').textContent = usuarioLogado[0].nome || 'Nome não encontrado';
+    } catch (error) {
+        console.error('Erro ao carregar o nome do usuário logado:', error);
+    }
+}
 
-        if (numerosDisponiveis.length === 0) {
-            numerosDisponiveis = [1, 2, 3, 4, 5];
-        }
+carregarNomeUsuarioLogado();
 
-        estaGirando = true;  
 
-        const randomIndex = Math.floor(Math.random() * numerosDisponiveis.length); 
-        const randomNum = numerosDisponiveis[randomIndex]; 
+// ------------------- FIM DA SIDE BAR ------------------- //
 
-        numerosDisponiveis.splice(randomIndex, 1); 
 
-        const roleta = document.getElementById("roleta-g");  
-        const rotacao = randomNum * 72 + 720; 
-        
-        roleta.style.transition = "transform 2s ease-out";
-        roleta.style.transform = `rotate(${rotacao}deg)`; 
+let data;  
+let numerosDisponiveis = [1, 2, 3, 4, 5]; 
+let estaGirando = false;  
 
-        setTimeout(() => {  
-            roleta.style.transition = "transform 1s ease-in";  
-            roleta.style.transform = "rotate(0deg)";  
-            mostrarResultado(randomNum);  
-            estaGirando = false; 
-        }, 2000);  
+async function carregarDados() {  
+    const response = await fetch('http://localhost:3000/tela3');  
+    data = await response.json();  
+}  
+
+carregarDados(); 
+
+function girarRoleta() {
+    if (estaGirando) {
+        return;  
     }
 
-    document.getElementById("roleta-g").addEventListener("click", girarRoleta);  
+    if (!data) {  
+        alert("Os dados ainda estão sendo carregados. Tente novamente mais tarde.");  
+        return;  
+    }
 
-    document.getElementById("girar").addEventListener("click", girarRoleta);  
+    if (numerosDisponiveis.length === 0) {
+        numerosDisponiveis = [1, 2, 3, 4, 5];
+    }
 
-    function mostrarResultado(num) {  
-        const resultadoDiv = document.getElementById("resultado");  
-        const mostrarDicasDiv = document.querySelector(".mostrar-dicas"); 
-        const itemCorrespondente = data.telas.tela4.find(item => item.num === num);  
+    estaGirando = true;  
 
-        const titulo = itemCorrespondente.titulo || `Número ${num}`;
-        document.getElementById("num-sorteado").innerText = titulo;  
+    const randomIndex = Math.floor(Math.random() * numerosDisponiveis.length); 
+    const randomNum = numerosDisponiveis[randomIndex]; 
 
-        resultadoDiv.innerHTML = ''; 
-        for (let i = 1; i <= 5; i++) {
-            const texto = itemCorrespondente[`text${i}`];
-            if (texto) {
-                const li = document.createElement("li");
-                li.textContent = texto;
-                li.style.marginBottom = "10px"; 
-                resultadoDiv.appendChild(li);
+    numerosDisponiveis.splice(randomIndex, 1); 
+
+    const roleta = document.getElementById("roleta-g");  
+    const rotacao = randomNum * 72 + 720; 
+    
+    roleta.style.transition = "transform 2s ease-out";
+    roleta.style.transform = `rotate(${rotacao}deg)`; 
+
+    setTimeout(() => {  
+        roleta.style.transition = "transform 1s ease-in";  
+        roleta.style.transform = "rotate(0deg)";  
+        mostrarResultado(randomNum);  
+        estaGirando = false; 
+    }, 2000);  
+}
+
+document.getElementById("roleta-g").addEventListener("click", girarRoleta);  
+
+document.getElementById("girar").addEventListener("click", girarRoleta);  
+
+function mostrarResultado(num) {  
+    const resultadoDiv = document.getElementById("resultado");  
+    const mostrarDicasDiv = document.querySelector(".mostrar-dicas"); 
+    const itemCorrespondente = data.find(item => item.num === num);  
+
+    const titulo = itemCorrespondente.titulo || `Número ${num}`;
+    document.getElementById("num-sorteado").innerText = titulo;  
+
+    resultadoDiv.innerHTML = ''; 
+    for (let i = 1; i <= 5; i++) {
+        const texto = itemCorrespondente[`text${i}`];
+        if (texto) {
+            const li = document.createElement("li");
+            li.textContent = texto;
+            li.style.marginBottom = "10px"; 
+            resultadoDiv.appendChild(li);
+        }
+    }
+
+    const lastLi = resultadoDiv.lastElementChild;
+    if (lastLi) {
+        lastLi.style.marginBottom = "10px";
+    }
+
+    resultadoDiv.style.display = "block"; 
+    mostrarDicasDiv.style.border = "2px solid #00a4cc"; 
+    mostrarDicasDiv.style.borderRadius = "30px"; 
+}
+
+
+
+//------------ Codigo para contagem de tarefas --------------- //
+async function atualizarContagemTarefas() {
+    try {
+        const respostaAdicionarTarefas = await fetch('http://localhost:4000/adicionarTarefas');
+        const respostaListaDeTarefas = await fetch('http://localhost:4000/listaDeTarefas');
+        
+        const dadosAdicionarTarefas = await respostaAdicionarTarefas.json();
+        const dadosListaDeTarefas = await respostaListaDeTarefas.json();
+
+        let contagemTrabalho = 0;
+        let contagemLazer = 0;
+        let contagemEstudo = 0;
+
+        dadosListaDeTarefas.forEach(tarefa => {
+            switch (tarefa.category) {
+                case 'Trabalho':
+                    contagemTrabalho++;
+                    break;
+                case 'Lazer':
+                    contagemLazer++;
+                    break;
+                case 'Estudo':
+                    contagemEstudo++;
+                    break;
             }
-        }
+        });
 
-        const lastLi = resultadoDiv.lastElementChild;
-        if (lastLi) {
-            lastLi.style.marginBottom = "10px";
-        }
+        dadosAdicionarTarefas.forEach(tarefa => {
+            switch (tarefa.category) {
+                case 'Trabalho':
+                    contagemTrabalho++;
+                    break;
+                case 'Lazer':
+                    contagemLazer++;
+                    break;
+                case 'Estudo':
+                    contagemEstudo++;
+                    break;
+            }
+        });
 
-        resultadoDiv.style.display = "block"; 
-        mostrarDicasDiv.style.border = "2px solid #00a4cc"; 
-        mostrarDicasDiv.style.borderRadius = "30px"; 
+        document.getElementById('trabalho').textContent = `Trabalho ${contagemTrabalho}`;
+        document.getElementById('lazer').textContent = `Lazer ${contagemLazer}`;
+        document.getElementById('estudo').textContent = `Estudo ${contagemEstudo}`;
 
-
-
+    } catch (error) {
+        console.error('Erro ao atualizar contagem de tarefas:', error);
     }
 }
 
 
-//------------ Codigo para contagem de tarefas --------------- //
-    async function atualizarContagemTarefas() {
-        try {
-            const response = await fetch('/codigo/db/DB2.json');
-            const data = await response.json();
-
-            let contagemTrabalho = 0;
-            let contagemLazer = 0;
-            let contagemEstudo = 0;
-
-            data.listaDeTarefas.forEach(tarefa => {
-                switch (tarefa.category) {
-                    case 'Trabalho':
-                        contagemTrabalho++;
-                        break;
-                    case 'Lazer':
-                        contagemLazer++;
-                        break;
-                    case 'Estudo':
-                        contagemEstudo++;
-                        break;
-                }
-            });
-
-            data.adicionarTarefas.forEach(tarefa => {
-                switch (tarefa.category) {
-                    case 'Trabalho':
-                        contagemTrabalho++;
-                        break;
-                    case 'Lazer':
-                        contagemLazer++;
-                        break;
-                    case 'Estudo':
-                        contagemEstudo++;
-                        break;
-                }
-            });
-
-            document.getElementById('trabalho').textContent = `Trabalho ${contagemTrabalho}`;
-            document.getElementById('lazer').textContent = `Lazer ${contagemLazer}`;
-            document.getElementById('estudo').textContent = `Estudo ${contagemEstudo}`;
-
-        } catch (error) {
-            console.error('Erro ao atualizar contagem de tarefas:', error);
-        }
-    }
-
 //---------- Codigo para a contagem de tempo --------------- //    
 async function atualizarDuracaoEstimadas() {
     try {
-        const response = await fetch('/codigo/db/DB2.json');
-        const data = await response.json();
+        const respostaAdicionarTarefas = await fetch('http://localhost:4000/adicionarTarefas');
+        const respostaListaDeTarefas = await fetch('http://localhost:4000/listaDeTarefas');
+        
+        const dadosAdicionarTarefas = await respostaAdicionarTarefas.json();
+        const dadosListaDeTarefas = await respostaListaDeTarefas.json();
 
         let duracaoTrabalho = 0;
         let duracaoLazer = 0;
         let duracaoEstudo = 0;
 
-        data.listaDeTarefas.forEach(tarefa => {
+        dadosListaDeTarefas.forEach(tarefa => {
             switch (tarefa.category) {
                 case 'Trabalho':
                     duracaoTrabalho += tarefa.estimatedDuration;
@@ -199,7 +222,7 @@ async function atualizarDuracaoEstimadas() {
             }
         });
 
-        data.adicionarTarefas.forEach(tarefa => {
+        dadosAdicionarTarefas.forEach(tarefa => {
             switch (tarefa.category) {
                 case 'Trabalho':
                     duracaoTrabalho += tarefa.estimatedDuration;
@@ -227,7 +250,7 @@ async function atualizarDuracaoEstimadas() {
 }
 
 
-    document.getElementById('atualizarDados').addEventListener('click', () => {
-        atualizarContagemTarefas();
-        atualizarDuracaoEstimadas();
-    });
+document.getElementById('atualizarDados').addEventListener('click', () => {
+    atualizarContagemTarefas();
+    atualizarDuracaoEstimadas();
+});

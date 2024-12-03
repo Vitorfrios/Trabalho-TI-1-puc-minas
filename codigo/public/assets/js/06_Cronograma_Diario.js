@@ -256,71 +256,84 @@ function desenharCalendario() {
 
 
 function carregarTarefas() {  
-    fetch('/codigo/db/DB2.json')  
-        .then(response => response.json())  
-        .then(data => {  
-            const tarefas = [...data.listaDeTarefas, ...data.adicionarTarefas];
-            const horas = document.querySelectorAll('#linhas_calendario tr');  
+    Promise.all([
+        fetch('http://localhost:4000/listaDeTarefas'),
+        fetch('http://localhost:4000/adicionarTarefas')
+    ])
+    .then(([responseListaDeTarefas, responseAdicionarTarefas]) => {
+        if (!responseListaDeTarefas.ok) {
+            throw new Error(`Erro ao carregar 'listaDeTarefas': ${responseListaDeTarefas.status}`);
+        }
+        if (!responseAdicionarTarefas.ok) {
+            throw new Error(`Erro ao carregar 'adicionarTarefas': ${responseAdicionarTarefas.status}`);
+        }
 
-            horas.forEach(hora => {
-                for (let i = 1; i < hora.children.length; i++) { 
-                    hora.children[i].innerHTML = ''; 
+        return Promise.all([
+            responseListaDeTarefas.json(),
+            responseAdicionarTarefas.json()
+        ]);
+    })
+    .then(([dataListaDeTarefas, dataAdicionarTarefas]) => {
+        const tarefas = [...dataListaDeTarefas, ...dataAdicionarTarefas];
+        const horas = document.querySelectorAll('#linhas_calendario tr');
+
+        horas.forEach(hora => {
+            for (let i = 1; i < hora.children.length; i++) { 
+                hora.children[i].innerHTML = ''; 
+            }
+        });
+
+        for (let dia = 0; dia < 7; dia++) {  
+            tarefas.forEach(tarefa => {
+                if (tarefa.date.includes(dia + 1)) {  
+                    const horarioInicial = arredondarHorarioPara15Minutos(tarefa.time);  
+                    let horaIndex = Array.from(horas).findIndex(row => row.firstChild.innerText === horarioInicial);  
+
+                    if (horaIndex === -1) { 
+                        horaIndex = criarLinhaHorario(horarioInicial);
+                    }
+
+                    const duracaoMinutos = Math.min(parseInt(tarefa.estimatedDuration), 1440);
+                    const intervalos = Math.ceil(duracaoMinutos / 15);
+                    const ultimoIntervaloIndex = horaIndex + intervalos - 1;
+
+                    const cellInicio = horas[horaIndex].children[dia + 1];
+                    cellInicio.classList.add('cursor-pointer');
+                    const tarefaDiv = document.createElement('div');
+                    tarefaDiv.classList.add('tarefa');
+                    tarefaDiv.style.color = getColorForPriority(tarefa.priority);
+                    tarefaDiv.innerText = tarefa.name;
+                    cellInicio.appendChild(tarefaDiv);
+
+                    tarefaDiv.addEventListener('click', () => {
+                        abrirModalEdicao(tarefa);
+                    });
+
+                    let atualIndex = (horaIndex + intervalos - 1) % horas.length;
+                    let atualDia = dia;
+
+                    if (horaIndex + intervalos - 1 >= horas.length) {
+                        atualDia = (dia + 1) % 7;
+                    }
+
+                    const cellFim = horas[atualIndex].children[atualDia + 1];
+                    cellFim.classList.add('cursor-pointer');
+                    const fimDiv = document.createElement('div');
+                    fimDiv.classList.add('tarefa');
+                    fimDiv.style.color = 'gray';
+                    fimDiv.innerText = `${tarefa.name} - fim da tarefa`;
+                    cellFim.appendChild(fimDiv);
+
+                    fimDiv.addEventListener('click', () => {
+                        abrirModalEdicao(tarefa);
+                    });
                 }
             });
-
-            for (let dia = 0; dia < 7; dia++) {  
-                tarefas.forEach(tarefa => {
-                    if (tarefa.date.includes(dia + 1)) {  
-                        const horarioInicial = arredondarHorarioPara15Minutos(tarefa.time);  
-                        let horaIndex = Array.from(horas).findIndex(row => row.firstChild.innerText === horarioInicial);  
-
-                        if (horaIndex === -1) { 
-                            horaIndex = criarLinhaHorario(horarioInicial);
-                        }
-
-                        const duracaoMinutos = Math.min(parseInt(tarefa.estimatedDuration), 1440);
-                        const intervalos = Math.ceil(duracaoMinutos / 15);
-                        const ultimoIntervaloIndex = horaIndex + intervalos - 1;
-
-                        
-                        const cellInicio = horas[horaIndex].children[dia + 1];
-                        cellInicio.classList.add('cursor-pointer');
-                        const tarefaDiv = document.createElement('div');
-                        tarefaDiv.classList.add('tarefa');
-                        tarefaDiv.style.color = getColorForPriority(tarefa.priority);
-                        tarefaDiv.innerText = tarefa.name;
-                        cellInicio.appendChild(tarefaDiv);
-
-                        tarefaDiv.addEventListener('click', () => {
-                            abrirModalEdicao(tarefa);
-                        });
-
-                        
-                        let atualIndex = (horaIndex + intervalos - 1) % horas.length;
-                        let atualDia = dia;
-
-                        if (horaIndex + intervalos - 1 >= horas.length) {
-                            atualDia = (dia + 1) % 7;
-                        }
-
-                        const cellFim = horas[atualIndex].children[atualDia + 1];
-                        cellFim.classList.add('cursor-pointer');
-                        const fimDiv = document.createElement('div');
-                        fimDiv.classList.add('tarefa');
-                        fimDiv.style.color = 'gray';
-                        fimDiv.innerText = `${tarefa.name} - fim da tarefa`;
-                        cellFim.appendChild(fimDiv);
-
-                        
-                        fimDiv.addEventListener('click', () => {
-                            abrirModalEdicao(tarefa);
-                        });
-                    }
-                });  
-            }  
-        })  
-        .catch(error => console.error('Erro ao carregar tarefas:', error));  
+        }
+    })
+    .catch(error => console.error('Erro ao carregar tarefas:', error));  
 }
+
 
 function arredondarHorarioPara15Minutos(horario) {
     let [hora, minuto] = horario.split(':').map(Number);

@@ -4,20 +4,29 @@ npm start
 */
 
 
-const jsonPath = '/codigo/db/db.json';
-
+const jsonPath = 'http://localhost:3000/tutorial';  
 
 async function carregarDados() {
     try {
         console.log("Iniciando carregamento de dados...");
-        const response = await fetch(jsonPath);
-        const data = await response.json();
+        const response = await fetch(jsonPath);  
+        const data = await response.json();  
         console.log("Dados carregados com sucesso:", data);
-        return data.tutorial;
+        return data;  
     } catch (error) {
         console.error("Erro ao carregar o JSON:", error);
     }
 }
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const dados = await carregarDados();
+    if (dados) {
+        console.log("Dados carregados e prontos para uso.");
+        configurarBotoes(dados);  
+    } else {
+        console.error("Dados não carregados corretamente.");
+    }
+});
 
 
 function configurarBotoes(dados) {
@@ -48,7 +57,7 @@ function configurarBotoes(dados) {
 
 }
 
-// Função para exibir a descrição geral de Sugestões
+
 function exibirDescricaoS(elemento, dadosDescricao) {
     console.log("Exibindo descrição geral de Sugestões.");
     const conteudoHTML = `
@@ -58,7 +67,7 @@ function exibirDescricaoS(elemento, dadosDescricao) {
     elemento.innerHTML = conteudoHTML;
 }
 
-// Função para exibir um subtópico na sugestão
+
 function exibirSubtopico(subtopicoConteudo, subtopico, padding, fontSize) {
     console.log(`Exibindo subtópico: ${subtopico.titulo}`);
     const conteudoHTML = `
@@ -77,7 +86,7 @@ function exibirSubtopico(subtopicoConteudo, subtopico, padding, fontSize) {
     });
 }
 
-// Função para mostrar os subtópicos da sugestão
+
 function mostrarSubtopicos(elemento, dadosSugestao) {
     console.log("Mostrando subtópicos da sugestão.");
 
@@ -116,15 +125,6 @@ function mostrarSubtopicos(elemento, dadosSugestao) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const dados = await carregarDados();
-    if (dados) {
-        console.log("Dados carregados e prontos para uso.");
-        configurarBotoes(dados);
-    } else {
-        console.error("Dados não carregados corretamente.");
-    }
-});
 
 function exibirDescricao(elemento, dadosDescricao, padding, fontSize) {
     console.log(`Exibindo descrição: ${dadosDescricao.titulo}`);

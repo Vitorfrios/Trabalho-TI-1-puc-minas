@@ -74,6 +74,18 @@ async function salvaLogin(event) {
     })
     .then(() => {
         alert('Usuário criado com sucesso!');
+        
+        // Fechar o modal automaticamente após salvar
+        const modal = document.getElementById('meuModal'); 
+        if (modal) {
+            modal.style.display = 'none';
+        }
+        
+        document.getElementById('txt_login').value = '';
+        document.getElementById('txt_nome').value = '';
+        document.getElementById('txt_email').value = '';
+        document.getElementById('txt_senha').value = '';
+        document.getElementById('txt_senha2').value = '';
     })
     .catch(error => {
         console.error("Erro ao salvar o usuário:", error);

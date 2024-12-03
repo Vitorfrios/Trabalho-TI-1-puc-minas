@@ -64,89 +64,85 @@ carregarNomeUsuarioLogado();
 
 // ------------------- FIM DA SIDE BAR ------------------- //
 
-{// ------------- Codigo para a roleta ------------- //
-    let data;  
-    let numerosDisponiveis = [1, 2, 3, 4, 5]; 
-    let estaGirando = false;  
+let data;  
+let numerosDisponiveis = [1, 2, 3, 4, 5]; 
+let estaGirando = false;  
 
-    async function carregarDados() {  
-        const response = await fetch('/codigo/db/db.json');  
-        data = await response.json();  
-    }  
+async function carregarDados() {  
+    const response = await fetch('http://localhost:3000/tela1');  
+    data = await response.json();  
+}  
 
-    carregarDados(); 
+carregarDados(); 
 
-    function girarRoleta() {
-        if (estaGirando) {
-            return;  
-        }
-
-        if (!data) {  
-            alert("Os dados ainda estão sendo carregados. Tente novamente mais tarde.");  
-            return;  
-        }  
-
-        if (numerosDisponiveis.length === 0) {
-            numerosDisponiveis = [1, 2, 3, 4, 5];
-        }
-
-        estaGirando = true;  
-
-        const randomIndex = Math.floor(Math.random() * numerosDisponiveis.length); 
-        const randomNum = numerosDisponiveis[randomIndex]; 
-
-        numerosDisponiveis.splice(randomIndex, 1); 
-
-        const roleta = document.getElementById("roleta-g");  
-        const rotacao = randomNum * 72 + 720; 
-        
-        roleta.style.transition = "transform 2s ease-out";
-        roleta.style.transform = `rotate(${rotacao}deg)`; 
-
-        setTimeout(() => {  
-            roleta.style.transition = "transform 1s ease-in";  
-            roleta.style.transform = "rotate(0deg)";  
-            mostrarResultado(randomNum);  
-            estaGirando = false; 
-        }, 2000);  
+function girarRoleta() {
+    if (estaGirando) {
+        return;  
     }
 
-    document.getElementById("roleta-g").addEventListener("click", girarRoleta);  
-
-    document.getElementById("girar").addEventListener("click", girarRoleta);  
-
-    function mostrarResultado(num) {  
-        const resultadoDiv = document.getElementById("resultado");  
-        const mostrarDicasDiv = document.querySelector(".mostrar-dicas"); 
-        const itemCorrespondente = data.telas.tela2.find(item => item.num === num);  
-
-        const titulo = itemCorrespondente.titulo || `Número ${num}`;
-        document.getElementById("num-sorteado").innerText = titulo;  
-
-        resultadoDiv.innerHTML = ''; 
-        for (let i = 1; i <= 5; i++) {
-            const texto = itemCorrespondente[`text${i}`];
-            if (texto) {
-                const li = document.createElement("li");
-                li.textContent = texto;
-                li.style.marginBottom = "10px"; 
-                resultadoDiv.appendChild(li);
-            }
-        }
-
-        const lastLi = resultadoDiv.lastElementChild;
-        if (lastLi) {
-            lastLi.style.marginBottom = "10px";
-        }
-
-        resultadoDiv.style.display = "block"; 
-        mostrarDicasDiv.style.border = "2px solid #00a4cc"; 
-        mostrarDicasDiv.style.borderRadius = "30px"; 
-
-
-
+    if (!data) {  
+        alert("Os dados ainda estão sendo carregados. Tente novamente mais tarde.");  
+        return;  
     }
-} 
+
+    if (numerosDisponiveis.length === 0) {
+        numerosDisponiveis = [1, 2, 3, 4, 5];
+    }
+
+    estaGirando = true;  
+
+    const randomIndex = Math.floor(Math.random() * numerosDisponiveis.length); 
+    const randomNum = numerosDisponiveis[randomIndex]; 
+
+    numerosDisponiveis.splice(randomIndex, 1); 
+
+    const roleta = document.getElementById("roleta-g");  
+    const rotacao = randomNum * 72 + 720; 
+    
+    roleta.style.transition = "transform 2s ease-out";
+    roleta.style.transform = `rotate(${rotacao}deg)`; 
+
+    setTimeout(() => {  
+        roleta.style.transition = "transform 1s ease-in";  
+        roleta.style.transform = "rotate(0deg)";  
+        mostrarResultado(randomNum);  
+        estaGirando = false; 
+    }, 2000);  
+}
+
+document.getElementById("roleta-g").addEventListener("click", girarRoleta);  
+
+document.getElementById("girar").addEventListener("click", girarRoleta);  
+
+function mostrarResultado(num) {  
+    const resultadoDiv = document.getElementById("resultado");  
+    const mostrarDicasDiv = document.querySelector(".mostrar-dicas"); 
+    const itemCorrespondente = data.find(item => item.num === num);  
+
+    const titulo = itemCorrespondente.titulo || `Número ${num}`;
+    document.getElementById("num-sorteado").innerText = titulo;  
+
+    resultadoDiv.innerHTML = ''; 
+    for (let i = 1; i <= 5; i++) {
+        const texto = itemCorrespondente[`text${i}`];
+        if (texto) {
+            const li = document.createElement("li");
+            li.textContent = texto;
+            li.style.marginBottom = "10px"; 
+            resultadoDiv.appendChild(li);
+        }
+    }
+
+    const lastLi = resultadoDiv.lastElementChild;
+    if (lastLi) {
+        lastLi.style.marginBottom = "10px";
+    }
+
+    resultadoDiv.style.display = "block"; 
+    mostrarDicasDiv.style.border = "2px solid #00a4cc"; 
+    mostrarDicasDiv.style.borderRadius = "30px"; 
+}
+
 
 
 // ------------- CODIGO DO POMODORO ------------- //

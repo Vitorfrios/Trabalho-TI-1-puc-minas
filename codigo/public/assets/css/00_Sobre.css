@@ -2,12 +2,11 @@
 DIGITAR npm start NO TERMINAL PARA INICIALIZAR O JSON SERVER
 npm start 
 */
-
 html {
     overflow-y: auto; 
     overflow-x: auto; 
     scrollbar-width: overflow-y none; 
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
 
 }
 
@@ -27,6 +26,41 @@ html::-webkit-scrollbar-thumb:horizontal {
     border-radius: 10px; 
     margin-bottom: 60px;
 }
+
+/* Animação de fade e slide (entrada) */
+@keyframes pageTransition {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-wrapper {
+    display: block;
+    animation: pageTransition 0.8s ease-out;
+}
+
+/* Animação de saída para quando uma página desaparecer */
+@keyframes pageTransitionOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh); /
+    }
+}
+
+/* Aplicando a animação de saída */
+.page-wrapper-leaving {
+    animation: pageTransitionOut 0.8s ease-in;
+}
+
 
 
 body {
